@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 36.23 50" id="fuxaWidget" style="border: none !important; outline: none !important; box-shadow: none !important; margin: 0; padding: 0; background: transparent;" width="100%" height="100%">
+  <g id="fuxaSymbol">
+    <defs id="defs1"/>
+    <g data-cell-id="gQ551Ar7PwXLAaA90adm-614" id="g26" transform="translate(-10.5,-0.5)">
+      <g id="cell-gQ551Ar7PwXLAaA90adm-614">
+        <g transform="translate(0.5,0.5)" id="g25">
+          <path d="m 33.55,0 c -0.03,0 -0.06,0 -0.09,0 v 0 c -1.86,0.21 -2.99,1.02 -4.01,2.07 -0.01,0.01 -0.02,0.02 -0.02,0.03 -1.44,1.7 -1.45,3.31 -1.45,4.21 0,0.14 0.05,0.27 0.15,0.37 0.1,0.1 0.24,0.15 0.38,0.14 1.59,-0.05 3.16,-0.7 4.24,-2.09 0,-0.01 0,-0.01 0,-0.01 1.21,-1.6 1.39,-3.06 1.28,-4.26 C 34,0.21 33.8,0.02 33.55,0 Z M 32.97,1.2 C 32.96,2.06 32.79,2.97 31.93,4.1 31.19,5.07 30.16,5.5 29.06,5.66 29.09,4.86 29.23,3.94 30.2,2.77 31,1.95 31.79,1.47 32.97,1.2 Z m 0,5.88 c -0.48,0 -0.96,0.07 -1.43,0.21 0,0 0,0 0,0 -1.09,0.34 -1.81,0.67 -2.86,0.95 -0.69,-0.15 -1.23,-0.36 -2.15,-0.71 0,0 0,0 -0.01,0 -2.22,-0.79 -4.32,0 -5.45,0.9 0,0 0,0 0,0.01 -2.75,2.23 -3.08,5.4 -2.72,8.17 0,0.01 0,0.01 0,0.01 0.48,3.36 2.01,6.26 3.95,8.37 0,0 0,0 0,0 0.73,0.77 1.48,1.23 2.26,1.36 0.79,0.13 1.56,-0.06 2.33,-0.43 1.47,-0.67 2.67,-0.72 3.97,-0.1 0.95,0.46 1.82,0.63 2.66,0.46 0.83,-0.18 1.56,-0.69 2.29,-1.44 0.01,-0.01 0.02,-0.02 0.02,-0.03 1.45,-1.69 2.35,-3.5 3.01,-5.17 0.1,-0.26 -0.02,-0.56 -0.28,-0.66 -1.99,-0.84 -3.11,-2.8 -2.96,-4.79 0.11,-1.26 0.99,-2.87 2.34,-3.72 0.24,-0.15 0.31,-0.46 0.16,-0.7 C 37.5,8.8 36.47,8.02 35.3,7.55 34.71,7.31 34.08,7.16 33.44,7.1 v 0 C 33.29,7.09 33.13,7.08 32.97,7.08 Z m 0,1.03 c 0.13,0 0.26,0.01 0.39,0.02 0.53,0.04 1.06,0.17 1.56,0.37 0.84,0.34 1.52,0.89 2.01,1.48 -1.36,1.08 -2.23,2.66 -2.36,4.12 0,0 0,0 0,0.01 -0.16,2.25 1.05,4.42 3.14,5.53 -0.62,1.5 -1.41,3.04 -2.65,4.49 -0.64,0.67 -1.2,1.03 -1.76,1.15 -0.56,0.12 -1.17,0.02 -2,-0.38 0,0 0,0 0,0 -1.56,-0.74 -3.18,-0.67 -4.84,0.09 0,0 0,0 0,0.01 -0.66,0.31 -1.21,0.42 -1.73,0.34 -0.52,-0.09 -1.05,-0.38 -1.68,-1.05 v 0 c 0,0 0,0 0,0 -1.8,-1.96 -3.23,-4.68 -3.68,-7.81 -0.34,-2.61 -0.07,-5.29 2.34,-7.25 0,0 0,0 0.01,0 0.86,-0.69 2.64,-1.38 4.46,-0.73 L 26.17,8.49 c 0.95,0.36 1.56,0.62 2.41,0.79 0.08,0.01 0.16,0.01 0.23,-0.01 1.22,-0.31 1.96,-0.67 3.02,-1 0.37,-0.11 0.75,-0.16 1.14,-0.16 z m -20.68,7.07 c -1.26,0 -2.29,1.03 -2.29,2.3 V 40.4 c 0,1.27 1.03,2.3 2.29,2.3 h 12.87 c -0.2,2.76 -1.14,4.55 -2.15,6.28 h -2.66 c -0.28,0 -0.51,0.22 -0.51,0.51 0,0.13 0.05,0.26 0.15,0.36 0.09,0.1 0.23,0.15 0.36,0.15 h 15.54 c 0.28,0 0.51,-0.23 0.51,-0.51 0,-0.29 -0.23,-0.51 -0.51,-0.51 H 33.3 C 32.2,47.5 31.25,44.97 31.1,42.7 h 12.84 c 1.26,0 2.29,-1.03 2.29,-2.3 V 17.48 c 0,-1.27 -1.03,-2.3 -2.29,-2.3 h -3.28 c -0.28,0 -0.51,0.23 -0.51,0.51 0,0.29 0.23,0.52 0.51,0.52 h 3.28 c 0.71,0 1.27,0.55 1.27,1.27 v 18.7 H 11.02 v -18.7 c 0,-0.72 0.56,-1.27 1.27,-1.27 h 3.3 c 0.29,0 0.52,-0.23 0.52,-0.52 0,-0.28 -0.23,-0.51 -0.52,-0.51 z m -1.27,22.03 h 34.19 v 3.19 c 0,0.72 -0.56,1.27 -1.27,1.27 H 12.29 c -0.71,0 -1.27,-0.55 -1.27,-1.27 z m 15.17,5.49 h 3.89 c 0.12,2.23 0.91,4.58 1.98,6.28 h -7.87 c 0.94,-1.66 1.81,-3.57 2,-6.28 z" fill="#000000" stroke="none" pointer-events="all" id="path24"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <script type="text/javascript"><![CDATA[/*
+    # =============================================
+    # ===             How to Use                ===
+    # =============================================
+
+    Variables with the following prefix:
+
+    _pb_ = bool   parameter ( true or false )
+    _pn_ = number parameter ( Int, Float, Real etc )
+    _ps_ = string parameter ( string can be entered directly )
+    _pc_ = color parameter in hex color code ( #00ff00ff )
+
+    Indicate variable type to be used in Fuxa Properties and binding of Tags, Important! they have to be place within:
+
+    //!export-start
+    let _pn_setState = 0;
+    //!export-end
+
+    There are 2x Functions to handle sending and receiving data between Fuxa and the SVG
+
+    // Recieve Variables From Fuxa
+    function putValue(id, value) { } 
+    
+    // Send Variables To Fuxa
+    function postValue(id, value) {
+      console.error('Not defined!');
+    }
+
+    The ID is the name of the variable _pn_setState for example and value is the value to be sent or received from Fuxa
+
+
+    This SVG uses an INT/Number Variable to change the State and State of the SVG:
+
+    0 = Off
+    1 = Run
+    2 = Warning
+    3 = Fault
+    4 = Invalid
+    5 = Spare
+
+    You can also use the bool field and this will change the state between 0 = off and 1 = run 
+
+    You can also set the color for each state in Fuxa using HEX color code #b4b4b4
+    The Default Blink Interval for On and Off is 500ms but can also be changed in Fuxa in MS resolution
+
+    <svg>
+      SVG Content Here
+      <script>
+        JS Script Content Here
+      </script>
+    </svg>
+
+    */
+
+	  // Global Parameters and Variables
+
+    //!export-start
+    let _pn_setState = 0;                     // 0=Off, 1=Run, 2=Warn, 3=Fault, 4=Invalid, 5=Spare
+    let _pb_boolState = false;                // true = Run, false = Off
+    let _pn_setIntervalOn = 500;              // ms fault color is ON
+    let _pn_setIntervalOff = 500;             // ms fault color is OFF
+    let _pn_strokeWidth = 1;                  // Global stroke width for all states
+    let _pc_fill_0 = 'none';                  // Off
+    let _pc_fill_1 = 'none';                  // Run
+    let _pc_fill_2 = 'none';                  // Warn
+    let _pc_fill_3 = 'none';                  // Fault
+    let _pc_fill_4 = 'none';                  // Invalid
+    let _pc_fill_5 = 'none';                  // Spare
+    let _pc_stroke_0 = '#7f7f7f';             // Off
+    let _pc_stroke_1 = '#00ff00';             // Run
+    let _pc_stroke_2 = '#ff9500';             // Warn
+    let _pc_stroke_3 = '#ff0000';             // Fault
+    let _pc_stroke_4 = '#3c3c3c';             // Invalid
+    let _pc_stroke_5 = '#dcdcdc';             // Spare
+    let _pb_preserveAspectRatio = true;       // true = preserve aspect ratio, false = stretch
+    let _pn_rotateAngle = 0;                  // degrees, 0 = no rotation
+    let _pn_rotateOffsetX = 0;                // offset from center (0 = center)
+    let _pn_rotateOffsetY = 0;                // offset from center (0 = center)
+    let _pb_flipHorizontal = false;           // true = flip X
+    let _pb_flipVertical = false;             // true = flip Y
+    let _pn_flipOffsetX = 0;                  // offset from center (0 = center)
+    let _pn_flipOffsetY = 0;                  // offset from center (0 = center)
+    let _pn_padding = 0;                      // padding around SVG (default 0)
+    //!export-end
+
+    let stateNumber = 0;
+    let blinkInterval = null;
+    let blinkTimer = null;
+    let blinkObserver = null;
+    let originalViewBox = null;
+
+    // Get dynamic center from SVG viewBox (uses originalViewBox if available)
+    function getCenter() {
+      const svg = document.getElementById('fuxaWidget');
+      const symbol = document.getElementById('fuxaSymbol');
+      if (!svg) return { x: 25.5, y: 25.5 };
+      if (symbol && typeof symbol.getBBox === 'function') {
+        const bb = symbol.getBBox();
+        return { x: bb.x + bb.width / 2, y: bb.y + bb.height / 2 };
+      }
+      const vbString = originalViewBox || svg.getAttribute('viewBox') || '0 0 51 51';
+      const vb = vbString.split(/\s+/).map(parseFloat);
+      return { x: (vb[0] + vb[2]) / 2, y: (vb[1] + vb[3]) / 2 };
+    }
+
+    // Apply transform to symbol group
+    function applyTransform() {
+      const symbol = document.getElementById('fuxaSymbol');
+      if (!symbol) return;
+      const center = getCenter();
+      const cx = center.x + _pn_rotateOffsetX + _pn_flipOffsetX;
+      const cy = center.y + _pn_rotateOffsetY + _pn_flipOffsetY;
+      let transform = '';
+      if (_pb_flipHorizontal || _pb_flipVertical) {
+        const scaleX = _pb_flipHorizontal ? -1 : 1;
+        const scaleY = _pb_flipVertical ? -1 : 1;
+        transform += `scale(${scaleX}, ${scaleY}) translate(${scaleX === -1 ? -cx * 2 : 0}, ${scaleY === -1 ? -cy * 2 : 0}) `;
+      }
+      if (_pn_rotateAngle !== 0) {
+        transform += `rotate(${_pn_rotateAngle}, ${cx}, ${cy}) `;
+      }
+      symbol.setAttribute('transform', transform.trim() || '');
+    }
+
+    // Update viewBox with padding
+    function updatePadding() {
+      const svg = document.getElementById('fuxaWidget');
+      const symbol = document.getElementById('fuxaSymbol');
+      if (!svg) return;
+      const pad = Math.max(0, _pn_padding || 0);
+      // Prefer persisted original viewBox (stable) — if not present, persist a computed one using getBBox
+      const persisted = svg.getAttribute('data-fuxa-orig-viewbox');
+      if (persisted) {
+        const vb = persisted.split(/\s+/).map(parseFloat);
+        const width = vb[2] - vb[0];
+        const height = vb[3] - vb[1];
+        const padded = Math.max(width, height);
+        const size = padded + 2 * pad;
+        const offsetX = (padded - width) / 2;
+        const offsetY = (padded - height) / 2;
+        svg.setAttribute('viewBox', `${vb[0] - pad - offsetX} ${vb[1] - pad - offsetY} ${size} ${size}`);
+        return;
+      }
+      if (symbol && typeof symbol.getBBox === 'function') {
+        // Use the actual content bounds to compute the original viewBox and persist it
+        const bb = symbol.getBBox();
+        const contentSize = Math.max(bb.width, bb.height);
+        const size = contentSize + 2 * pad;
+        const cx = bb.x + bb.width / 2;
+        const cy = bb.y + bb.height / 2;
+        const x = cx - size / 2;
+        const y = cy - size / 2;
+        const vbString = `${x} ${y} ${size} ${size}`;
+        svg.setAttribute('data-fuxa-orig-viewbox', vbString);
+        originalViewBox = vbString;
+        svg.setAttribute('viewBox', vbString);
+        return;
+      }
+      // Fallback to original viewBox if getBBox is not available
+      const vbString = originalViewBox || svg.getAttribute('viewBox') || '0 0 51 51';
+      const vb = vbString.split(/\s+/).map(parseFloat);
+      const width = vb[2] - vb[0];
+      const height = vb[3] - vb[1];
+      const padded = Math.max(width, height);
+      const size = padded + 2 * pad;
+      const offsetX = (padded - width) / 2;
+      const offsetY = (padded - height) / 2;
+      svg.setAttribute('viewBox', `${vb[0] - pad - offsetX} ${vb[1] - pad - offsetY} ${size} ${size}`);
+    }
+
+    // Function to update preserveAspectRatio
+    function updatePreserveAspectRatio() {
+      const svg = document.getElementById('fuxaWidget');
+      if (!svg) return;
+      if (_pb_preserveAspectRatio) {
+        svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+      } else {
+        svg.setAttribute('preserveAspectRatio', 'none');
+      }
+    }
+
+    // Function to update the color based on the set state
+    function logic() {
+      switch (stateNumber) {
+        case 0: // off
+          setBaseColor(_pc_stroke_0, _pc_fill_0);
+          clearBlinking();
+          break;
+        case 1: // run
+          setBaseColor(_pc_stroke_1, _pc_fill_1);
+          clearBlinking();
+          break;
+        case 2: // warning
+          setBaseColor(_pc_stroke_2, _pc_fill_2);
+          clearBlinking();
+          break;
+        case 3: // fault
+          const onRaw = +_pn_setIntervalOn;
+          const offRaw = +_pn_setIntervalOff;
+          const on = (onRaw > 0) ? Math.max(50, onRaw) : 0;
+          const off = (offRaw > 0) ? Math.max(50, offRaw) : 0;
+
+          if (on === 0 || off === 0) {
+            setBaseColor(_pc_stroke_3, _pc_fill_3);
+            clearBlinking();
+          } else {
+            startDualBlinking(_pc_stroke_0, _pc_stroke_3, _pc_fill_0, _pc_fill_3, on, off);
+          }
+          break;
+        case 4: // invalid
+          setBaseColor(_pc_stroke_4, _pc_fill_4);
+          clearBlinking();
+          break;
+        case 5: // spare
+          setBaseColor(_pc_stroke_5, _pc_fill_5);
+          clearBlinking();
+          break;
+        default:
+          console.log('Undefined State');
+          clearBlinking();
+      }
+    }
+
+    // Initial setup
+    function init() {
+      // ensure no residual timers from previous initializations
+      clearBlinking();
+      const svg = document.getElementById('fuxaWidget');
+      if (svg) {
+        // Use or persist the original viewBox to prevent cumulative padding growth
+        if (!svg.getAttribute('data-fuxa-orig-viewbox')) {
+          svg.setAttribute('data-fuxa-orig-viewbox', svg.getAttribute('viewBox') || '0 0 51 51');
+        }
+        originalViewBox = svg.getAttribute('data-fuxa-orig-viewbox');
+      }
+      updatePadding();
+      updatePreserveAspectRatio();
+      applyTransform();
+      logic();
+    }
+
+    // Function to update values from Fuxa
+    function putValue(id, value) {
+      let needsTransform = false;
+
+      if (id === '_pn_setState') {
+        stateNumber = value;
+        logic();
+      }
+      if (id === '_pb_boolState') {
+        _pb_boolState = value;
+        if (_pb_boolState === true) {
+          stateNumber = 1;
+        } else if (_pb_boolState === false) {
+          stateNumber = 0;
+        }
+        logic();
+      }
+      if (id === '_pn_setIntervalOn') {
+        _pn_setIntervalOn = value;
+        if (stateNumber === 3) logic();
+      }
+      if (id === '_pn_setIntervalOff') {
+        _pn_setIntervalOff = value;
+        if (stateNumber === 3) logic();
+      }
+      if (id === '_pn_strokeWidth') _pn_strokeWidth = value;
+      if (id === '_pc_fill_0') _pc_fill_0 = value;
+      if (id === '_pc_fill_1') _pc_fill_1 = value;
+      if (id === '_pc_fill_2') _pc_fill_2 = value;
+      if (id === '_pc_fill_3') _pc_fill_3 = value;
+      if (id === '_pc_fill_4') _pc_fill_4 = value;
+      if (id === '_pc_fill_5') _pc_fill_5 = value;
+      if (id === '_pc_stroke_0') _pc_stroke_0 = value;
+      if (id === '_pc_stroke_1') _pc_stroke_1 = value;
+      if (id === '_pc_stroke_2') _pc_stroke_2 = value;
+      if (id === '_pc_stroke_3') _pc_stroke_3 = value;
+      if (id === '_pc_stroke_4') _pc_stroke_4 = value;
+      if (id === '_pc_stroke_5') _pc_stroke_5 = value;
+
+      // ROTATE
+      if (id === '_pn_rotateAngle') { _pn_rotateAngle = value; needsTransform = true; }
+      if (id === '_pn_rotateOffsetX') { _pn_rotateOffsetX = value; needsTransform = true; }
+      if (id === '_pn_rotateOffsetY') { _pn_rotateOffsetY = value; needsTransform = true; }
+
+      // FLIP
+      if (id === '_pb_flipHorizontal') {
+        _pb_flipHorizontal = (value === true || value === 1 || value === '1');
+        needsTransform = true;
+      }
+      if (id === '_pb_flipVertical') {
+        _pb_flipVertical = (value === true || value === 1 || value === '1');
+        needsTransform = true;
+      }
+      if (id === '_pn_flipOffsetX') { _pn_flipOffsetX = value; needsTransform = true; }
+      if (id === '_pn_flipOffsetY') { _pn_flipOffsetY = value; needsTransform = true; }
+
+      // PADDING
+      if (id === '_pn_padding') {
+        _pn_padding = Math.max(0, +value || 0);
+        updatePadding();
+        needsTransform = true;
+      }
+
+      // PRESERVE ASPECT RATIO
+      if (id === '_pb_preserveAspectRatio') {
+        _pb_preserveAspectRatio = (value === true || value === 1 || value === '1');
+        updatePreserveAspectRatio();
+      }
+
+      if (needsTransform) {
+        applyTransform();
+      }
+    }
+
+    // Function to send values back to Fuxa (placeholder)
+    function postValue(id, value) {
+      console.log('Not defined!');
+    }
+
+    // Make postValue globally available only if not already set by Fuxa
+    if (!window.postValue) {
+      window.postValue = postValue;
+    }
+
+    // Initialize the SVG
+    init();
+
+    // Re-run init when the page becomes visible (e.g., returning from editor)
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'visible') {
+        setTimeout(() => init(), 10);
+      }
+    });
+
+    // Function to update the color for the base shape group
+    function setBaseColor(strokeColor, fillColor) {
+      const symbol = document.getElementById('fuxaSymbol');
+      if (!symbol) return;
+      symbol.querySelectorAll('*').forEach(function(elem) {
+        try {
+          // Set both presentation attributes and inline styles so existing style attributes
+          // (e.g., style="fill:none") are overridden by the inline style setting.
+          if (fillColor !== undefined && fillColor !== null) {
+            elem.setAttribute('fill', fillColor);
+            elem.style.fill = fillColor;
+          }
+          if (strokeColor !== undefined && strokeColor !== null) {
+            elem.setAttribute('stroke', strokeColor);
+            elem.style.stroke = strokeColor;
+          }
+          elem.setAttribute('stroke-width', _pn_strokeWidth);
+          elem.style.strokeWidth = String(_pn_strokeWidth);
+        } catch (e) {
+          // Ignore if an element doesn't accept a property
+        }
+      });
+      applyTransform();
+    }
+
+    // DUAL BLINK: onTime (fault), offTime (off) - simple top-level tick-by-id function
+    // This follows the original approach — a named top-level tick function that schedules itself.
+    function fuxa_blink_tick(svgId) {
+      const svg = document.getElementById(svgId);
+      if (!svg) {
+        clearBlinking();
+        return;
+      }
+      if (!svg || !svg._fuxa_blink_params) return;
+      const p = svg._fuxa_blink_params;
+      if (svg._fuxa_blink_state) {
+        setBaseColor(p.strokeOn, p.fillOn);
+        svg._fuxa_blink_state = false;
+        svg._fuxa_blink_timer = setTimeout(function() { fuxa_blink_tick(svgId); }, p.onTime);
+      } else {
+        setBaseColor(p.strokeOff, p.fillOff);
+        svg._fuxa_blink_state = true;
+        svg._fuxa_blink_timer = setTimeout(function() { fuxa_blink_tick(svgId); }, p.offTime);
+      }
+    }
+
+    function startDualBlinking(strokeOff, strokeOn, fillOff, fillOn, onTime, offTime) {
+      clearBlinking();
+      // Ensure values are numbers
+      onTime = Number(onTime) || 0;
+      offTime = Number(offTime) || 0;
+      const id = 'fuxaWidget';
+      const svg = document.getElementById(id);
+      if (!svg) return;
+      svg._fuxa_blink_params = { strokeOff, strokeOn, fillOff, fillOn, onTime, offTime };
+      svg._fuxa_blink_state = true;
+      // start the tick by id (named function) for reliability
+      fuxa_blink_tick(id);
+
+      blinkObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.removedNodes.forEach((node) => {
+            if (node && node.id === 'fuxaWidget') {
+              clearBlinking();
+              if (blinkObserver) {
+                blinkObserver.disconnect();
+                blinkObserver = null;
+              }
+            }
+          });
+        });
+      });
+      blinkObserver.observe(document.body, { childList: true, subtree: true });
+    }
+
+    // FULL CLEAR BLINKING
+    function clearBlinking() {
+      if (blinkInterval) {
+        clearInterval(blinkInterval);
+        blinkInterval = null;
+      }
+      if (blinkTimer) {
+        clearTimeout(blinkTimer);
+        blinkTimer = null;
+      }
+      if (blinkObserver) {
+        blinkObserver.disconnect();
+        blinkObserver = null;
+      }
+      const svg = document.getElementById('fuxaWidget');
+      if (svg) {
+        if (svg._fuxa_blink_timer) { clearTimeout(svg._fuxa_blink_timer); svg._fuxa_blink_timer = null; }
+        if (svg._fuxa_blink_params) { svg._fuxa_blink_params = null; }
+        if (svg._fuxa_blink_state !== undefined) { svg._fuxa_blink_state = null; }
+      }
+    }]]></script>
+</svg>

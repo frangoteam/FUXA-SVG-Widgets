@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 42.98" id="fuxaWidget" style="border: none !important; outline: none !important; box-shadow: none !important; margin: 0; padding: 0; background: transparent;" width="100%" height="100%">
+  <g id="fuxaSymbol">
+    <defs id="defs1"/>
+    <g data-cell-id="gQ551Ar7PwXLAaA90adm-578" id="g12" transform="translate(-0.5,-10.5)">
+      <g id="cell-gQ551Ar7PwXLAaA90adm-578">
+        <g transform="translate(0.5,0.5)" id="g11">
+          <path d="m 3,10 c -1.65,0 -3,1.34 -3,3 v 36.99 c 0,1.65 1.35,2.99 3,2.99 h 44 c 1.65,0 3,-1.34 3,-2.99 V 13 c 0,-1.66 -1.35,-3 -3,-3 z m 0,0.99 h 44 c 1.12,0 2.01,0.89 2.01,2.01 v 36.99 c 0,1.12 -0.89,2 -2.01,2 H 3 c -1.12,0 -2.01,-0.88 -2.01,-2 V 13 c 0,-1.12 0.89,-2.01 2.01,-2.01 z m 7.16,2.41 c -1.05,0 -1.91,0.86 -1.91,1.9 0,1.05 0.86,1.91 1.91,1.91 1.05,0 1.91,-0.86 1.91,-1.91 0,-1.04 -0.86,-1.9 -1.91,-1.9 z m 17.69,0.02 c -0.85,0 -1.55,0.7 -1.55,1.55 0,0.84 0.7,1.54 1.55,1.54 h 17.18 c 0.85,0 1.55,-0.7 1.55,-1.54 0,-0.85 -0.7,-1.55 -1.55,-1.55 z m -12.86,0 c -1.05,0 -1.91,0.86 -1.91,1.91 0,1.05 0.86,1.91 1.91,1.91 1.04,0 1.9,-0.86 1.9,-1.91 0,-1.05 -0.86,-1.91 -1.9,-1.91 z m -9.67,0.01 c -1.05,0 -1.91,0.86 -1.91,1.91 0,1.05 0.86,1.91 1.91,1.91 1.04,0 1.9,-0.86 1.9,-1.91 0,-1.05 -0.86,-1.91 -1.9,-1.91 z m 4.84,0.96 c 0.51,0 0.92,0.4 0.92,0.91 0,0.52 -0.41,0.92 -0.92,0.92 -0.51,0 -0.92,-0.4 -0.92,-0.92 0,-0.51 0.41,-0.91 0.92,-0.91 z m 17.69,0.02 h 17.18 c 0.31,0 0.55,0.24 0.55,0.56 0,0.31 -0.24,0.55 -0.55,0.55 H 27.85 c -0.31,0 -0.55,-0.24 -0.55,-0.55 0,-0.32 0.24,-0.56 0.55,-0.56 z m -12.86,0.01 c 0.51,0 0.91,0.4 0.91,0.91 0,0.51 -0.4,0.92 -0.91,0.92 -0.52,0 -0.92,-0.41 -0.92,-0.92 0,-0.51 0.4,-0.91 0.92,-0.91 z m -9.67,0 c 0.51,0 0.91,0.41 0.91,0.92 0,0.51 -0.4,0.91 -0.91,0.91 -0.52,0 -0.92,-0.4 -0.92,-0.91 0,-0.51 0.4,-0.92 0.92,-0.92 z m -1.41,5.24 c -0.13,0 -0.25,0.05 -0.35,0.15 -0.09,0.09 -0.14,0.21 -0.14,0.35 v 28.95 c 0,0.13 0.05,0.26 0.14,0.35 0.1,0.1 0.22,0.15 0.35,0.15 h 42.17 c 0.13,0 0.26,-0.05 0.35,-0.15 0.09,-0.09 0.14,-0.22 0.14,-0.35 V 20.16 c 0,-0.14 -0.05,-0.26 -0.14,-0.35 -0.09,-0.1 -0.22,-0.15 -0.35,-0.15 z m 0.5,0.99 H 45.58 V 48.62 H 4.41 Z m 23.26,1.86 c -0.28,0 -0.5,0.22 -0.5,0.49 0,0.13 0.05,0.26 0.15,0.35 0.09,0.1 0.22,0.15 0.35,0.15 h 9.19 c 0.13,0 0.26,-0.05 0.35,-0.15 0.09,-0.09 0.15,-0.22 0.15,-0.35 -0.01,-0.27 -0.23,-0.49 -0.5,-0.49 z m -0.09,1.9 c -0.28,0 -0.5,0.22 -0.5,0.5 v 3.53 c 0,0.28 0.22,0.5 0.5,0.5 h 12.78 c 0.13,0 0.25,-0.05 0.35,-0.14 0.09,-0.1 0.14,-0.22 0.14,-0.36 v -3.53 c 0,-0.28 -0.22,-0.5 -0.49,-0.5 z m -18.05,0.2 c -0.06,0 -0.12,0.01 -0.18,0.01 0,0 -0.01,0 -0.01,0 -0.25,0.03 -0.51,0.12 -0.7,0.36 -0.19,0.24 -0.22,0.66 -0.05,0.95 0.02,0.04 0.05,0.07 0.08,0.11 l 1.32,1.32 c 0,0.01 0.01,0.01 0.01,0.02 0.05,0.04 0.1,0.15 0.07,0.33 -0.03,0.18 -0.14,0.4 -0.3,0.55 C 9.36,28.6 9.02,28.5 8.91,28.41 L 7.65,27.13 C 7.63,27.11 7.61,27.09 7.59,27.07 7.44,26.96 7.22,26.92 7.06,26.95 c -0.17,0.03 -0.28,0.11 -0.38,0.19 -0.17,0.15 -0.27,0.31 -0.34,0.5 -0.21,0.54 -0.12,1.11 0.08,1.59 0.21,0.49 0.53,0.92 0.88,1.26 0,0.01 0,0.01 0.01,0.01 0.82,0.76 1.79,0.93 2.77,0.79 0,0 0.01,0 0.01,0 0.24,-0.04 0.46,0.04 0.58,0.16 0,0 0,0 0,0 l 1.65,1.62 -5.01,5 c 0,0.01 0,0.01 -0.01,0.02 -0.69,0.74 -0.96,1.59 -0.88,2.35 0.07,0.76 0.46,1.42 0.94,1.92 1.13,1.27 3.22,1.45 4.59,0.09 0,0 0,0 0,0 l 4.91,-4.92 1.54,1.52 c 0.04,0.05 0.17,0.4 0.13,0.68 -0.01,0.01 -0.01,0.01 -0.01,0.01 -0.23,1.44 0.46,2.48 1.14,3.1 0.01,0 0.02,0.01 0.02,0.01 0.67,0.54 1.47,0.92 2.4,0.78 0,0 0.01,0 0.02,0 0.39,-0.08 0.74,-0.36 0.8,-0.72 0.06,-0.36 -0.1,-0.65 -0.34,-0.85 l 0.02,0.02 -1,-0.91 c -0.05,-0.05 -0.16,-0.26 -0.17,-0.51 -0.01,-0.25 0.07,-0.49 0.19,-0.62 0,0 0,0 0.01,-0.01 0.07,-0.08 0.27,-0.18 0.47,-0.21 0.21,-0.02 0.38,0.03 0.47,0.11 l 1.27,1.2 c 0.01,0.01 0.02,0.02 0.03,0.03 0.27,0.22 0.66,0.23 0.93,0.07 0.27,-0.15 0.45,-0.47 0.44,-0.81 -0.05,-0.88 -0.32,-1.87 -0.99,-2.55 -0.73,-0.77 -1.72,-1.02 -2.64,-0.91 -0.01,0 -0.01,0 -0.02,0 -0.28,0.05 -0.39,0.03 -0.43,0.01 -0.03,-0.01 -0.06,-0.03 -0.18,-0.16 -0.01,-0.01 -0.01,-0.01 -0.02,-0.02 l -2.77,-2.73 4.08,-4.05 1.06,-0.33 c 0.12,-0.04 0.22,-0.11 0.28,-0.22 l 1.3,-2.17 C 25,27.1 24.97,26.85 24.82,26.69 l -1.59,-1.63 c -0.16,-0.16 -0.41,-0.2 -0.6,-0.08 l -2.16,1.26 c -0.11,0.06 -0.19,0.16 -0.23,0.27 l -0.37,1.17 -4.1,4.01 L 13.04,29 c -0.01,-0.01 -0.02,-0.01 -0.03,-0.02 -0.08,-0.07 -0.17,-0.49 -0.16,-0.81 0,0 0,-0.01 0,-0.01 0.02,-1.12 -0.3,-1.94 -0.81,-2.46 0,0 0,0 0,0 -0.7,-0.71 -1.63,-1.11 -2.51,-1.09 z m 18.55,0.79 h 11.78 v 2.55 H 28.08 Z M 9.69,25.65 c 0.53,0.04 1.17,0.27 1.64,0.74 0.29,0.3 0.54,0.82 0.53,1.74 -0.02,0.39 -0.07,1.1 0.48,1.58 l 7.89,7.78 c 0.14,0.15 0.31,0.32 0.57,0.42 0.27,0.1 0.56,0.09 0.92,0.04 h -0.01 c 0.68,-0.08 1.29,0.07 1.8,0.6 0,0.01 0.01,0.01 0.01,0.01 0.33,0.33 0.53,0.93 0.62,1.51 l -0.92,-0.88 c -0.01,0 -0.01,-0.01 -0.02,-0.01 -0.35,-0.31 -0.81,-0.39 -1.23,-0.34 -0.41,0.04 -0.81,0.21 -1.1,0.53 -0.35,0.38 -0.47,0.87 -0.45,1.32 0.01,0.46 0.14,0.9 0.49,1.22 0,0 0,0 0,0 l 0.8,0.72 C 21.22,42.64 20.8,42.47 20.32,42.09 19.78,41.6 19.33,40.98 19.51,39.9 H 19.5 c 0.1,-0.57 0.01,-1.14 -0.39,-1.55 0,0 -0.01,0 -0.01,0 l -7.73,-7.61 v 0.01 C 11,30.37 10.46,30.23 9.95,30.31 H 9.94 C 9.12,30.42 8.6,30.34 7.98,29.77 7.73,29.52 7.48,29.18 7.34,28.85 7.22,28.58 7.24,28.36 7.28,28.16 l 0.95,0.97 c 0.01,0.01 0.02,0.02 0.03,0.03 0.54,0.46 1.44,0.46 2.16,-0.15 0.01,0 0.01,-0.01 0.02,-0.01 0.34,-0.31 0.55,-0.72 0.61,-1.14 0.06,-0.41 -0.02,-0.89 -0.37,-1.21 l 0.01,0.02 z m 13.1,0.38 1.05,1.08 -1,1.68 -1,0.31 c -0.08,0.02 -0.15,0.06 -0.21,0.12 l -4.16,4.15 -1,-0.98 4.18,-4.09 c 0.06,-0.05 0.1,-0.12 0.13,-0.2 L 21.13,27 Z m 4.88,5.01 c -0.13,0 -0.26,0.05 -0.35,0.14 -0.1,0.1 -0.15,0.22 -0.15,0.35 0,0.28 0.22,0.5 0.5,0.5 h 9.19 c 0.27,0 0.49,-0.22 0.5,-0.5 0,-0.13 -0.06,-0.25 -0.15,-0.35 -0.09,-0.09 -0.22,-0.14 -0.35,-0.14 z m -0.09,1.9 c -0.28,0 -0.5,0.22 -0.5,0.5 v 3.54 c 0,0.27 0.22,0.49 0.5,0.49 h 12.78 c 0.27,0 0.49,-0.22 0.49,-0.49 v -3.54 c 0,-0.28 -0.22,-0.5 -0.49,-0.5 z m -14.55,0.83 3.12,3.07 -4.9,4.91 C 10.26,42.72 8.86,42.56 8.1,41.69 8.09,41.69 8.08,41.68 8.08,41.68 7.72,41.3 7.45,40.83 7.41,40.34 c -0.05,-0.48 0.08,-1 0.62,-1.57 0,-0.01 0,-0.01 0,-0.01 z m 15.05,0.16 h 11.78 v 2.55 H 28.08 Z m -15.02,0.85 c -0.15,-0.01 -0.29,0.04 -0.39,0.15 l -4.66,4.76 c -0.19,0.2 -0.19,0.51 0.01,0.7 0.09,0.09 0.22,0.14 0.35,0.14 0.13,0 0.26,-0.05 0.35,-0.15 l 4.66,-4.76 c 0.19,-0.19 0.18,-0.51 -0.01,-0.7 -0.09,-0.08 -0.2,-0.13 -0.31,-0.14 z m 1.33,1.42 c -0.11,0.01 -0.22,0.06 -0.31,0.14 l -4.71,4.68 c -0.09,0.09 -0.14,0.21 -0.14,0.35 0,0.13 0.05,0.25 0.14,0.35 0.09,0.09 0.22,0.14 0.35,0.14 0.13,0.01 0.26,-0.05 0.35,-0.14 l 4.71,-4.67 c 0.2,-0.2 0.2,-0.51 0.01,-0.71 -0.11,-0.1 -0.25,-0.15 -0.4,-0.14 z m 13.28,3.37 c -0.28,0 -0.5,0.22 -0.5,0.5 0,0.13 0.05,0.25 0.15,0.35 0.09,0.09 0.22,0.14 0.35,0.14 h 9.19 c 0.13,0 0.26,-0.05 0.35,-0.14 0.09,-0.1 0.15,-0.22 0.15,-0.35 -0.01,-0.28 -0.23,-0.5 -0.5,-0.5 z m -0.09,1.9 c -0.28,0 -0.5,0.22 -0.5,0.5 v 3.54 c 0,0.27 0.22,0.49 0.5,0.49 h 12.78 c 0.27,0 0.49,-0.22 0.49,-0.49 v -3.54 c 0,-0.28 -0.22,-0.5 -0.49,-0.5 z m 0.5,0.99 h 11.78 v 2.55 H 28.08 Z" fill="#000000" stroke="none" pointer-events="all" id="path10"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <script type="text/javascript"><![CDATA[/*
+    # =============================================
+    # ===             How to Use                ===
+    # =============================================
+
+    Variables with the following prefix:
+
+    _pb_ = bool   parameter ( true or false )
+    _pn_ = number parameter ( Int, Float, Real etc )
+    _ps_ = string parameter ( string can be entered directly )
+    _pc_ = color parameter in hex color code ( #00ff00ff )
+
+    Indicate variable type to be used in Fuxa Properties and binding of Tags, Important! they have to be place within:
+
+    //!export-start
+    let _pn_setState = 0;
+    //!export-end
+
+    There are 2x Functions to handle sending and receiving data between Fuxa and the SVG
+
+    // Recieve Variables From Fuxa
+    function putValue(id, value) { } 
+    
+    // Send Variables To Fuxa
+    function postValue(id, value) {
+      console.error('Not defined!');
+    }
+
+    The ID is the name of the variable _pn_setState for example and value is the value to be sent or received from Fuxa
+
+
+    This SVG uses an INT/Number Variable to change the State and State of the SVG:
+
+    0 = Off
+    1 = Run
+    2 = Warning
+    3 = Fault
+    4 = Invalid
+    5 = Spare
+
+    You can also use the bool field and this will change the state between 0 = off and 1 = run 
+
+    You can also set the color for each state in Fuxa using HEX color code #b4b4b4
+    The Default Blink Interval for On and Off is 500ms but can also be changed in Fuxa in MS resolution
+
+    <svg>
+      SVG Content Here
+      <script>
+        JS Script Content Here
+      </script>
+    </svg>
+
+    */
+
+	  // Global Parameters and Variables
+
+    //!export-start
+    let _pn_setState = 0;                     // 0=Off, 1=Run, 2=Warn, 3=Fault, 4=Invalid, 5=Spare
+    let _pb_boolState = false;                // true = Run, false = Off
+    let _pn_setIntervalOn = 500;              // ms fault color is ON
+    let _pn_setIntervalOff = 500;             // ms fault color is OFF
+    let _pn_strokeWidth = 1;                  // Global stroke width for all states
+    let _pc_fill_0 = 'none';                  // Off
+    let _pc_fill_1 = 'none';                  // Run
+    let _pc_fill_2 = 'none';                  // Warn
+    let _pc_fill_3 = 'none';                  // Fault
+    let _pc_fill_4 = 'none';                  // Invalid
+    let _pc_fill_5 = 'none';                  // Spare
+    let _pc_stroke_0 = '#7f7f7f';             // Off
+    let _pc_stroke_1 = '#00ff00';             // Run
+    let _pc_stroke_2 = '#ff9500';             // Warn
+    let _pc_stroke_3 = '#ff0000';             // Fault
+    let _pc_stroke_4 = '#3c3c3c';             // Invalid
+    let _pc_stroke_5 = '#dcdcdc';             // Spare
+    let _pb_preserveAspectRatio = true;       // true = preserve aspect ratio, false = stretch
+    let _pn_rotateAngle = 0;                  // degrees, 0 = no rotation
+    let _pn_rotateOffsetX = 0;                // offset from center (0 = center)
+    let _pn_rotateOffsetY = 0;                // offset from center (0 = center)
+    let _pb_flipHorizontal = false;           // true = flip X
+    let _pb_flipVertical = false;             // true = flip Y
+    let _pn_flipOffsetX = 0;                  // offset from center (0 = center)
+    let _pn_flipOffsetY = 0;                  // offset from center (0 = center)
+    let _pn_padding = 0;                      // padding around SVG (default 0)
+    //!export-end
+
+    let stateNumber = 0;
+    let blinkInterval = null;
+    let blinkTimer = null;
+    let blinkObserver = null;
+    let originalViewBox = null;
+
+    // Get dynamic center from SVG viewBox (uses originalViewBox if available)
+    function getCenter() {
+      const svg = document.getElementById('fuxaWidget');
+      const symbol = document.getElementById('fuxaSymbol');
+      if (!svg) return { x: 25.5, y: 25.5 };
+      if (symbol && typeof symbol.getBBox === 'function') {
+        const bb = symbol.getBBox();
+        return { x: bb.x + bb.width / 2, y: bb.y + bb.height / 2 };
+      }
+      const vbString = originalViewBox || svg.getAttribute('viewBox') || '0 0 51 51';
+      const vb = vbString.split(/\s+/).map(parseFloat);
+      return { x: (vb[0] + vb[2]) / 2, y: (vb[1] + vb[3]) / 2 };
+    }
+
+    // Apply transform to symbol group
+    function applyTransform() {
+      const symbol = document.getElementById('fuxaSymbol');
+      if (!symbol) return;
+      const center = getCenter();
+      const cx = center.x + _pn_rotateOffsetX + _pn_flipOffsetX;
+      const cy = center.y + _pn_rotateOffsetY + _pn_flipOffsetY;
+      let transform = '';
+      if (_pb_flipHorizontal || _pb_flipVertical) {
+        const scaleX = _pb_flipHorizontal ? -1 : 1;
+        const scaleY = _pb_flipVertical ? -1 : 1;
+        transform += `scale(${scaleX}, ${scaleY}) translate(${scaleX === -1 ? -cx * 2 : 0}, ${scaleY === -1 ? -cy * 2 : 0}) `;
+      }
+      if (_pn_rotateAngle !== 0) {
+        transform += `rotate(${_pn_rotateAngle}, ${cx}, ${cy}) `;
+      }
+      symbol.setAttribute('transform', transform.trim() || '');
+    }
+
+    // Update viewBox with padding
+    function updatePadding() {
+      const svg = document.getElementById('fuxaWidget');
+      const symbol = document.getElementById('fuxaSymbol');
+      if (!svg) return;
+      const pad = Math.max(0, _pn_padding || 0);
+      // Prefer persisted original viewBox (stable) — if not present, persist a computed one using getBBox
+      const persisted = svg.getAttribute('data-fuxa-orig-viewbox');
+      if (persisted) {
+        const vb = persisted.split(/\s+/).map(parseFloat);
+        const width = vb[2] - vb[0];
+        const height = vb[3] - vb[1];
+        const padded = Math.max(width, height);
+        const size = padded + 2 * pad;
+        const offsetX = (padded - width) / 2;
+        const offsetY = (padded - height) / 2;
+        svg.setAttribute('viewBox', `${vb[0] - pad - offsetX} ${vb[1] - pad - offsetY} ${size} ${size}`);
+        return;
+      }
+      if (symbol && typeof symbol.getBBox === 'function') {
+        // Use the actual content bounds to compute the original viewBox and persist it
+        const bb = symbol.getBBox();
+        const contentSize = Math.max(bb.width, bb.height);
+        const size = contentSize + 2 * pad;
+        const cx = bb.x + bb.width / 2;
+        const cy = bb.y + bb.height / 2;
+        const x = cx - size / 2;
+        const y = cy - size / 2;
+        const vbString = `${x} ${y} ${size} ${size}`;
+        svg.setAttribute('data-fuxa-orig-viewbox', vbString);
+        originalViewBox = vbString;
+        svg.setAttribute('viewBox', vbString);
+        return;
+      }
+      // Fallback to original viewBox if getBBox is not available
+      const vbString = originalViewBox || svg.getAttribute('viewBox') || '0 0 51 51';
+      const vb = vbString.split(/\s+/).map(parseFloat);
+      const width = vb[2] - vb[0];
+      const height = vb[3] - vb[1];
+      const padded = Math.max(width, height);
+      const size = padded + 2 * pad;
+      const offsetX = (padded - width) / 2;
+      const offsetY = (padded - height) / 2;
+      svg.setAttribute('viewBox', `${vb[0] - pad - offsetX} ${vb[1] - pad - offsetY} ${size} ${size}`);
+    }
+
+    // Function to update preserveAspectRatio
+    function updatePreserveAspectRatio() {
+      const svg = document.getElementById('fuxaWidget');
+      if (!svg) return;
+      if (_pb_preserveAspectRatio) {
+        svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+      } else {
+        svg.setAttribute('preserveAspectRatio', 'none');
+      }
+    }
+
+    // Function to update the color based on the set state
+    function logic() {
+      switch (stateNumber) {
+        case 0: // off
+          setBaseColor(_pc_stroke_0, _pc_fill_0);
+          clearBlinking();
+          break;
+        case 1: // run
+          setBaseColor(_pc_stroke_1, _pc_fill_1);
+          clearBlinking();
+          break;
+        case 2: // warning
+          setBaseColor(_pc_stroke_2, _pc_fill_2);
+          clearBlinking();
+          break;
+        case 3: // fault
+          const onRaw = +_pn_setIntervalOn;
+          const offRaw = +_pn_setIntervalOff;
+          const on = (onRaw > 0) ? Math.max(50, onRaw) : 0;
+          const off = (offRaw > 0) ? Math.max(50, offRaw) : 0;
+
+          if (on === 0 || off === 0) {
+            setBaseColor(_pc_stroke_3, _pc_fill_3);
+            clearBlinking();
+          } else {
+            startDualBlinking(_pc_stroke_0, _pc_stroke_3, _pc_fill_0, _pc_fill_3, on, off);
+          }
+          break;
+        case 4: // invalid
+          setBaseColor(_pc_stroke_4, _pc_fill_4);
+          clearBlinking();
+          break;
+        case 5: // spare
+          setBaseColor(_pc_stroke_5, _pc_fill_5);
+          clearBlinking();
+          break;
+        default:
+          console.log('Undefined State');
+          clearBlinking();
+      }
+    }
+
+    // Initial setup
+    function init() {
+      // ensure no residual timers from previous initializations
+      clearBlinking();
+      const svg = document.getElementById('fuxaWidget');
+      if (svg) {
+        // Use or persist the original viewBox to prevent cumulative padding growth
+        if (!svg.getAttribute('data-fuxa-orig-viewbox')) {
+          svg.setAttribute('data-fuxa-orig-viewbox', svg.getAttribute('viewBox') || '0 0 51 51');
+        }
+        originalViewBox = svg.getAttribute('data-fuxa-orig-viewbox');
+      }
+      updatePadding();
+      updatePreserveAspectRatio();
+      applyTransform();
+      logic();
+    }
+
+    // Function to update values from Fuxa
+    function putValue(id, value) {
+      let needsTransform = false;
+
+      if (id === '_pn_setState') {
+        stateNumber = value;
+        logic();
+      }
+      if (id === '_pb_boolState') {
+        _pb_boolState = value;
+        if (_pb_boolState === true) {
+          stateNumber = 1;
+        } else if (_pb_boolState === false) {
+          stateNumber = 0;
+        }
+        logic();
+      }
+      if (id === '_pn_setIntervalOn') {
+        _pn_setIntervalOn = value;
+        if (stateNumber === 3) logic();
+      }
+      if (id === '_pn_setIntervalOff') {
+        _pn_setIntervalOff = value;
+        if (stateNumber === 3) logic();
+      }
+      if (id === '_pn_strokeWidth') _pn_strokeWidth = value;
+      if (id === '_pc_fill_0') _pc_fill_0 = value;
+      if (id === '_pc_fill_1') _pc_fill_1 = value;
+      if (id === '_pc_fill_2') _pc_fill_2 = value;
+      if (id === '_pc_fill_3') _pc_fill_3 = value;
+      if (id === '_pc_fill_4') _pc_fill_4 = value;
+      if (id === '_pc_fill_5') _pc_fill_5 = value;
+      if (id === '_pc_stroke_0') _pc_stroke_0 = value;
+      if (id === '_pc_stroke_1') _pc_stroke_1 = value;
+      if (id === '_pc_stroke_2') _pc_stroke_2 = value;
+      if (id === '_pc_stroke_3') _pc_stroke_3 = value;
+      if (id === '_pc_stroke_4') _pc_stroke_4 = value;
+      if (id === '_pc_stroke_5') _pc_stroke_5 = value;
+
+      // ROTATE
+      if (id === '_pn_rotateAngle') { _pn_rotateAngle = value; needsTransform = true; }
+      if (id === '_pn_rotateOffsetX') { _pn_rotateOffsetX = value; needsTransform = true; }
+      if (id === '_pn_rotateOffsetY') { _pn_rotateOffsetY = value; needsTransform = true; }
+
+      // FLIP
+      if (id === '_pb_flipHorizontal') {
+        _pb_flipHorizontal = (value === true || value === 1 || value === '1');
+        needsTransform = true;
+      }
+      if (id === '_pb_flipVertical') {
+        _pb_flipVertical = (value === true || value === 1 || value === '1');
+        needsTransform = true;
+      }
+      if (id === '_pn_flipOffsetX') { _pn_flipOffsetX = value; needsTransform = true; }
+      if (id === '_pn_flipOffsetY') { _pn_flipOffsetY = value; needsTransform = true; }
+
+      // PADDING
+      if (id === '_pn_padding') {
+        _pn_padding = Math.max(0, +value || 0);
+        updatePadding();
+        needsTransform = true;
+      }
+
+      // PRESERVE ASPECT RATIO
+      if (id === '_pb_preserveAspectRatio') {
+        _pb_preserveAspectRatio = (value === true || value === 1 || value === '1');
+        updatePreserveAspectRatio();
+      }
+
+      if (needsTransform) {
+        applyTransform();
+      }
+    }
+
+    // Function to send values back to Fuxa (placeholder)
+    function postValue(id, value) {
+      console.log('Not defined!');
+    }
+
+    // Make postValue globally available only if not already set by Fuxa
+    if (!window.postValue) {
+      window.postValue = postValue;
+    }
+
+    // Initialize the SVG
+    init();
+
+    // Re-run init when the page becomes visible (e.g., returning from editor)
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'visible') {
+        setTimeout(() => init(), 10);
+      }
+    });
+
+    // Function to update the color for the base shape group
+    function setBaseColor(strokeColor, fillColor) {
+      const symbol = document.getElementById('fuxaSymbol');
+      if (!symbol) return;
+      symbol.querySelectorAll('*').forEach(function(elem) {
+        try {
+          // Set both presentation attributes and inline styles so existing style attributes
+          // (e.g., style="fill:none") are overridden by the inline style setting.
+          if (fillColor !== undefined && fillColor !== null) {
+            elem.setAttribute('fill', fillColor);
+            elem.style.fill = fillColor;
+          }
+          if (strokeColor !== undefined && strokeColor !== null) {
+            elem.setAttribute('stroke', strokeColor);
+            elem.style.stroke = strokeColor;
+          }
+          elem.setAttribute('stroke-width', _pn_strokeWidth);
+          elem.style.strokeWidth = String(_pn_strokeWidth);
+        } catch (e) {
+          // Ignore if an element doesn't accept a property
+        }
+      });
+      applyTransform();
+    }
+
+    // DUAL BLINK: onTime (fault), offTime (off) - simple top-level tick-by-id function
+    // This follows the original approach — a named top-level tick function that schedules itself.
+    function fuxa_blink_tick(svgId) {
+      const svg = document.getElementById(svgId);
+      if (!svg) {
+        clearBlinking();
+        return;
+      }
+      if (!svg || !svg._fuxa_blink_params) return;
+      const p = svg._fuxa_blink_params;
+      if (svg._fuxa_blink_state) {
+        setBaseColor(p.strokeOn, p.fillOn);
+        svg._fuxa_blink_state = false;
+        svg._fuxa_blink_timer = setTimeout(function() { fuxa_blink_tick(svgId); }, p.onTime);
+      } else {
+        setBaseColor(p.strokeOff, p.fillOff);
+        svg._fuxa_blink_state = true;
+        svg._fuxa_blink_timer = setTimeout(function() { fuxa_blink_tick(svgId); }, p.offTime);
+      }
+    }
+
+    function startDualBlinking(strokeOff, strokeOn, fillOff, fillOn, onTime, offTime) {
+      clearBlinking();
+      // Ensure values are numbers
+      onTime = Number(onTime) || 0;
+      offTime = Number(offTime) || 0;
+      const id = 'fuxaWidget';
+      const svg = document.getElementById(id);
+      if (!svg) return;
+      svg._fuxa_blink_params = { strokeOff, strokeOn, fillOff, fillOn, onTime, offTime };
+      svg._fuxa_blink_state = true;
+      // start the tick by id (named function) for reliability
+      fuxa_blink_tick(id);
+
+      blinkObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.removedNodes.forEach((node) => {
+            if (node && node.id === 'fuxaWidget') {
+              clearBlinking();
+              if (blinkObserver) {
+                blinkObserver.disconnect();
+                blinkObserver = null;
+              }
+            }
+          });
+        });
+      });
+      blinkObserver.observe(document.body, { childList: true, subtree: true });
+    }
+
+    // FULL CLEAR BLINKING
+    function clearBlinking() {
+      if (blinkInterval) {
+        clearInterval(blinkInterval);
+        blinkInterval = null;
+      }
+      if (blinkTimer) {
+        clearTimeout(blinkTimer);
+        blinkTimer = null;
+      }
+      if (blinkObserver) {
+        blinkObserver.disconnect();
+        blinkObserver = null;
+      }
+      const svg = document.getElementById('fuxaWidget');
+      if (svg) {
+        if (svg._fuxa_blink_timer) { clearTimeout(svg._fuxa_blink_timer); svg._fuxa_blink_timer = null; }
+        if (svg._fuxa_blink_params) { svg._fuxa_blink_params = null; }
+        if (svg._fuxa_blink_state !== undefined) { svg._fuxa_blink_state = null; }
+      }
+    }]]></script>
+</svg>

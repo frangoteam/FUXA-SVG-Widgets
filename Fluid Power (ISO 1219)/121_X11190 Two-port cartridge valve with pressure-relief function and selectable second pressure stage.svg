@@ -1,0 +1,450 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 354.01999 447.12" id="fuxaWidget" style="border: none !important; outline: none !important; box-shadow: none !important; margin: 0; padding: 0; background: transparent;" width="100%" height="100%">
+  <g id="fuxaSymbol">
+    <defs id="defs1"/>
+    <g data-cell-id="b54Z_1cSVq9n6jkFMYGL-483" id="g319">
+      <g id="cell-b54Z_1cSVq9n6jkFMYGL-483">
+        <g transform="translate(0.5,0.5)" id="g318">
+          <path d="m 185,88.88 v -9.8 h -3.66 v -1.3 h 8.82 v 1.3 h -3.68 v 9.8 z m -22.14,0.08 V 77.84 h 4.18 c 0.74,0 1.3,0.04 1.7,0.1 0.54,0.1 1,0.28 1.36,0.52 0.38,0.26 0.66,0.62 0.9,1.08 0.22,0.46 0.34,0.96 0.34,1.52 0,0.94 -0.3,1.74 -0.9,2.4 -0.62,0.64 -1.7,0.98 -3.26,0.98 h -2.86 v 4.52 z m 1.46,-5.84 h 2.88 c 0.94,0 1.62,-0.18 2.02,-0.52 0.4,-0.36 0.6,-0.86 0.6,-1.5 0,-0.46 -0.12,-0.86 -0.36,-1.2 -0.24,-0.32 -0.54,-0.54 -0.92,-0.66 -0.26,-0.06 -0.7,-0.08 -1.38,-0.08 h -2.84 z m 18.82,-55.1 v 4.14 h 2.46 c 0.82,0 1.42,-0.18 1.82,-0.52 0.4,-0.34 0.6,-0.86 0.6,-1.56 0,-0.7 -0.2,-1.22 -0.6,-1.56 -0.4,-0.34 -1,-0.5 -1.82,-0.5 z m 0,-4.66 v 3.4 h 2.26 c 0.76,0 1.3,-0.14 1.68,-0.4 0.36,-0.3 0.54,-0.72 0.54,-1.3 0,-0.56 -0.18,-1 -0.54,-1.28 -0.38,-0.28 -0.92,-0.42 -1.68,-0.42 z M 181.6,22.1 h 3.92 c 1.16,0 2.06,0.24 2.7,0.72 0.62,0.5 0.94,1.18 0.94,2.08 0,0.68 -0.16,1.24 -0.48,1.64 -0.32,0.42 -0.8,0.68 -1.42,0.78 0.74,0.16 1.34,0.5 1.74,1 0.42,0.52 0.64,1.16 0.64,1.92 0,1.02 -0.34,1.8 -1.04,2.34 -0.68,0.56 -1.66,0.84 -2.92,0.84 h -4.08 z m -14.64,1.14 -2.08,5.62 h 4.16 z m -0.86,-1.52 h 1.74 l 4.3,11.32 h -1.58 l -1.04,-2.9 h -5.1 l -1.02,2.9 h -1.62 z m 167.52,253.2 v -4.72 l -4.28,-6.4 h 1.78 l 2.2,3.36 c 0.4,0.62 0.78,1.24 1.12,1.88 0.34,-0.58 0.74,-1.24 1.22,-1.98 l 2.14,-3.26 h 1.72 l -4.44,6.4 v 4.72 z m -36.84,74.76 v -4.72 l -4.3,-6.4 h 1.8 l 2.18,3.36 c 0.42,0.62 0.78,1.24 1.14,1.88 0.32,-0.58 0.74,-1.24 1.2,-1.96 l 2.16,-3.28 h 1.72 l -4.44,6.4 v 4.72 z m -94.76,31.8 v 4.14 h 2.46 c 0.82,0 1.42,-0.16 1.82,-0.5 0.4,-0.34 0.6,-0.88 0.6,-1.58 0,-0.7 -0.2,-1.22 -0.6,-1.56 -0.4,-0.34 -1,-0.5 -1.82,-0.5 z m 0,-4.66 v 3.42 h 2.26 c 0.76,0 1.3,-0.14 1.68,-0.42 0.36,-0.28 0.54,-0.72 0.54,-1.3 0,-0.56 -0.18,-0.98 -0.54,-1.28 -0.38,-0.28 -0.92,-0.42 -1.68,-0.42 z m -1.54,-1.26 h 3.92 c 1.16,0 2.06,0.24 2.7,0.74 0.62,0.48 0.94,1.16 0.94,2.06 0,0.7 -0.16,1.24 -0.48,1.66 -0.32,0.4 -0.8,0.66 -1.42,0.76 0.74,0.16 1.34,0.5 1.74,1.02 0.42,0.5 0.64,1.14 0.64,1.92 0,1 -0.34,1.78 -1.04,2.34 -0.68,0.54 -1.66,0.82 -2.94,0.82 h -4.06 z m -37.98,36.12 -2.08,5.64 h 4.16 z m -0.88,-1.5 h 1.74 l 4.32,11.3 h -1.6 l -1.02,-2.9 h -5.1 l -1.04,2.9 H 157.3 Z M 14.2,264.12 h 1.64 l 2.82,4.22 2.82,-4.22 h 1.66 l -3.64,5.44 3.88,5.88 h -1.64 l -3.2,-4.8 -3.2,4.8 h -1.66 l 4.04,-6.04 z m 18.64,74.22 h 1.64 l 2.8,4.22 2.84,-4.22 h 1.64 l -3.64,5.44 3.88,5.88 h -1.64 l -3.18,-4.82 -3.22,4.82 h -1.64 l 4.04,-6.04 z" fill="#000000" stroke="none" pointer-events="all" id="path314"/>
+          <rect x="0" y="0" width="0" height="0" fill="none" stroke="#000000" pointer-events="all" id="rect314"/>
+          <path d="m 155.84,63.6 1.66,9.28 -6.6,-6.72 z m 0.54,-16.3 1.64,-9.28 -6.58,6.72 z m 41.48,17.12 -2.78,9 -2.78,-9 z m -18.54,-17.62 -2.78,-9.02 -2.78,9 z m 46.34,128.48 -2.78,9.02 -2.78,-9.02 z m 43.18,-14.08 -0.7,-9.4 -4.72,8.14 z m -0.48,105.88 9,2.76 -9,2.8 z m -2.16,48.58 9.4,-0.7 -8.14,-4.72 z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" id="path315"/>
+          <path d="m 178.14,427.72 c 0,0.8 -0.66,1.46 -1.48,1.46 -0.8,0 -1.46,-0.66 -1.46,-1.46 0,-0.82 0.66,-1.48 1.46,-1.48 0.82,0 1.48,0.66 1.48,1.48 z M 178,279.02 c 0,0.82 -0.66,1.48 -1.48,1.48 -0.8,0 -1.46,-0.66 -1.46,-1.48 0,-0.8 0.66,-1.46 1.46,-1.46 0.82,0 1.48,0.66 1.48,1.46 z m -129.88,0 c 0,0.82 -0.66,1.48 -1.48,1.48 -0.8,0 -1.46,-0.66 -1.46,-1.48 0,-0.8 0.66,-1.46 1.46,-1.46 0.82,0 1.48,0.66 1.48,1.46 z M 308,279 c 0,0.82 -0.66,1.48 -1.48,1.48 -0.8,0 -1.46,-0.66 -1.46,-1.48 0,-0.8 0.66,-1.46 1.46,-1.46 0.82,0 1.48,0.66 1.48,1.46 z m 0,-74.7 c 0,0.8 -0.66,1.46 -1.48,1.46 -0.8,0 -1.46,-0.66 -1.46,-1.46 0,-0.82 0.66,-1.48 1.46,-1.48 0.82,0 1.48,0.66 1.48,1.48 z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" id="path316"/>
+          <path d="m 304.14,334.6 v 18.92 M 195.08,74.28 195.44,92.94 H 306.56 V 353.8 m -27.8,-74.78 h 74.26 M 0,279.02 h 241.52 m -64.86,148.7 H 46.64 V 279 M 176.54,74.28 V 334.66 M 241.52,279 222.9,260.3 v -18.56 h 27.98 V 260.4 M 195.04,36.9 V 18.56 h 74.24 v 111.52 h -37.14 v 18.58 m 0,0 -18.46,-18.58 h -18.76 v 27.84 h 18.64 m 18.54,27.88 v 18.54 h 74.58" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="6, 4" pointer-events="all" id="path317"/>
+          <rect x="0" y="0" width="0" height="0" fill="none" stroke="#000000" pointer-events="all" id="rect317"/>
+          <path d="m 0,273.96 v 9.96 M 241.52,260.4 h 37.24 v 37.22 h -37.24 z m 25.3,52.32 -32.66,-7.3 m 17.04,-7.88 8.86,2.02 -18.52,3.86 18.66,3.84 -18.58,3.84 18.44,3.86 -18.48,3.84 9.78,2.06 m -204.9,4.58 c -5.06,0 -9.16,-4.1 -9.16,-9.18 0,-5.06 4.1,-9.16 9.16,-9.16 5.08,0 9.18,4.1 9.18,9.16 0,5.08 -4.1,9.18 -9.18,9.18 z m 5.8,-13.88 c -2.76,2.6 -2.66,6.54 0,9.46 m -11.58,-9.46 c 2.74,2.6 2.64,6.54 0,9.46 m 135.84,-70.24 c -5.06,0 -9.18,-4.1 -9.18,-9.18 0,-5.06 4.12,-9.18 9.18,-9.18 5.08,0 9.18,4.12 9.18,9.18 0,5.08 -4.1,9.18 -9.18,9.18 z m 5.78,-13.9 c -2.74,2.6 -2.64,6.56 0,9.46 m -11.56,-9.46 c 2.74,2.6 2.64,6.56 0,9.46 m 97.64,23.12 H 241.52 M 28,334.6 V 0 h 297.14 v 334.6 z m 167.2,0 v 55.98 l -18.54,18.56 -18.6,-18.56 V 334.6 m 18.6,112.02 v -37.48 m -18.6,-18.56 h 56.12 m -56.12,-32.56 h 37.14 m -32.42,-23.22 8.92,2.76 -8.92,2.54 8.92,2.54 -8.92,2.54 8.92,2.54 -8.92,2.54 8.92,2.54 -8.92,2.54 8.98,2.74 m 94.12,-197.62 -7.28,32.78 m -7.88,-17.04 2.02,-8.86 3.84,18.52 3.86,-18.66 3.84,18.58 3.86,-18.44 3.84,18.48 2.06,-9.78 m -46.58,-110.78 -2.02,8.86 -3.86,-18.52 -3.84,18.66 -3.84,-18.56 -3.86,18.42 -3.84,-18.48 -1.72,9.14 m 148.54,209.18 v 9.96 M 213.56,148.66 h 37.28 v 37.14 h -37.28 z m 9.32,26.64 V 148.66 M 129.94,36.86 h 74.58 V 74.1 h -74.58 z m 46.6,9.9 v 27.52 m 18.5,-9.84 V 36.9 M 153.7,45.86 139.16,74.1 m 14.02,-9.04 -14.02,-28 M 129.94,74.1 H 102.12 V 55.7 h 27.82 m -9.22,0 -9.3,18.4 M 176.54,36.8 V 18.38 m -5.26,0.14 h 10.08 m -14.18,18.34 v 37.12 m 157.96,37.38 H 28 m 297.14,111.6 H 28" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all" id="path318"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <script type="text/javascript"><![CDATA[/*
+    # =============================================
+    # ===             How to Use                ===
+    # =============================================
+
+    Variables with the following prefix:
+
+    _pb_ = bool   parameter ( true or false )
+    _pn_ = number parameter ( Int, Float, Real etc )
+    _ps_ = string parameter ( string can be entered directly )
+    _pc_ = color parameter in hex color code ( #00ff00ff )
+
+    Indicate variable type to be used in Fuxa Properties and binding of Tags, Important! they have to be place within:
+
+    //!export-start
+    let _pn_setState = 0;
+    //!export-end
+
+    There are 2x Functions to handle sending and receiving data between Fuxa and the SVG
+
+    // Recieve Variables From Fuxa
+    function putValue(id, value) { } 
+    
+    // Send Variables To Fuxa
+    function postValue(id, value) {
+      console.error('Not defined!');
+    }
+
+    The ID is the name of the variable _pn_setState for example and value is the value to be sent or received from Fuxa
+
+
+    This SVG uses an INT/Number Variable to change the State and State of the SVG:
+
+    0 = Off
+    1 = Run
+    2 = Warning
+    3 = Fault
+    4 = Invalid
+    5 = Spare
+
+    You can also use the bool field and this will change the state between 0 = off and 1 = run 
+
+    You can also set the color for each state in Fuxa using HEX color code #b4b4b4
+    The Default Blink Interval for On and Off is 500ms but can also be changed in Fuxa in MS resolution
+
+    <svg>
+      SVG Content Here
+      <script>
+        JS Script Content Here
+      </script>
+    </svg>
+
+    */
+
+	  // Global Parameters and Variables
+
+    //!export-start
+    let _pn_setState = 0;                     // 0=Off, 1=Run, 2=Warn, 3=Fault, 4=Invalid, 5=Spare
+    let _pb_boolState = false;                // true = Run, false = Off
+    let _pn_setIntervalOn = 500;              // ms fault color is ON
+    let _pn_setIntervalOff = 500;             // ms fault color is OFF
+    let _pn_strokeWidth = 1;                  // Global stroke width for all states
+    let _pc_fill_0 = 'none';                  // Off
+    let _pc_fill_1 = 'none';                  // Run
+    let _pc_fill_2 = 'none';                  // Warn
+    let _pc_fill_3 = 'none';                  // Fault
+    let _pc_fill_4 = 'none';                  // Invalid
+    let _pc_fill_5 = 'none';                  // Spare
+    let _pc_stroke_0 = '#7f7f7f';             // Off
+    let _pc_stroke_1 = '#00ff00';             // Run
+    let _pc_stroke_2 = '#ff9500';             // Warn
+    let _pc_stroke_3 = '#ff0000';             // Fault
+    let _pc_stroke_4 = '#3c3c3c';             // Invalid
+    let _pc_stroke_5 = '#dcdcdc';             // Spare
+    let _pb_preserveAspectRatio = true;       // true = preserve aspect ratio, false = stretch
+    let _pn_rotateAngle = 0;                  // degrees, 0 = no rotation
+    let _pn_rotateOffsetX = 0;                // offset from center (0 = center)
+    let _pn_rotateOffsetY = 0;                // offset from center (0 = center)
+    let _pb_flipHorizontal = false;           // true = flip X
+    let _pb_flipVertical = false;             // true = flip Y
+    let _pn_flipOffsetX = 0;                  // offset from center (0 = center)
+    let _pn_flipOffsetY = 0;                  // offset from center (0 = center)
+    let _pn_padding = 0;                      // padding around SVG (default 0)
+    //!export-end
+
+    let stateNumber = 0;
+    let blinkInterval = null;
+    let blinkTimer = null;
+    let blinkObserver = null;
+    let originalViewBox = null;
+
+    // Get dynamic center from SVG viewBox (uses originalViewBox if available)
+    function getCenter() {
+      const svg = document.getElementById('fuxaWidget');
+      const symbol = document.getElementById('fuxaSymbol');
+      if (!svg) return { x: 25.5, y: 25.5 };
+      if (symbol && typeof symbol.getBBox === 'function') {
+        const bb = symbol.getBBox();
+        return { x: bb.x + bb.width / 2, y: bb.y + bb.height / 2 };
+      }
+      const vbString = originalViewBox || svg.getAttribute('viewBox') || '0 0 51 51';
+      const vb = vbString.split(/\s+/).map(parseFloat);
+      return { x: (vb[0] + vb[2]) / 2, y: (vb[1] + vb[3]) / 2 };
+    }
+
+    // Apply transform to symbol group
+    function applyTransform() {
+      const symbol = document.getElementById('fuxaSymbol');
+      if (!symbol) return;
+      const center = getCenter();
+      const cx = center.x + _pn_rotateOffsetX + _pn_flipOffsetX;
+      const cy = center.y + _pn_rotateOffsetY + _pn_flipOffsetY;
+      let transform = '';
+      if (_pb_flipHorizontal || _pb_flipVertical) {
+        const scaleX = _pb_flipHorizontal ? -1 : 1;
+        const scaleY = _pb_flipVertical ? -1 : 1;
+        transform += `scale(${scaleX}, ${scaleY}) translate(${scaleX === -1 ? -cx * 2 : 0}, ${scaleY === -1 ? -cy * 2 : 0}) `;
+      }
+      if (_pn_rotateAngle !== 0) {
+        transform += `rotate(${_pn_rotateAngle}, ${cx}, ${cy}) `;
+      }
+      symbol.setAttribute('transform', transform.trim() || '');
+    }
+
+    // Update viewBox with padding
+    function updatePadding() {
+      const svg = document.getElementById('fuxaWidget');
+      const symbol = document.getElementById('fuxaSymbol');
+      if (!svg) return;
+      const pad = Math.max(0, _pn_padding || 0);
+      // Prefer persisted original viewBox (stable) — if not present, persist a computed one using getBBox
+      const persisted = svg.getAttribute('data-fuxa-orig-viewbox');
+      if (persisted) {
+        const vb = persisted.split(/\s+/).map(parseFloat);
+        const width = vb[2] - vb[0];
+        const height = vb[3] - vb[1];
+        const padded = Math.max(width, height);
+        const size = padded + 2 * pad;
+        const offsetX = (padded - width) / 2;
+        const offsetY = (padded - height) / 2;
+        svg.setAttribute('viewBox', `${vb[0] - pad - offsetX} ${vb[1] - pad - offsetY} ${size} ${size}`);
+        return;
+      }
+      if (symbol && typeof symbol.getBBox === 'function') {
+        // Use the actual content bounds to compute the original viewBox and persist it
+        const bb = symbol.getBBox();
+        const contentSize = Math.max(bb.width, bb.height);
+        const size = contentSize + 2 * pad;
+        const cx = bb.x + bb.width / 2;
+        const cy = bb.y + bb.height / 2;
+        const x = cx - size / 2;
+        const y = cy - size / 2;
+        const vbString = `${x} ${y} ${size} ${size}`;
+        svg.setAttribute('data-fuxa-orig-viewbox', vbString);
+        originalViewBox = vbString;
+        svg.setAttribute('viewBox', vbString);
+        return;
+      }
+      // Fallback to original viewBox if getBBox is not available
+      const vbString = originalViewBox || svg.getAttribute('viewBox') || '0 0 51 51';
+      const vb = vbString.split(/\s+/).map(parseFloat);
+      const width = vb[2] - vb[0];
+      const height = vb[3] - vb[1];
+      const padded = Math.max(width, height);
+      const size = padded + 2 * pad;
+      const offsetX = (padded - width) / 2;
+      const offsetY = (padded - height) / 2;
+      svg.setAttribute('viewBox', `${vb[0] - pad - offsetX} ${vb[1] - pad - offsetY} ${size} ${size}`);
+    }
+
+    // Function to update preserveAspectRatio
+    function updatePreserveAspectRatio() {
+      const svg = document.getElementById('fuxaWidget');
+      if (!svg) return;
+      if (_pb_preserveAspectRatio) {
+        svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+      } else {
+        svg.setAttribute('preserveAspectRatio', 'none');
+      }
+    }
+
+    // Function to update the color based on the set state
+    function logic() {
+      switch (stateNumber) {
+        case 0: // off
+          setBaseColor(_pc_stroke_0, _pc_fill_0);
+          clearBlinking();
+          break;
+        case 1: // run
+          setBaseColor(_pc_stroke_1, _pc_fill_1);
+          clearBlinking();
+          break;
+        case 2: // warning
+          setBaseColor(_pc_stroke_2, _pc_fill_2);
+          clearBlinking();
+          break;
+        case 3: // fault
+          const onRaw = +_pn_setIntervalOn;
+          const offRaw = +_pn_setIntervalOff;
+          const on = (onRaw > 0) ? Math.max(50, onRaw) : 0;
+          const off = (offRaw > 0) ? Math.max(50, offRaw) : 0;
+
+          if (on === 0 || off === 0) {
+            setBaseColor(_pc_stroke_3, _pc_fill_3);
+            clearBlinking();
+          } else {
+            startDualBlinking(_pc_stroke_0, _pc_stroke_3, _pc_fill_0, _pc_fill_3, on, off);
+          }
+          break;
+        case 4: // invalid
+          setBaseColor(_pc_stroke_4, _pc_fill_4);
+          clearBlinking();
+          break;
+        case 5: // spare
+          setBaseColor(_pc_stroke_5, _pc_fill_5);
+          clearBlinking();
+          break;
+        default:
+          console.log('Undefined State');
+          clearBlinking();
+      }
+    }
+
+    // Initial setup
+    function init() {
+      // ensure no residual timers from previous initializations
+      clearBlinking();
+      const svg = document.getElementById('fuxaWidget');
+      if (svg) {
+        // Use or persist the original viewBox to prevent cumulative padding growth
+        if (!svg.getAttribute('data-fuxa-orig-viewbox')) {
+          svg.setAttribute('data-fuxa-orig-viewbox', svg.getAttribute('viewBox') || '0 0 51 51');
+        }
+        originalViewBox = svg.getAttribute('data-fuxa-orig-viewbox');
+      }
+      updatePadding();
+      updatePreserveAspectRatio();
+      applyTransform();
+      logic();
+    }
+
+    // Function to update values from Fuxa
+    function putValue(id, value) {
+      let needsTransform = false;
+
+      if (id === '_pn_setState') {
+        stateNumber = value;
+        logic();
+      }
+      if (id === '_pb_boolState') {
+        _pb_boolState = value;
+        if (_pb_boolState === true) {
+          stateNumber = 1;
+        } else if (_pb_boolState === false) {
+          stateNumber = 0;
+        }
+        logic();
+      }
+      if (id === '_pn_setIntervalOn') {
+        _pn_setIntervalOn = value;
+        if (stateNumber === 3) logic();
+      }
+      if (id === '_pn_setIntervalOff') {
+        _pn_setIntervalOff = value;
+        if (stateNumber === 3) logic();
+      }
+      if (id === '_pn_strokeWidth') _pn_strokeWidth = value;
+      if (id === '_pc_fill_0') _pc_fill_0 = value;
+      if (id === '_pc_fill_1') _pc_fill_1 = value;
+      if (id === '_pc_fill_2') _pc_fill_2 = value;
+      if (id === '_pc_fill_3') _pc_fill_3 = value;
+      if (id === '_pc_fill_4') _pc_fill_4 = value;
+      if (id === '_pc_fill_5') _pc_fill_5 = value;
+      if (id === '_pc_stroke_0') _pc_stroke_0 = value;
+      if (id === '_pc_stroke_1') _pc_stroke_1 = value;
+      if (id === '_pc_stroke_2') _pc_stroke_2 = value;
+      if (id === '_pc_stroke_3') _pc_stroke_3 = value;
+      if (id === '_pc_stroke_4') _pc_stroke_4 = value;
+      if (id === '_pc_stroke_5') _pc_stroke_5 = value;
+
+      // ROTATE
+      if (id === '_pn_rotateAngle') { _pn_rotateAngle = value; needsTransform = true; }
+      if (id === '_pn_rotateOffsetX') { _pn_rotateOffsetX = value; needsTransform = true; }
+      if (id === '_pn_rotateOffsetY') { _pn_rotateOffsetY = value; needsTransform = true; }
+
+      // FLIP
+      if (id === '_pb_flipHorizontal') {
+        _pb_flipHorizontal = (value === true || value === 1 || value === '1');
+        needsTransform = true;
+      }
+      if (id === '_pb_flipVertical') {
+        _pb_flipVertical = (value === true || value === 1 || value === '1');
+        needsTransform = true;
+      }
+      if (id === '_pn_flipOffsetX') { _pn_flipOffsetX = value; needsTransform = true; }
+      if (id === '_pn_flipOffsetY') { _pn_flipOffsetY = value; needsTransform = true; }
+
+      // PADDING
+      if (id === '_pn_padding') {
+        _pn_padding = Math.max(0, +value || 0);
+        updatePadding();
+        needsTransform = true;
+      }
+
+      // PRESERVE ASPECT RATIO
+      if (id === '_pb_preserveAspectRatio') {
+        _pb_preserveAspectRatio = (value === true || value === 1 || value === '1');
+        updatePreserveAspectRatio();
+      }
+
+      if (needsTransform) {
+        applyTransform();
+      }
+    }
+
+    // Function to send values back to Fuxa (placeholder)
+    function postValue(id, value) {
+      console.log('Not defined!');
+    }
+
+    // Make postValue globally available only if not already set by Fuxa
+    if (!window.postValue) {
+      window.postValue = postValue;
+    }
+
+    // Initialize the SVG
+    init();
+
+    // Re-run init when the page becomes visible (e.g., returning from editor)
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'visible') {
+        setTimeout(() => init(), 10);
+      }
+    });
+
+    // Function to update the color for the base shape group
+    function setBaseColor(strokeColor, fillColor) {
+      const symbol = document.getElementById('fuxaSymbol');
+      if (!symbol) return;
+      symbol.querySelectorAll('*').forEach(function(elem) {
+        try {
+          // Set both presentation attributes and inline styles so existing style attributes
+          // (e.g., style="fill:none") are overridden by the inline style setting.
+          if (fillColor !== undefined && fillColor !== null) {
+            elem.setAttribute('fill', fillColor);
+            elem.style.fill = fillColor;
+          }
+          if (strokeColor !== undefined && strokeColor !== null) {
+            elem.setAttribute('stroke', strokeColor);
+            elem.style.stroke = strokeColor;
+          }
+          elem.setAttribute('stroke-width', _pn_strokeWidth);
+          elem.style.strokeWidth = String(_pn_strokeWidth);
+        } catch (e) {
+          // Ignore if an element doesn't accept a property
+        }
+      });
+      applyTransform();
+    }
+
+    // DUAL BLINK: onTime (fault), offTime (off) - simple top-level tick-by-id function
+    // This follows the original approach — a named top-level tick function that schedules itself.
+    function fuxa_blink_tick(svgId) {
+      const svg = document.getElementById(svgId);
+      if (!svg) {
+        clearBlinking();
+        return;
+      }
+      if (!svg || !svg._fuxa_blink_params) return;
+      const p = svg._fuxa_blink_params;
+      if (svg._fuxa_blink_state) {
+        setBaseColor(p.strokeOn, p.fillOn);
+        svg._fuxa_blink_state = false;
+        svg._fuxa_blink_timer = setTimeout(function() { fuxa_blink_tick(svgId); }, p.onTime);
+      } else {
+        setBaseColor(p.strokeOff, p.fillOff);
+        svg._fuxa_blink_state = true;
+        svg._fuxa_blink_timer = setTimeout(function() { fuxa_blink_tick(svgId); }, p.offTime);
+      }
+    }
+
+    function startDualBlinking(strokeOff, strokeOn, fillOff, fillOn, onTime, offTime) {
+      clearBlinking();
+      // Ensure values are numbers
+      onTime = Number(onTime) || 0;
+      offTime = Number(offTime) || 0;
+      const id = 'fuxaWidget';
+      const svg = document.getElementById(id);
+      if (!svg) return;
+      svg._fuxa_blink_params = { strokeOff, strokeOn, fillOff, fillOn, onTime, offTime };
+      svg._fuxa_blink_state = true;
+      // start the tick by id (named function) for reliability
+      fuxa_blink_tick(id);
+
+      blinkObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.removedNodes.forEach((node) => {
+            if (node && node.id === 'fuxaWidget') {
+              clearBlinking();
+              if (blinkObserver) {
+                blinkObserver.disconnect();
+                blinkObserver = null;
+              }
+            }
+          });
+        });
+      });
+      blinkObserver.observe(document.body, { childList: true, subtree: true });
+    }
+
+    // FULL CLEAR BLINKING
+    function clearBlinking() {
+      if (blinkInterval) {
+        clearInterval(blinkInterval);
+        blinkInterval = null;
+      }
+      if (blinkTimer) {
+        clearTimeout(blinkTimer);
+        blinkTimer = null;
+      }
+      if (blinkObserver) {
+        blinkObserver.disconnect();
+        blinkObserver = null;
+      }
+      const svg = document.getElementById('fuxaWidget');
+      if (svg) {
+        if (svg._fuxa_blink_timer) { clearTimeout(svg._fuxa_blink_timer); svg._fuxa_blink_timer = null; }
+        if (svg._fuxa_blink_params) { svg._fuxa_blink_params = null; }
+        if (svg._fuxa_blink_state !== undefined) { svg._fuxa_blink_state = null; }
+      }
+    }]]></script>
+</svg>
