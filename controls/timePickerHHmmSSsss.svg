@@ -147,6 +147,12 @@
       let _pc_arrowStrokeColor          = '#595959';
       let _pc_arrowClickColor           = '#595959';
       let _pc_textColor                 = '#595959';
+      let _pn_baseStrokeWidth           = 2;
+      let _pn_arrowStrokeWidth          = 2;
+      let _pn_baseCornerRadius          = 5;
+      let _pn_arrowCornerRadius         = 2;
+      let _pn_minTimeMS                 = 0;
+      let _pn_maxTimeMS                 = 24 * 60 * 60 * 1000;
       //!export-end
 
       let currentTime       = 0; 
@@ -227,13 +233,43 @@
 
         timeBox.setAttribute('fill',        _pc_baseColor);
         timeBox.setAttribute('stroke',      _pc_baseStrokeColor);
+        timeBox.setAttribute('stroke-width', _pn_baseStrokeWidth);
+        timeBox.setAttribute('rx',          _pn_baseCornerRadius);
+        timeBox.setAttribute('ry',          _pn_baseCornerRadius);
         timeSymbol.setAttribute('stroke',   _pc_timeSymbolStrokeColor);
         timeDisplay.setAttribute('fill',    _pc_textColor);
 
         document.querySelectorAll(".arrow").forEach(function (arrow) {
           arrow.setAttribute("fill",   _pc_arrowColor);
           arrow.setAttribute("stroke", _pc_arrowStrokeColor);
+          arrow.setAttribute("stroke-width", _pn_arrowStrokeWidth);
+          arrow.setAttribute("stroke-linecap", "round");
+          arrow.setAttribute("stroke-linejoin", _pn_arrowCornerRadius > 0 ? "round" : "miter");
         });
+      }
+  
+      // Check if can increase time for a unit
+      function canIncrease(unit) {
+        let increment;
+        switch(unit){
+          case "hour": increment = 3600000; break;
+          case "minute": increment = 60000; break;
+          case "second": increment = 1000; break;
+          case "millisecond": increment = 1; break;
+        }
+        return _pn_timeMS + increment <= _pn_maxTimeMS;
+      }
+  
+      // Check if can decrease time for a unit
+      function canDecrease(unit) {
+        let decrement;
+        switch(unit){
+          case "hour": decrement = 3600000; break;
+          case "minute": decrement = 60000; break;
+          case "second": decrement = 1000; break;
+          case "millisecond": decrement = 1; break;
+        }
+        return _pn_timeMS - decrement >= _pn_minTimeMS;
       }
   
       // Show or hide the arrows when the time rectangle is clicked
@@ -345,28 +381,28 @@
   
       // Add event listeners for arrows
       hourUpTransparent.addEventListener("mousedown", function () {
-        startAdjusting(1, "hour", hourUpArrow, 1);
+        if (canIncrease("hour")) startAdjusting(1, "hour", hourUpArrow, 1);
       });
       hourDownTransparent.addEventListener("mousedown", function () {
-        startAdjusting(-1, "hour", hourDownArrow, 1);
+        if (canDecrease("hour")) startAdjusting(-1, "hour", hourDownArrow, 1);
       });
       minuteUpTransparent.addEventListener("mousedown", function () {
-        startAdjusting(1, "minute", minuteUpArrow, 5);
+        if (canIncrease("minute")) startAdjusting(1, "minute", minuteUpArrow, 5);
       });
       minuteDownTransparent.addEventListener("mousedown", function () {
-        startAdjusting(-1, "minute", minuteDownArrow, 5);
+        if (canDecrease("minute")) startAdjusting(-1, "minute", minuteDownArrow, 5);
       });
       secondUpTransparent.addEventListener("mousedown", function () {
-        startAdjusting(1, "second", secondUpArrow, 5);
+        if (canIncrease("second")) startAdjusting(1, "second", secondUpArrow, 5);
       });
       secondDownTransparent.addEventListener("mousedown", function () {
-        startAdjusting(-1, "second", secondDownArrow, 5);
+        if (canDecrease("second")) startAdjusting(-1, "second", secondDownArrow, 5);
       });
       millisecondUpTransparent.addEventListener("mousedown", function () {
-        startAdjusting(1, "millisecond", millisecondUpArrow, 10);
+        if (canIncrease("millisecond")) startAdjusting(1, "millisecond", millisecondUpArrow, 10);
       });
       millisecondDownTransparent.addEventListener("mousedown", function () {
-        startAdjusting(-1, "millisecond", millisecondDownArrow, 10);
+        if (canDecrease("millisecond")) startAdjusting(-1, "millisecond", millisecondDownArrow, 10);
       });
   
       // Stop adjusting when mouse is released
@@ -374,28 +410,28 @@
   
       // Add touch event listeners for mobile devices
       hourUpTransparent.addEventListener("touchstart", function () {
-        startAdjusting(1, "hour", hourUpArrow, 1);
+        if (canIncrease("hour")) startAdjusting(1, "hour", hourUpArrow, 1);
       });
       hourDownTransparent.addEventListener("touchstart", function () {
-        startAdjusting(-1, "hour", hourDownArrow, 1);
+        if (canDecrease("hour")) startAdjusting(-1, "hour", hourDownArrow, 1);
       });
       minuteUpTransparent.addEventListener("touchstart", function () {
-        startAdjusting(1, "minute", minuteUpArrow, 5);
+        if (canIncrease("minute")) startAdjusting(1, "minute", minuteUpArrow, 5);
       });
       minuteDownTransparent.addEventListener("touchstart", function () {
-        startAdjusting(-1, "minute", minuteDownArrow, 5);
+        if (canDecrease("minute")) startAdjusting(-1, "minute", minuteDownArrow, 5);
       });
       secondUpTransparent.addEventListener("touchstart", function () {
-        startAdjusting(1, "second", secondUpArrow, 5);
+        if (canIncrease("second")) startAdjusting(1, "second", secondUpArrow, 5);
       });
       secondDownTransparent.addEventListener("touchstart", function () {
-        startAdjusting(-1, "second", secondDownArrow, 5);
+        if (canDecrease("second")) startAdjusting(-1, "second", secondDownArrow, 5);
       });
       millisecondUpTransparent.addEventListener("touchstart", function () {
-        startAdjusting(1, "millisecond", millisecondUpArrow, 10);
+        if (canIncrease("millisecond")) startAdjusting(1, "millisecond", millisecondUpArrow, 10);
       });
       millisecondDownTransparent.addEventListener("touchstart", function () {
-        startAdjusting(-1, "millisecond", millisecondDownArrow, 10);
+        if (canDecrease("millisecond")) startAdjusting(-1, "millisecond", millisecondDownArrow, 10);
       });
   
       // Stop adjusting when touch is released
@@ -411,6 +447,16 @@
         if (id === '_pc_arrowStrokeColor'           ) _pc_arrowStrokeColor          = value;
         if (id === '_pc_arrowClickColor'            ) _pc_arrowClickColor           = value;
         if (id === '_pc_textColor'                  ) _pc_textColor                 = value;
+        if (id === '_pn_baseStrokeWidth'            ) _pn_baseStrokeWidth           = value;
+        if (id === '_pn_arrowStrokeWidth'           ) _pn_arrowStrokeWidth          = value;
+        if (id === '_pn_baseCornerRadius'           ) _pn_baseCornerRadius          = value;
+        if (id === '_pn_arrowCornerRadius'          ) _pn_arrowCornerRadius         = value;
+        if (id === '_pn_minTimeMS'                  ) _pn_minTimeMS                 = value;
+        if (id === '_pn_maxTimeMS'                  ) _pn_maxTimeMS                 = value;
+
+        // Clamp timeMS to min/max
+        if (_pn_timeMS < _pn_minTimeMS) _pn_timeMS = _pn_minTimeMS;
+        if (_pn_timeMS > _pn_maxTimeMS) _pn_timeMS = _pn_maxTimeMS;
 
         updateTimeDisplay();
         updateColors();
