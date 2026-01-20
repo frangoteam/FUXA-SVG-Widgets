@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   viewBox="0 0 40 374"
-   version="1.1"
-   id="svg4330"
-   width="40"
-   height="374"
+  viewBox="0 0 40 374"
+  version="1.1"
+  id="fuxaWidget"
+  width="100%"
+  height="100%"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs2" />
-  <g
-     id="analogIndicator"
-     transform="translate(0,16)">
+  <defs id="defs2">
+    <clipPath id="indicatorClip">
+      <rect id="indicatorClipRect" x="0" y="0" width="0" height="0" />
+    </clipPath>
+  </defs>
+  <g id="fuxaSymbol">
+    <g
+       id="analogIndicator"
+       transform="translate(0,16)">
     <rect
        style="fill:#cccccc;stroke:#000000;stroke-width:0.493445"
        id="baseIndicator"
@@ -19,13 +23,11 @@
        height="350"
        x="20"
        y="-3.75" />
-    <rect
-       style="fill:#00ff00;stroke:#000000;stroke-width:0.491786"
-       id="normalIndicator"
-       width="20"
-       height="60"
-       x="20"
-       y="141.25" />
+     <g id="indicatorGroup" clip-path="url(#indicatorClip)">
+     <path
+       style="fill:#ff0000;stroke:#000000;stroke-width:0.487805"
+       id="lowLowIndicator"
+       d="" />
     <rect
        style="fill:#ff9500;stroke:#000000;stroke-width:0.491786"
        id="lowIndicator"
@@ -40,18 +42,23 @@
        height="60"
        x="20"
        y="-3.75" />
-    <rect
-       style="fill:#ff0000;stroke:#000000;stroke-width:0.487805"
-       id="lowLowIndicator"
-       width="20"
-       height="20"
-       x="20"
-       y="326" />
-    <rect
+     <path
        style="fill:#ff0000;stroke:#000000;stroke-width:0.487805"
        id="highHighIndicator"
+       d="" />
+    <rect
+       style="fill:#00ff00;stroke:#000000;stroke-width:0.491786"
+       id="normalIndicator"
        width="20"
-       height="20"
+       height="60"
+       x="20"
+       y="141.25" />
+     </g>
+     <rect
+       style="fill:none;stroke:#000000;stroke-width:0.493445"
+       id="baseStroke"
+       width="20"
+       height="350"
        x="20"
        y="-3.75" />
     <g
@@ -62,6 +69,10 @@
          id="movingIndicator"
          d="M 19.462117,346.01586 0.24,355.6272 v -19.22269 z" />
     </g>
+    <g id="valueBoxGroup">
+      <rect id="valueBoxRect" x="0" y="0" width="0" height="0" />
+      <text id="valueBoxText" x="0" y="0">0</text>
+    </g>
     <g
        id="setpointGroup"
        transform="translate(0,-350)">
@@ -69,6 +80,7 @@
          style="fill:#b3b3b3;fill-rule:evenodd;stroke:#000000;stroke-width:0.462748;stroke-linejoin:round"
          id="setpointIndicator"
          d="m 29.695647,355.76884 -9.768278,-9.76874 9.768277,-9.76874 9.768276,9.76874 z" />
+    </g>
     </g>
   </g>
   <script type="text/javascript">
@@ -135,14 +147,50 @@
     let _pn_high                    = 85;
     let _pn_low                     = 15;
     let _pn_lowLow                  = 5;
-    let _pc_baseBackgroundColor     = '#cccccc';
+    let _pc_baseBackgroundColor     = '#d8d8d8ff';
     let _pc_movingIndicatorColor    = '#808080';
-    let _pc_setpointIndicatorColor  = '#b3b3b3';
-    let _pc_normalColor             = '#00ff00';
-    let _pc_highHighColor           = '#ff0000';
-    let _pc_highColor               = '#ff9500';
-    let _pc_lowColor                = '#ff9500';
-    let _pc_lowLowColor             = '#ff0000';
+    let _pc_setpointIndicatorColor  = '#a5a5a5ff';
+    let _pc_normalColor             = '#bfbfbfff';
+    let _pc_highHighColor           = '#7f7f7fff';
+    let _pc_highColor               = '#a5a5a5ff';
+    let _pc_lowColor                = '#a5a5a5ff';
+    let _pc_lowLowColor             = '#7f7f7fff';
+    let _pc_strokeColor             = '#7f7f7fff';
+    let _pn_strokeWidth             = 1;
+    let _pc_indicatorStrokeColor    = '#7f7f7fff';
+    let _pn_indicatorStrokeWidth    = 0;
+    let _pn_cornerRadius            = 4;
+    let _pn_movingRadius            = 2;
+    let _pn_setpointRadius          = 2;
+    let _pb_valueBoxEnable          = true;
+    let _ps_valueBoxFormat          = '0';
+    let _ps_valueBoxUnit            = '';
+    let _pc_valueBoxTextColor       = '#7f7f7fff';
+    let _pc_valueBoxBackgroundColor = '#ffffff00';
+    let _pc_valueBoxStrokeColor     = '#7f7f7fff';
+    let _pn_valueBoxStrokeWidth     = 1;
+    let _pn_valueBoxRadius          = 2;
+    let _pn_valueBoxTextSize        = 12;
+    let _pc_valueBoxTextStrokeColor = '#7f7f7fff';
+    let _pn_valueBoxTextStrokeWidth = 0;
+    let _ps_valueBoxTextWeight      = 'bold';
+    let _pn_valueBoxLength          = 40;
+    let _pb_valueBoxAutoFit         = true;
+    let _ps_valueBoxTextAlign       = 'center';
+    let _pn_valueBoxPadding         = 2.5;
+    let _pn_valueBoxGap             = 4;
+    let _pn_valueBoxRotation        = 0;
+    let _pn_valueBoxRotationOffsetX = 0;
+    let _pn_valueBoxRotationOffsetY = 0;
+    let _pb_preserveAspectRatio     = true;
+    let _pn_rotateAngle             = 0;
+    let _pn_rotateOffsetX           = 0;
+    let _pn_rotateOffsetY           = 0;
+    let _pb_flipHorizontal          = false;
+    let _pb_flipVertical            = false;
+    let _pn_flipOffsetX             = 0;
+    let _pn_flipOffsetY             = 0;
+    let _pn_padding                 = 0;
     //!export-end
 
     // Dynamically fetch the dimensions of the baseIndicator
@@ -162,8 +210,189 @@
       return (scaledValue - _pn_minVal) / (_pn_maxVal - _pn_minVal) * baseHeight;
     }
 
+    let originalViewBox = null;
+    let transformCenter = null;
+
+    function getSvgElement() {
+      return document.getElementById('fuxaWidget') || document.querySelector('svg');
+    }
+
+    function getSymbolElement() {
+      return document.getElementById('fuxaSymbol') || document.getElementById('analogIndicator');
+    }
+
+    function getCenter() {
+      if (transformCenter) return transformCenter;
+      const svg = getSvgElement();
+      const vbString = originalViewBox || (svg ? svg.getAttribute('viewBox') : null) || '0 0 40 374';
+      const vb = vbString.split(/\s+/).map(parseFloat);
+      transformCenter = { x: (vb[0] + vb[2]) / 2, y: (vb[1] + vb[3]) / 2 };
+      return transformCenter;
+    }
+
+    function updatePreserveAspectRatio() {
+      const svg = getSvgElement();
+      if (!svg) return;
+      svg.setAttribute('preserveAspectRatio', _pb_preserveAspectRatio ? 'xMidYMid meet' : 'none');
+    }
+
+    function updatePadding() {
+      const svg = getSvgElement();
+      const symbol = getSymbolElement();
+      if (!svg) return;
+      const pad = Math.max(0, +_pn_padding || 0);
+      const persisted = svg.getAttribute('data-fuxa-orig-viewbox');
+      if (pad === 0) {
+        const vbString = persisted || originalViewBox || svg.getAttribute('viewBox') || '0 0 40 374';
+        svg.setAttribute('viewBox', vbString);
+        return;
+      }
+      if (persisted) {
+        const vb = persisted.split(/\s+/).map(parseFloat);
+        const width = vb[2] - vb[0];
+        const height = vb[3] - vb[1];
+        const padded = Math.max(width, height);
+        const size = padded + 2 * pad;
+        const offsetX = (padded - width) / 2;
+        const offsetY = (padded - height) / 2;
+        svg.setAttribute('viewBox', `${vb[0] - pad - offsetX} ${vb[1] - pad - offsetY} ${size} ${size}`);
+        return;
+      }
+      if (symbol && typeof symbol.getBBox === 'function') {
+        const bb = symbol.getBBox();
+        const contentSize = Math.max(bb.width, bb.height);
+        const size = contentSize + 2 * pad;
+        const cx = bb.x + bb.width / 2;
+        const cy = bb.y + bb.height / 2;
+        const x = cx - size / 2;
+        const y = cy - size / 2;
+        const vbString = `${x} ${y} ${size} ${size}`;
+        svg.setAttribute('data-fuxa-orig-viewbox', vbString);
+        originalViewBox = vbString;
+        svg.setAttribute('viewBox', vbString);
+        return;
+      }
+      const vbString = originalViewBox || svg.getAttribute('viewBox') || '0 0 40 374';
+      const vb = vbString.split(/\s+/).map(parseFloat);
+      const width = vb[2] - vb[0];
+      const height = vb[3] - vb[1];
+      const padded = Math.max(width, height);
+      const size = padded + 2 * pad;
+      const offsetX = (padded - width) / 2;
+      const offsetY = (padded - height) / 2;
+      svg.setAttribute('viewBox', `${vb[0] - pad - offsetX} ${vb[1] - pad - offsetY} ${size} ${size}`);
+    }
+
+    function applyTransform() {
+      const symbol = getSymbolElement();
+      if (!symbol) return;
+      
+      const center = getCenter();
+      const cx = center.x + _pn_rotateOffsetX + _pn_flipOffsetX;
+      const cy = center.y + _pn_rotateOffsetY + _pn_flipOffsetY;
+      
+      let transforms = [];
+      
+      if (_pb_flipHorizontal || _pb_flipVertical) {
+        const scaleX = _pb_flipHorizontal ? -1 : 1;
+        const scaleY = _pb_flipVertical ? -1 : 1;
+        transforms.push(`scale(${scaleX}, ${scaleY}) translate(${scaleX === -1 ? -cx * 2 : 0}, ${scaleY === -1 ? -cy * 2 : 0})`);
+      }
+      
+      if (_pn_rotateAngle !== 0) {
+        transforms.push(`rotate(${_pn_rotateAngle}, ${cx}, ${cy})`);
+      }
+      
+      symbol.setAttribute('transform', transforms.length > 0 ? transforms.join(' ') : '');
+    }
+
     // Function to update the colors dynamically
     function updateColors() {
+      const baseRectangles = ['baseStroke'];
+      const indicatorRectangles = ['lowLowIndicator', 'lowIndicator', 'highIndicator', 'highHighIndicator', 'normalIndicator'];
+
+      baseRectangles.forEach(id => {
+        const element = document.getElementById(id);
+        if (!element) return;
+        element.setAttribute('vector-effect', 'non-scaling-stroke');
+        if (_pn_strokeWidth > 0) {
+          element.setAttribute('stroke', _pc_strokeColor);
+          element.setAttribute('stroke-width', _pn_strokeWidth);
+          element.style.stroke = _pc_strokeColor;
+          element.style.strokeWidth = String(_pn_strokeWidth);
+          element.style.display = 'inline';
+        } else {
+          element.setAttribute('stroke', 'none');
+          element.setAttribute('stroke-width', 0);
+          element.style.stroke = 'none';
+          element.style.strokeWidth = '0';
+          element.style.display = 'none';
+        }
+      });
+
+      indicatorRectangles.forEach(id => {
+        const element = document.getElementById(id);
+        if (!element) return;
+        element.setAttribute('vector-effect', 'non-scaling-stroke');
+        if (_pn_indicatorStrokeWidth > 0) {
+          element.setAttribute('stroke', _pc_indicatorStrokeColor);
+          element.setAttribute('stroke-width', _pn_indicatorStrokeWidth);
+          element.style.stroke = _pc_indicatorStrokeColor;
+          element.style.strokeWidth = String(_pn_indicatorStrokeWidth);
+        } else {
+          element.setAttribute('stroke', 'none');
+          element.setAttribute('stroke-width', 0);
+          element.style.stroke = 'none';
+          element.style.strokeWidth = '0';
+        }
+      });
+
+      const baseIndicator = document.getElementById('baseIndicator');
+      const baseStroke = document.getElementById('baseStroke');
+      if (baseIndicator) {
+        baseIndicator.setAttribute('stroke', 'none');
+        baseIndicator.setAttribute('stroke-width', 0);
+        baseIndicator.style.stroke = 'none';
+        baseIndicator.style.strokeWidth = '0';
+        const radius = Math.max(0, +_pn_cornerRadius || 0);
+        if (radius > 0) {
+          baseIndicator.setAttribute('rx', radius);
+          baseIndicator.setAttribute('ry', radius);
+        } else {
+          baseIndicator.removeAttribute('rx');
+          baseIndicator.removeAttribute('ry');
+        }
+      }
+      if (baseStroke) {
+        const radius = Math.max(0, +_pn_cornerRadius || 0);
+        if (radius > 0) {
+          baseStroke.setAttribute('rx', radius);
+          baseStroke.setAttribute('ry', radius);
+        } else {
+          baseStroke.removeAttribute('rx');
+          baseStroke.removeAttribute('ry');
+        }
+      }
+
+      const clipRect = document.getElementById('indicatorClipRect');
+      if (clipRect && baseIndicator) {
+        const baseX = parseFloat(baseIndicator.getAttribute('x')) || 0;
+        const baseY = parseFloat(baseIndicator.getAttribute('y')) || 0;
+        const baseWidth = parseFloat(baseIndicator.getAttribute('width')) || 0;
+        const baseHeight = parseFloat(baseIndicator.getAttribute('height')) || 0;
+        clipRect.setAttribute('x', baseX);
+        clipRect.setAttribute('y', baseY);
+        clipRect.setAttribute('width', baseWidth);
+        clipRect.setAttribute('height', baseHeight);
+        if (_pn_cornerRadius > 0) {
+          clipRect.setAttribute('rx', _pn_cornerRadius);
+          clipRect.setAttribute('ry', _pn_cornerRadius);
+        } else {
+          clipRect.removeAttribute('rx');
+          clipRect.removeAttribute('ry');
+        }
+      }
+
       document.getElementById('baseIndicator').style.fill       = _pc_baseBackgroundColor;
       document.getElementById('normalIndicator').style.fill     = _pc_normalColor;
       document.getElementById('highIndicator').style.fill       = _pc_highColor;
@@ -172,50 +401,369 @@
       document.getElementById('lowLowIndicator').style.fill     = _pc_lowLowColor;
       document.getElementById('movingIndicator').style.fill     = _pc_movingIndicatorColor;
       document.getElementById('setpointIndicator').style.fill   = _pc_setpointIndicatorColor;
+
+      const movingIndicator = document.getElementById('movingIndicator');
+      const setpointIndicator = document.getElementById('setpointIndicator');
+      movingIndicator.setAttribute('vector-effect', 'non-scaling-stroke');
+      setpointIndicator.setAttribute('vector-effect', 'non-scaling-stroke');
+      if (_pn_strokeWidth > 0) {
+        movingIndicator.setAttribute('stroke', _pc_strokeColor);
+        setpointIndicator.setAttribute('stroke', _pc_strokeColor);
+        movingIndicator.setAttribute('stroke-width', _pn_strokeWidth);
+        setpointIndicator.setAttribute('stroke-width', _pn_strokeWidth);
+        movingIndicator.style.stroke = _pc_strokeColor;
+        setpointIndicator.style.stroke = _pc_strokeColor;
+        movingIndicator.style.strokeWidth = String(_pn_strokeWidth);
+        setpointIndicator.style.strokeWidth = String(_pn_strokeWidth);
+      } else {
+        movingIndicator.setAttribute('stroke', 'none');
+        setpointIndicator.setAttribute('stroke', 'none');
+        movingIndicator.setAttribute('stroke-width', 0);
+        setpointIndicator.setAttribute('stroke-width', 0);
+        movingIndicator.style.stroke = 'none';
+        setpointIndicator.style.stroke = 'none';
+        movingIndicator.style.strokeWidth = '0';
+        setpointIndicator.style.strokeWidth = '0';
+      }
+
+      movingIndicator.setAttribute('stroke-linejoin', _pn_movingRadius > 0 ? 'round' : 'miter');
+      movingIndicator.setAttribute('stroke-linecap', _pn_movingRadius > 0 ? 'round' : 'butt');
+      setpointIndicator.setAttribute('stroke-linejoin', _pn_setpointRadius > 0 ? 'round' : 'miter');
+      setpointIndicator.setAttribute('stroke-linecap', _pn_setpointRadius > 0 ? 'round' : 'butt');
+    }
+
+    function buildLowLowPath(x, y, width, height, radius) {
+      const r = Math.max(0, Math.min(radius, width / 2, height / 2));
+      if (r === 0) {
+        return `M ${x} ${y} H ${x + width} V ${y + height} H ${x} Z`;
+      }
+      const right = x + width;
+      const bottom = y + height;
+      return `M ${x} ${y} H ${right} V ${bottom - r} A ${r} ${r} 0 0 1 ${right - r} ${bottom} H ${x + r} A ${r} ${r} 0 0 1 ${x} ${bottom - r} Z`;
+    }
+
+    function buildHighHighPath(x, y, width, height, radius) {
+      const r = Math.max(0, Math.min(radius, width / 2, height / 2));
+      if (r === 0) {
+        return `M ${x} ${y} H ${x + width} V ${y + height} H ${x} Z`;
+      }
+      const right = x + width;
+      const bottom = y + height;
+      return `M ${x} ${y + r} A ${r} ${r} 0 0 1 ${x + r} ${y} H ${right - r} A ${r} ${r} 0 0 1 ${right} ${y + r} V ${bottom} H ${x} Z`;
+    }
+
+    function normalize(v) {
+      const len = Math.sqrt((v.x * v.x) + (v.y * v.y));
+      return len === 0 ? { x: 0, y: 0 } : { x: v.x / len, y: v.y / len };
+    }
+
+    function buildRoundedPolygon(points, radius) {
+      if (!points || points.length < 3) return '';
+      const r = Math.max(0, radius || 0);
+      if (r === 0) {
+        return `M ${points[0].x} ${points[0].y} ` + points.slice(1).map(p => `L ${p.x} ${p.y}`).join(' ') + ' Z';
+      }
+
+      const corners = points.map((p, i) => {
+        const prev = points[(i - 1 + points.length) % points.length];
+        const next = points[(i + 1) % points.length];
+        const v1 = normalize({ x: p.x - prev.x, y: p.y - prev.y });
+        const v2 = normalize({ x: p.x - next.x, y: p.y - next.y });
+        const start = { x: p.x - v1.x * r, y: p.y - v1.y * r };
+        const end = { x: p.x - v2.x * r, y: p.y - v2.y * r };
+        const cross = v1.x * v2.y - v1.y * v2.x;
+        const sweep = cross < 0 ? 1 : 0;
+        return { start, end, sweep };
+      });
+
+      if (!corners.length || !isFinite(corners[0].start.x) || !isFinite(corners[0].start.y)) {
+        return `M ${points[0].x} ${points[0].y} ` + points.slice(1).map(p => `L ${p.x} ${p.y}`).join(' ') + ' Z';
+      }
+
+      let d = `M ${corners[0].start.x} ${corners[0].start.y}`;
+      for (let i = 0; i < corners.length; i++) {
+        const c = corners[i];
+        d += ` A ${r} ${r} 0 0 ${c.sweep} ${c.end.x} ${c.end.y}`;
+        const next = corners[(i + 1) % corners.length];
+        d += ` L ${next.start.x} ${next.start.y}`;
+      }
+      return d + ' Z';
+    }
+
+    function formatValue(value) {
+      const raw = Number.isFinite(value) ? value : 0;
+      const unit = _ps_valueBoxUnit ? ` ${_ps_valueBoxUnit}` : '';
+      const format = (_ps_valueBoxFormat || '').trim();
+      if (format.includes('{value}')) {
+        return format.replace('{value}', String(raw)) + unit;
+      }
+      const decimals = parseInt(format, 10);
+      if (Number.isFinite(decimals)) {
+        return raw.toFixed(Math.max(0, decimals)) + unit;
+      }
+      return String(raw) + unit;
+    }
+
+    function autoFitText(textElement, maxWidth, maxHeight, baseSize) {
+      let size = Math.max(1, baseSize || 10);
+      textElement.setAttribute('font-size', size);
+      if (typeof textElement.getComputedTextLength !== 'function') {
+        return size;
+      }
+      let length = textElement.getComputedTextLength();
+      const targetWidth = Math.max(1, maxWidth);
+      const targetHeight = Math.max(1, maxHeight);
+      while ((length > targetWidth || size > targetHeight) && size > 4) {
+        size -= 1;
+        textElement.setAttribute('font-size', size);
+        length = textElement.getComputedTextLength();
+      }
+      return size;
     }
 
     function updateIndicators() {
       const { baseHeight, baseY } = getBaseDimensions(); // Get dynamic dimensions
+      const baseIndicator = document.getElementById('baseIndicator');
+      const baseX = parseFloat(baseIndicator.getAttribute('x')) || 0;
+      const baseWidth = parseFloat(baseIndicator.getAttribute('width')) || 0;
+      const baseStroke = Math.max(0, +_pn_strokeWidth || 0);
+      const indicatorStroke = Math.max(0, +_pn_indicatorStrokeWidth || 0);
+      const epsilon = 0.01;
+      const inset = (baseStroke / 2) + (indicatorStroke / 2) + epsilon;
+      const indicatorX = baseX + inset;
+      const indicatorWidth = Math.max(0, baseWidth - inset * 2);
+      const baseInnerWidth = Math.max(0, baseWidth - baseStroke);
+      const baseInnerLeft = baseX + (baseStroke / 2);
+      const baseInnerCenterX = baseInnerLeft + (baseInnerWidth / 2);
+      const baseCenterX = baseX + (baseWidth / 2);
     
-      // Update lowLowIndicator
+      // Update lowLowIndicator (from 0 to lowLow)
       const lowLowIndicator = document.getElementById('lowLowIndicator');
       const lowLowHeight = scaleValueToHeight(_pn_lowLow, baseHeight);
-      lowLowIndicator.setAttribute('height', lowLowHeight);
-      lowLowIndicator.setAttribute('y', baseY + baseHeight - lowLowHeight);
+      const lowLowY = baseY + baseHeight - lowLowHeight;
+      lowLowIndicator.setAttribute('d', buildLowLowPath(indicatorX, lowLowY, indicatorWidth, lowLowHeight, _pn_cornerRadius));
     
-      // Update lowIndicator
+      // Update lowIndicator (from lowLow to low)
       const lowIndicator = document.getElementById('lowIndicator');
       const lowHeight = scaleValueToHeight(_pn_low - _pn_lowLow, baseHeight);
+      lowIndicator.setAttribute('x', indicatorX);
+      lowIndicator.setAttribute('width', indicatorWidth);
       lowIndicator.setAttribute('height', lowHeight);
       lowIndicator.setAttribute('y', baseY + baseHeight - scaleValueToHeight(_pn_low, baseHeight));
     
-      // Update normalIndicator
-      const normalIndicator = document.getElementById('normalIndicator');
-      const normalHeight = scaleValueToHeight(_pn_normalHigh - _pn_normalLow, baseHeight);
-      normalIndicator.setAttribute('height', normalHeight);
-      normalIndicator.setAttribute('y', baseY + baseHeight - scaleValueToHeight(_pn_normalHigh, baseHeight));
-    
-      // Update highIndicator
+      // Update highIndicator (from high to highHigh)
       const highIndicator = document.getElementById('highIndicator');
-      const highHeight = scaleValueToHeight(_pn_maxVal - _pn_high, baseHeight); // Calculate from high to the top (max value)
+      const highHeight = scaleValueToHeight(_pn_highHigh - _pn_high, baseHeight);
+      highIndicator.setAttribute('x', indicatorX);
+      highIndicator.setAttribute('width', indicatorWidth);
       highIndicator.setAttribute('height', highHeight);
-      highIndicator.setAttribute('y', baseY); // Start from the top of the base
+      highIndicator.setAttribute('y', baseY + baseHeight - scaleValueToHeight(_pn_highHigh, baseHeight));
     
-      // Update highHighIndicator
+      // Update highHighIndicator (from highHigh to maxVal)
       const highHighIndicator = document.getElementById('highHighIndicator');
-      const highHighHeight = scaleValueToHeight(_pn_maxVal - _pn_highHigh, baseHeight); // Calculate height based on the highHigh value
-      highHighIndicator.setAttribute('height', highHighHeight);
-      highHighIndicator.setAttribute('y', baseY); // Start from the top of the base
+      const highHighHeight = scaleValueToHeight(_pn_maxVal - _pn_highHigh, baseHeight);
+      const highHighY = baseY + baseHeight - scaleValueToHeight(_pn_maxVal, baseHeight);
+      highHighIndicator.setAttribute('d', buildHighHighPath(indicatorX, highHighY, indicatorWidth, highHighHeight, _pn_cornerRadius));
+    
+      // Update normalIndicator (from normalLow to normalHigh) - DRAWN LAST so it appears on top
+      const normalIndicator = document.getElementById('normalIndicator');
+      const normalLowHeight = scaleValueToHeight(_pn_normalLow, baseHeight);
+      const normalHighHeight = scaleValueToHeight(_pn_normalHigh, baseHeight);
+      const normalHeight = Math.max(0, normalHighHeight - normalLowHeight);
+      normalIndicator.setAttribute('x', indicatorX);
+      normalIndicator.setAttribute('width', indicatorWidth);
+      normalIndicator.setAttribute('height', normalHeight);
+      normalIndicator.setAttribute('y', baseY + baseHeight - normalHighHeight);
     
       // Update setpointGroup position
       const setpointGroup = document.getElementById('setpointGroup');
       const setpointY = -(( _pn_setpoint - _pn_minVal) / (_pn_maxVal - _pn_minVal)) * baseHeight; // Scale the value to negative height
-      setpointGroup.setAttribute('transform', `translate(0, ${Math.max(Math.min(setpointY, 0), -baseHeight)})`); // Adjust position based on base dimensions
+      const setpointBaseCenterY = 346.0001;
+      const setpointPoints = [
+        { x: 29.695647, y: 355.76884 },
+        { x: 19.927369, y: 346.0001 },
+        { x: 29.695646, y: 336.23236 },
+        { x: 39.463923, y: 346.0001 }
+      ];
+      const setpointMinX = Math.min(...setpointPoints.map(p => p.x));
+      const setpointMaxX = Math.max(...setpointPoints.map(p => p.x));
+      const setpointBaseWidth = setpointMaxX - setpointMinX;
+      const setpointBaseCenterX = (setpointMinX + setpointMaxX) / 2;
+      const setpointTargetWidth = _pn_strokeWidth > 0
+        ? Math.max(0, baseInnerWidth - (_pn_strokeWidth || 0))
+        : Math.max(0, baseWidth);
+      const setpointScale = setpointTargetWidth > 0 ? Math.min(1, setpointTargetWidth / setpointBaseWidth) : 1;
+      const setpointTx = baseCenterX - setpointBaseCenterX;
+      const setpointTy = Math.max(Math.min(setpointY, 0), -baseHeight);
+      const setpointTransform = `translate(${setpointTx} ${setpointTy}) translate(${setpointBaseCenterX} ${setpointBaseCenterY}) scale(${setpointScale}) translate(${-setpointBaseCenterX} ${-setpointBaseCenterY})`;
+      setpointGroup.setAttribute('transform', setpointTransform);
+      const setpointIndicator = document.getElementById('setpointIndicator');
+      setpointIndicator.setAttribute('d', buildRoundedPolygon(setpointPoints, _pn_setpointRadius));
       
       // Update movingGroup position
       const movingGroup = document.getElementById('movingGroup');
       const movingY = -(( _pn_value - _pn_minVal) / (_pn_maxVal - _pn_minVal)) * baseHeight; // Scale the value to negative height
-      movingGroup.setAttribute('transform', `translate(0, ${Math.max(Math.min(movingY, 0), -baseHeight)})`); // Adjust position based on scaling
+      const movingPoints = [
+        { x: 19.462117, y: 346.01586 },
+        { x: 0.24, y: 355.6272 },
+        { x: 0.24, y: 336.40451 }
+      ];
+      const movingMinX = Math.min(...movingPoints.map(p => p.x));
+      const movingMaxX = Math.max(...movingPoints.map(p => p.x));
+      const movingStrokeHalf = _pn_strokeWidth > 0 ? (_pn_strokeWidth / 2) : 0;
+      const movingTargetRight = _pn_strokeWidth > 0 ? baseInnerLeft : baseX;
+      const movingTx = movingTargetRight - (movingMaxX + movingStrokeHalf);
+      const movingTy = Math.max(Math.min(movingY, 0), -baseHeight);
+      const movingTransform = `matrix(1 0 0 1 ${movingTx} ${movingTy})`;
+      movingGroup.setAttribute('transform', movingTransform);
+      const movingIndicator = document.getElementById('movingIndicator');
+      movingIndicator.setAttribute('d', buildRoundedPolygon(movingPoints, _pn_movingRadius));
+
+      const valueBoxGroup = document.getElementById('valueBoxGroup');
+      const valueBoxRect = document.getElementById('valueBoxRect');
+      const valueBoxText = document.getElementById('valueBoxText');
+      if (valueBoxGroup && valueBoxRect && valueBoxText) {
+        if (_pb_valueBoxEnable) {
+          const textValue = formatValue(_pn_value);
+          valueBoxText.textContent = textValue;
+          valueBoxText.setAttribute('fill', _pc_valueBoxTextColor);
+          valueBoxText.setAttribute('dominant-baseline', 'alphabetic');
+          valueBoxText.setAttribute('alignment-baseline', 'alphabetic');
+          valueBoxText.setAttribute('font-family', 'Arial, sans-serif');
+          valueBoxText.setAttribute('font-weight', _ps_valueBoxTextWeight || 'normal');
+          valueBoxText.style.fontWeight = _ps_valueBoxTextWeight || 'normal';
+          if (_pn_valueBoxTextStrokeWidth > 0) {
+            valueBoxText.setAttribute('stroke', _pc_valueBoxTextStrokeColor);
+            valueBoxText.setAttribute('stroke-width', _pn_valueBoxTextStrokeWidth);
+          } else {
+            valueBoxText.setAttribute('stroke', 'none');
+            valueBoxText.setAttribute('stroke-width', 0);
+          }
+
+          const triangleHeight = 355.6272 - 336.40451;
+          const boxHeight = triangleHeight;
+          const padding = Math.max(0, +_pn_valueBoxPadding || 0);
+          const gap = Math.max(0, +_pn_valueBoxGap || 0);
+
+          const baseFontSize = Math.max(1, +_pn_valueBoxTextSize || 10);
+          const layoutKey = `${textValue.length}|${padding}|${baseFontSize}|${_ps_valueBoxTextWeight}|${_pn_valueBoxTextStrokeWidth}|${_pn_valueBoxLength}`;
+          const lastLayoutKey = valueBoxText.getAttribute('data-layout-key');
+          const layoutChanged = lastLayoutKey !== layoutKey;
+          
+          let boxWidth = Math.max(0, +_pn_valueBoxLength || 0);
+
+          if (layoutChanged) {
+            valueBoxText.setAttribute('data-layout-key', layoutKey);
+            valueBoxText.setAttribute('font-size', baseFontSize);
+            
+            if (_pb_valueBoxAutoFit && typeof valueBoxText.getComputedTextLength === 'function') {
+              const textLength = valueBoxText.getComputedTextLength();
+              boxWidth = Math.max(boxWidth, textLength + padding * 2);
+            }
+            valueBoxText.setAttribute('data-locked-width', String(boxWidth));
+
+            const textMaxWidth = Math.max(1, boxWidth - padding * 2);
+            const textMaxHeight = Math.max(1, boxHeight - padding * 2);
+            autoFitText(valueBoxText, textMaxWidth, textMaxHeight, baseFontSize);
+          } else {
+            boxWidth = parseFloat(valueBoxText.getAttribute('data-locked-width') || String(Math.max(0, +_pn_valueBoxLength || 0)));
+            valueBoxText.setAttribute('font-size', baseFontSize);
+          }
+
+          // Store box position and dimensions in data attributes so they persist across calls
+          const leftEdge = movingMinX;
+          
+          // When box is rotated, increase gap to account for rotated bounds
+          let effectiveGap = gap;
+          if (_pn_valueBoxRotation !== 0) {
+            // Add extra gap based on rotation angle to prevent overlap
+            const rotRad = (_pn_valueBoxRotation * Math.PI) / 180;
+            const rotationExpansion = Math.abs(Math.sin(rotRad)) * boxHeight + Math.abs(Math.cos(rotRad)) * boxWidth;
+            const baseExpansion = Math.max(boxWidth, boxHeight);
+            effectiveGap = gap + (rotationExpansion - baseExpansion) / 2;
+          }
+          
+          const boxX = leftEdge - effectiveGap - boxWidth;
+          const boxY = 336.40451 + movingTy;
+          
+          // Cache position so it doesn't change when only rotation/flip changes
+          valueBoxGroup.setAttribute('data-box-x', String(boxX));
+          valueBoxGroup.setAttribute('data-box-y', String(boxY));
+          valueBoxGroup.setAttribute('data-box-width', String(boxWidth));
+          valueBoxGroup.setAttribute('data-box-height', String(boxHeight));
+
+          const align = (_ps_valueBoxTextAlign || 'center').toLowerCase();
+          if (align === 'left') {
+            valueBoxText.setAttribute('text-anchor', 'start');
+            valueBoxText.setAttribute('x', padding);
+          } else if (align === 'right') {
+            valueBoxText.setAttribute('text-anchor', 'end');
+            valueBoxText.setAttribute('x', boxWidth - padding);
+          } else {
+            valueBoxText.setAttribute('text-anchor', 'middle');
+            valueBoxText.setAttribute('x', boxWidth / 2);
+          }
+          
+          const targetY = boxHeight / 2;
+          valueBoxText.setAttribute('transform', '');
+          valueBoxText.setAttribute('y', targetY);
+          
+          if (layoutChanged && typeof valueBoxText.getBBox === 'function') {
+            const savedValueBox = valueBoxGroup.getAttribute('transform');
+            valueBoxGroup.setAttribute('transform', 'translate(0 0)');
+            valueBoxText.setAttribute('y', targetY);
+            const bbox = valueBoxText.getBBox();
+            const delta = targetY - (bbox.y + bbox.height / 2);
+            valueBoxText.setAttribute('y', targetY + delta);
+            valueBoxText.setAttribute('data-locked-y', String(targetY + delta));
+            valueBoxGroup.setAttribute('transform', savedValueBox || 'translate(0 0)');
+          } else {
+            const lockedY = parseFloat(valueBoxText.getAttribute('data-locked-y') || '0');
+            if (lockedY) {
+              valueBoxText.setAttribute('y', lockedY);
+            }
+          }
+
+          // Build the transform - using CACHED position
+          let boxTransform = `translate(${boxX} ${boxY})`;
+          if (_pb_flipHorizontal || _pb_flipVertical) {
+            const scaleX = _pb_flipHorizontal ? -1 : 1;
+            const scaleY = _pb_flipVertical ? -1 : 1;
+            boxTransform = `translate(${boxX} ${boxY}) scale(${scaleX}, ${scaleY}) translate(${scaleX === -1 ? -boxWidth : 0}, ${scaleY === -1 ? -boxHeight : 0})`;
+          }
+          if (_pn_valueBoxRotation !== 0) {
+            const localCenterX = boxWidth / 2 + _pn_valueBoxRotationOffsetX;
+            const localCenterY = boxHeight / 2 + _pn_valueBoxRotationOffsetY;
+            boxTransform = `translate(${boxX} ${boxY}) rotate(${_pn_valueBoxRotation}, ${localCenterX}, ${localCenterY})`;
+            if (_pb_flipHorizontal || _pb_flipVertical) {
+              const scaleX = _pb_flipHorizontal ? -1 : 1;
+              const scaleY = _pb_flipVertical ? -1 : 1;
+              boxTransform += ` scale(${scaleX}, ${scaleY}) translate(${scaleX === -1 ? -boxWidth : 0}, ${scaleY === -1 ? -boxHeight : 0})`;
+            }
+          }
+          
+          valueBoxGroup.setAttribute('transform', boxTransform);
+          valueBoxRect.setAttribute('x', 0);
+          valueBoxRect.setAttribute('y', 0);
+          valueBoxRect.setAttribute('width', boxWidth);
+          valueBoxRect.setAttribute('height', boxHeight);
+          valueBoxRect.setAttribute('rx', Math.max(0, +_pn_valueBoxRadius || 0));
+          valueBoxRect.setAttribute('ry', Math.max(0, +_pn_valueBoxRadius || 0));
+          valueBoxRect.setAttribute('fill', _pc_valueBoxBackgroundColor);
+
+          if (_pn_valueBoxStrokeWidth > 0) {
+            valueBoxRect.setAttribute('stroke', _pc_valueBoxStrokeColor);
+            valueBoxRect.setAttribute('stroke-width', _pn_valueBoxStrokeWidth);
+          } else {
+            valueBoxRect.setAttribute('stroke', 'none');
+            valueBoxRect.setAttribute('stroke-width', 0);
+          }
+
+          valueBoxGroup.style.display = 'inline';
+        } else {
+          valueBoxGroup.style.display = 'none';
+        }
+      }
 
 
       // Update colors dynamically
@@ -224,13 +772,21 @@
 
     // Values from Fuxa can update the indicator dynamically
     function putValue(id, value) {
-      if (id === '_pn_value'                    ) _pn_value                     = value;
-      if (id === '_pn_setpoint'                 ) _pn_setpoint                  = value;
-      if (id === '_pn_normalLow'                ) _pn_normalLow                 = value;
-      if (id === '_pn_normalHigh'               ) _pn_normalHigh                = value;
-      if (id === '_pn_lowLow'                   ) _pn_lowLow                    = value;
-      if (id === '_pn_low'                      ) _pn_low                       = value;
-      if (id === '_pc_baseBackgroundColor'      )  _pc_baseBackgroundColor      = value;
+      let needsTransform = false;
+      let needsPadding = false;
+      let needsAspect = false;
+
+      if (id === '_pn_value'                    ) _pn_value                     = +value;
+      if (id === '_pn_setpoint'                 ) _pn_setpoint                  = +value;
+      if (id === '_pn_minVal'                   ) _pn_minVal                    = +value;
+      if (id === '_pn_maxVal'                   ) _pn_maxVal                    = +value;
+      if (id === '_pn_normalLow'                ) _pn_normalLow                 = +value;
+      if (id === '_pn_normalHigh'               ) _pn_normalHigh                = +value;
+      if (id === '_pn_highHigh'                 ) _pn_highHigh                  = +value;
+      if (id === '_pn_high'                     ) _pn_high                      = +value;
+      if (id === '_pn_low'                      ) _pn_low                       = +value;
+      if (id === '_pn_lowLow'                   ) _pn_lowLow                    = +value;
+      if (id === '_pc_baseBackgroundColor'      ) _pc_baseBackgroundColor       = value;
       if (id === '_pc_movingIndicatorColor'     ) _pc_movingIndicatorColor      = value;
       if (id === '_pc_setpointIndicatorColor'   ) _pc_setpointIndicatorColor    = value;
       if (id === '_pc_normalColor'              ) _pc_normalColor               = value;
@@ -238,11 +794,67 @@
       if (id === '_pc_highColor'                ) _pc_highColor                 = value;
       if (id === '_pc_lowColor'                 ) _pc_lowColor                  = value;
       if (id === '_pc_lowLowColor'              ) _pc_lowLowColor               = value;
-      updateIndicators(); // Recalculate and update after new values are set
+      if (id === '_pc_strokeColor'              ) _pc_strokeColor               = value;
+      if (id === '_pn_strokeWidth'              ) _pn_strokeWidth               = +value;
+      if (id === '_pc_indicatorStrokeColor'     ) _pc_indicatorStrokeColor      = value;
+      if (id === '_pn_indicatorStrokeWidth'     ) _pn_indicatorStrokeWidth      = +value;
+      if (id === '_pn_cornerRadius'             ) _pn_cornerRadius              = +value;
+      if (id === '_pn_movingRadius'             ) _pn_movingRadius              = +value;
+      if (id === '_pn_setpointRadius'           ) _pn_setpointRadius            = +value;
+      if (id === '_pb_valueBoxEnable'           ) _pb_valueBoxEnable            = (value === true || value === 1 || value === '1');
+      if (id === '_ps_valueBoxFormat'           ) _ps_valueBoxFormat            = value;
+      if (id === '_ps_valueBoxUnit'             ) _ps_valueBoxUnit              = value;
+      if (id === '_pc_valueBoxTextColor'        ) _pc_valueBoxTextColor         = value;
+      if (id === '_pc_valueBoxBackgroundColor'  ) _pc_valueBoxBackgroundColor   = value;
+      if (id === '_pc_valueBoxStrokeColor'      ) _pc_valueBoxStrokeColor       = value;
+      if (id === '_pn_valueBoxStrokeWidth'      ) _pn_valueBoxStrokeWidth       = +value;
+      if (id === '_pn_valueBoxRadius'           ) _pn_valueBoxRadius            = +value;
+      if (id === '_pn_valueBoxTextSize'         ) _pn_valueBoxTextSize          = +value;
+      if (id === '_pc_valueBoxTextStrokeColor'  ) _pc_valueBoxTextStrokeColor   = value;
+      if (id === '_pn_valueBoxTextStrokeWidth'  ) _pn_valueBoxTextStrokeWidth   = +value;
+      if (id === '_ps_valueBoxTextWeight'       ) _ps_valueBoxTextWeight        = value;
+      if (id === '_pn_valueBoxLength'           ) _pn_valueBoxLength            = +value;
+      if (id === '_pb_valueBoxAutoFit'          ) _pb_valueBoxAutoFit           = (value === true || value === 1 || value === '1');
+      if (id === '_ps_valueBoxTextAlign'        ) _ps_valueBoxTextAlign         = value;
+      if (id === '_pn_valueBoxPadding'          ) _pn_valueBoxPadding           = +value;
+      if (id === '_pn_valueBoxGap'              ) _pn_valueBoxGap               = +value;
+      if (id === '_pn_valueBoxRotation'         ) _pn_valueBoxRotation          = +value;
+      if (id === '_pn_valueBoxRotationOffsetX'  ) _pn_valueBoxRotationOffsetX   = +value;
+      if (id === '_pn_valueBoxRotationOffsetY'  ) _pn_valueBoxRotationOffsetY   = +value;
+
+      if (id === '_pn_rotateAngle'              ) { _pn_rotateAngle = +value; needsTransform = true; }
+      if (id === '_pn_rotateOffsetX'            ) { _pn_rotateOffsetX = +value; needsTransform = true; }
+      if (id === '_pn_rotateOffsetY'            ) { _pn_rotateOffsetY = +value; needsTransform = true; }
+      if (id === '_pb_flipHorizontal'           ) { _pb_flipHorizontal = (value === true || value === 1 || value === '1'); needsTransform = true; }
+      if (id === '_pb_flipVertical'             ) { _pb_flipVertical = (value === true || value === 1 || value === '1'); needsTransform = true; }
+      if (id === '_pn_flipOffsetX'              ) { _pn_flipOffsetX = +value; needsTransform = true; }
+      if (id === '_pn_flipOffsetY'              ) { _pn_flipOffsetY = +value; needsTransform = true; }
+
+      if (id === '_pn_padding'                  ) { _pn_padding = Math.max(0, +value || 0); needsPadding = true; }
+      if (id === '_pb_preserveAspectRatio'      ) { _pb_preserveAspectRatio = (value === true || value === 1 || value === '1'); needsAspect = true; }
+
+      if (needsPadding) updatePadding();
+      if (needsAspect) updatePreserveAspectRatio();
+      if (needsTransform) applyTransform();
+      updateIndicators();
     }
 
     function init() {
-        updateIndicators(); // Initial call to set the values when the SVG loads
+      const svg = getSvgElement();
+      const symbol = getSymbolElement();
+      if (svg && !svg.getAttribute('data-fuxa-orig-viewbox')) {
+        svg.setAttribute('data-fuxa-orig-viewbox', svg.getAttribute('viewBox') || '0 0 40 374');
+      }
+      if (svg) {
+        originalViewBox = svg.getAttribute('data-fuxa-orig-viewbox');
+      }
+      if (symbol && !symbol.getAttribute('data-fuxa-base-transform')) {
+        symbol.setAttribute('data-fuxa-base-transform', symbol.getAttribute('transform') || '');
+      }
+      updatePadding();
+      updatePreserveAspectRatio();
+      applyTransform();
+      updateIndicators();
     }
 
     init();
