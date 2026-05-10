@@ -363,4 +363,4 @@ MIT License – free to use, modify, and share.
 
 - FUXA main repository: https://github.com/frangoteam/FUXA
 - Built‑in widget examples: https://github.com/frangoteam/FUXA/tree/master/server/_widgets
-- Original wiki reference: https://github.com/frangoteam/FUXA/wiki/HowTo-Widgets
+- Original wiki reference: https://frangoteam.github.io/FUXA/HowTo-Widgets/
