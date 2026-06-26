@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+  viewBox="0 0 800 450"
+  version="1.1"
+  id="fuxaWidget"
+  width="100%"
+  height="100%"
+  preserveAspectRatio="xMidYMid meet"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs2">
+    <style>
+      .axis-label { font-family: Arial, sans-serif; text-anchor: middle; }
+      .grid-line { stroke-dasharray: 2,2; }
+    </style>
+    <clipPath id="chartClip">
+      <rect x="80" y="40" width="700" height="310" />
+    </clipPath>
+  </defs>
+  
+  <g id="fuxaSymbol">
+    <!-- Title -->
+    <text id="titleText" x="400" y="25" font-size="16" font-weight="bold" text-anchor="middle" fill="black" display="block">Real-time Chart</text>
+    
+    <!-- Grid group -->
+    <g id="gridGroup"></g>
+    
+    <!-- X and Y axis -->
+    <g id="axisGroup">
+      <line id="xAxis" x1="80" y1="350" x2="780" y2="350" stroke="black" stroke-width="1" stroke-linecap="butt" stroke-linejoin="bevel"/>
+      <line id="yAxis" x1="80" y1="40" x2="80" y2="350" stroke="black" stroke-width="1" stroke-linecap="butt" stroke-linejoin="bevel"/>
+    </g>
+    
+    <!-- Axis labels group (Y-axis on left, X-axis on bottom) -->
+    <g id="yAxisLabelsGroup"></g>
+    <g id="xAxisLabelsGroup"></g>
+    
+    <!-- Chart line group (with clip path)-->
+    <g id="chartGroup">
+      <path id="chartLine" d="" stroke="blue" stroke-width="2" fill="none" clip-path="url(#chartClip)" />
+    </g>
+    
+    <!-- Current value display -->
+    <text id="valueText" x="400" y="420" font-size="12" text-anchor="middle" fill="black">Current: --</text>
+  </g>
+  
+  <script type="text/javascript">
+    <![CDATA[
+
+    //!export-start
+    let _pn_value                    = 50;
+    let _pn_timeRangeMinutes         = 5;
+    let _pn_minValue                 = 0;
+    let _pn_maxValue                 = 100;
+    let _pn_logIntervalSeconds       = 1;
+    let _pb_useLogInterval           = true;
+    let _pb_enableGrid               = false;
+    let _pb_partialGrid              = false;
+    let _pb_displayXAxisLabels       = true;
+    let _pb_displayYAxisLabels       = true;
+    let _pb_displayTitle             = true;
+    let _pb_displayCurrentValue      = true;
+    let _pb_displayXAxis             = true;
+    let _pb_displayYAxis             = true;
+    let _pb_enableAutoZoom           = false;
+    let _pb_keepAspectRatio          = true;
+    let _pn_lineStrokeWidth          = 2;
+    let _pn_lineSmoothingAmount      = 0.3;
+    let _pn_gridStrokeWidth          = 0.5;
+    let _pn_gridOpacity              = 0.6;
+    let _pn_axisStrokeWidth          = 1;
+    let _pc_lineColor                = '#0066cc';
+    let _pc_gridColor                = '#e0e0e0';
+    let _pc_axisColor                = '#000000';
+    let _pc_textColor                = '#000000';
+    let _pn_textSize                 = 12;
+    let _pn_axisLabelMargin          = 15;
+    let _ps_textWeight               = 'normal';
+    let _ps_chartTitle               = 'Real-time Chart';
+    //!export-end
+
+    // Cleanup references
+    let logIntervalId = null;
+    let updateIntervalId = null;
+    let cleanupObserver = null;
+    let initComplete = false;
+
+    const chartState = {
+      dataPoints: [],
+      chartWidth: 700,
+      chartHeight: 310,
+      chartX: 80,
+      chartY: 40
+    };
+
+    function formatTime(timestamp) {
+      const date = new Date(timestamp);
+      const hours = String(date.getHours()).padStart(2, '0');
+      const mins = String(date.getMinutes()).padStart(2, '0');
+      const secs = String(date.getSeconds()).padStart(2, '0');
+      return `${hours}:${mins}:${secs}`;
+    }
+
+    function getAutoZoomBounds(points) {
+      // Calculate min/max from visible data points for auto-zoom
+      if (points.length === 0) {
+        return { min: _pn_minValue, max: _pn_maxValue };
+      }
+      
+      let minVal = points[0].value;
+      let maxVal = points[0].value;
+      
+      for (let i = 1; i < points.length; i++) {
+        if (points[i].value < minVal) minVal = points[i].value;
+        if (points[i].value > maxVal) maxVal = points[i].value;
+      }
+      
+      // Add 10% padding above and below, but don't add lower padding if min is already at 0
+      const range = maxVal - minVal;
+      const upperPadding = range * 0.1;
+      const lowerPadding = (minVal === 0) ? 0 : range * 0.1;
+      
+      return {
+        min: Math.max(_pn_minValue, minVal - lowerPadding),
+        max: Math.min(_pn_maxValue, maxVal + upperPadding)
+      };
+    }
+
+    function calculateChartPath() {
+      if (chartState.dataPoints.length === 0) return '';
+      
+      const timeRangeMs = _pn_timeRangeMinutes * 60 * 1000;
+      const now = Date.now();
+      
+      // Filter points within time range
+      const visiblePoints = chartState.dataPoints.filter(p => now - p.time <= timeRangeMs);
+      
+      if (visiblePoints.length === 0) return '';
+      
+      // Get min/max values - either auto-zoom or fixed range
+      let minVal, maxVal;
+      if (_pb_enableAutoZoom) {
+        const bounds = getAutoZoomBounds(visiblePoints);
+        minVal = bounds.min;
+        maxVal = bounds.max;
+      } else {
+        minVal = _pn_minValue;
+        maxVal = _pn_maxValue;
+      }
+      
+      const range = maxVal - minVal;
+      if (range === 0) return '';
+      
+      // Convert points to pixel coordinates
+      const pixelPoints = visiblePoints.map(point => {
+        const timeOffset = now - point.time;
+        const xRatio = 1 - (timeOffset / timeRangeMs);
+        const x = chartState.chartX + xRatio * chartState.chartWidth;
+        const yRatio = (point.value - minVal) / range;
+        // Clamp yRatio to 0-1 range
+        const clampedYRatio = Math.max(0, Math.min(1, yRatio));
+        // Y position with adjustment for axis stroke positioning
+        const y = chartState.chartY + chartState.chartHeight - (clampedYRatio * chartState.chartHeight) + (clampedYRatio === 1 ? _pn_axisStrokeWidth / 2 : 0);
+        return { x, y };
+      });
+      
+      if (pixelPoints.length === 0) return '';
+      
+      // If no smoothing, use straight lines
+      if (_pn_lineSmoothingAmount === 0) {
+        let pathData = `M ${pixelPoints[0].x} ${pixelPoints[0].y}`;
+        for (let i = 1; i < pixelPoints.length; i++) {
+          pathData += ` L ${pixelPoints[i].x} ${pixelPoints[i].y}`;
+        }
+        return pathData;
+      }
+      
+      // Monotone cubic interpolation for smooth curves
+      // This creates smooth, natural-looking curves like Chart.js
+      let pathData = `M ${pixelPoints[0].x} ${pixelPoints[0].y}`;
+      
+      if (pixelPoints.length === 2) {
+        // Only 2 points - use simple quadratic curve
+        const cp = {
+          x: (pixelPoints[0].x + pixelPoints[1].x) / 2,
+          y: pixelPoints[0].y + (pixelPoints[1].y - pixelPoints[0].y) * _pn_lineSmoothingAmount
+        };
+        pathData += ` Q ${cp.x} ${cp.y} ${pixelPoints[1].x} ${pixelPoints[1].y}`;
+      } else {
+        // 3+ points - use Catmull-Rom-like spline
+        for (let i = 0; i < pixelPoints.length - 1; i++) {
+          const p0 = i > 0 ? pixelPoints[i - 1] : pixelPoints[i];
+          const p1 = pixelPoints[i];
+          const p2 = pixelPoints[i + 1];
+          const p3 = i < pixelPoints.length - 2 ? pixelPoints[i + 2] : p2;
+          
+          // Calculate control points using Catmull-Rom formula
+          const tension = _pn_lineSmoothingAmount;
+          const cp1x = p1.x + (p2.x - p0.x) * tension / 6;
+          const cp1y = p1.y + (p2.y - p0.y) * tension / 6;
+          const cp2x = p2.x - (p3.x - p1.x) * tension / 6;
+          const cp2y = p2.y - (p3.y - p1.y) * tension / 6;
+          
+          // Use cubic Bezier curve
+          pathData += ` C ${cp1x} ${cp1y} ${cp2x} ${cp2y} ${p2.x} ${p2.y}`;
+        }
+      }
+      
+      return pathData;
+    }
+
+    function updateAspectRatio() {
+      const svg = document.getElementById('fuxaWidget');
+      if (!svg) return;
+      
+      if (_pb_keepAspectRatio) {
+        svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+      } else {
+        svg.setAttribute('preserveAspectRatio', 'none');
+      }
+    }
+
+    function updateGrid() {
+      const gridGroup = document.getElementById('gridGroup');
+      if (!gridGroup) return;
+      
+      // Clear existing grid
+      gridGroup.innerHTML = '';
+      
+      if (!_pb_enableGrid) return;
+      
+      const divisions = 5;
+      // Adjust bottom line position to match X-axis positioning
+      const bottomLineY = chartState.chartY + chartState.chartHeight + _pn_axisStrokeWidth / 2;
+      
+      if (_pb_partialGrid) {
+        // Only left and bottom axes
+        const leftLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        leftLine.setAttribute('x1', chartState.chartX - _pn_axisStrokeWidth / 2);
+        leftLine.setAttribute('y1', chartState.chartY);
+        leftLine.setAttribute('x2', chartState.chartX - _pn_axisStrokeWidth / 2);
+        leftLine.setAttribute('y2', bottomLineY);
+        leftLine.setAttribute('stroke', _pc_gridColor);
+        leftLine.setAttribute('stroke-width', _pn_gridStrokeWidth);
+        gridGroup.appendChild(leftLine);
+        
+        const bottomLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        bottomLine.setAttribute('x1', chartState.chartX - _pn_axisStrokeWidth / 2);
+        bottomLine.setAttribute('y1', bottomLineY);
+        bottomLine.setAttribute('x2', chartState.chartX + chartState.chartWidth);
+        bottomLine.setAttribute('y2', bottomLineY);
+        bottomLine.setAttribute('stroke', _pc_gridColor);
+        bottomLine.setAttribute('stroke-width', _pn_gridStrokeWidth);
+        gridGroup.appendChild(bottomLine);
+      } else {
+        // Full grid
+        for (let i = 0; i <= divisions; i++) {
+          // Horizontal lines
+          const y = chartState.chartY + (i * chartState.chartHeight / divisions);
+          const hLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+          hLine.setAttribute('x1', chartState.chartX);
+          hLine.setAttribute('y1', y);
+          hLine.setAttribute('x2', chartState.chartX + chartState.chartWidth);
+          hLine.setAttribute('y2', y);
+          hLine.setAttribute('stroke', _pc_gridColor);
+          hLine.setAttribute('stroke-width', _pn_gridStrokeWidth);
+          hLine.setAttribute('opacity', _pn_gridOpacity);
+          gridGroup.appendChild(hLine);
+          
+          // Vertical lines
+          const x = chartState.chartX + (i * chartState.chartWidth / divisions);
+          const vLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+          vLine.setAttribute('x1', x);
+          vLine.setAttribute('y1', chartState.chartY);
+          vLine.setAttribute('x2', x);
+          vLine.setAttribute('y2', chartState.chartY + chartState.chartHeight);
+          vLine.setAttribute('stroke', _pc_gridColor);
+          vLine.setAttribute('stroke-width', _pn_gridStrokeWidth);
+          vLine.setAttribute('opacity', _pn_gridOpacity);
+          gridGroup.appendChild(vLine);
+        }
+      }
+    }
+
+    function updateAxisLabels() {
+      const yLabelsGroup = document.getElementById('yAxisLabelsGroup');
+      const xLabelsGroup = document.getElementById('xAxisLabelsGroup');
+      
+      if (yLabelsGroup) yLabelsGroup.innerHTML = '';
+      if (xLabelsGroup) xLabelsGroup.innerHTML = '';
+      
+      // Only update if labels are enabled
+      if (!_pb_displayYAxisLabels && !_pb_displayXAxisLabels) return;
+      
+      // Get min/max values - either auto-zoom or fixed range
+      let minVal, maxVal;
+      if (_pb_enableAutoZoom) {
+        const timeRangeMs = _pn_timeRangeMinutes * 60 * 1000;
+        const now = Date.now();
+        const visiblePoints = chartState.dataPoints.filter(p => now - p.time <= timeRangeMs);
+        const bounds = getAutoZoomBounds(visiblePoints);
+        minVal = bounds.min;
+        maxVal = bounds.max;
+      } else {
+        minVal = _pn_minValue;
+        maxVal = _pn_maxValue;
+      }
+      
+      const divisions = 5;
+      
+      // Y-axis labels (left side)
+      if (_pb_displayYAxisLabels && yLabelsGroup) {
+        for (let i = 0; i <= divisions; i++) {
+          const y = chartState.chartY + (i * chartState.chartHeight / divisions);
+          const value = maxVal - (i * (maxVal - minVal) / divisions);
+          
+          const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          text.setAttribute('x', chartState.chartX - _pn_axisLabelMargin);
+          text.setAttribute('y', y + 4);
+          text.setAttribute('font-size', _pn_textSize);
+          text.setAttribute('font-weight', _ps_textWeight);
+          text.setAttribute('text-anchor', 'end');
+          text.setAttribute('fill', _pc_textColor);
+          text.textContent = value.toFixed(0);
+          yLabelsGroup.appendChild(text);
+        }
+      }
+      
+      // X-axis labels (bottom side)
+      if (_pb_displayXAxisLabels && xLabelsGroup) {
+        const timeRangeMs = _pn_timeRangeMinutes * 60 * 1000;
+        const now = Date.now();
+        
+        for (let i = 0; i <= divisions; i++) {
+          const x = chartState.chartX + (i * chartState.chartWidth / divisions);
+          const timeOffset = (1 - i / divisions) * timeRangeMs;
+          const pointTime = now - timeOffset;
+          const timeLabel = formatTime(pointTime);
+          
+          const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          text.setAttribute('x', x);
+          text.setAttribute('y', chartState.chartY + chartState.chartHeight + _pn_axisLabelMargin);
+          text.setAttribute('font-size', _pn_textSize);
+          text.setAttribute('font-weight', _ps_textWeight);
+          text.setAttribute('text-anchor', 'middle');
+          text.setAttribute('fill', _pc_textColor);
+          text.textContent = timeLabel;
+          xLabelsGroup.appendChild(text);
+        }
+      }
+    }
+
+    function updateChart() {
+      const chartLine = document.getElementById('chartLine');
+      if (!chartLine) return;
+      
+      const pathData = calculateChartPath();
+      chartLine.setAttribute('d', pathData);
+      chartLine.setAttribute('stroke', _pc_lineColor);
+      chartLine.setAttribute('stroke-width', _pn_lineStrokeWidth);
+      
+      // Update axis visibility and properties
+      const xAxis = document.getElementById('xAxis');
+      const yAxis = document.getElementById('yAxis');
+      if (xAxis) {
+        xAxis.setAttribute('stroke', _pc_axisColor);
+        xAxis.setAttribute('stroke-width', _pn_axisStrokeWidth);
+        xAxis.setAttribute('display', _pb_displayXAxis ? 'block' : 'none');
+        // Position X-axis below the chart bottom to accommodate line stroke
+        const axisY = chartState.chartY + chartState.chartHeight + _pn_axisStrokeWidth / 2;
+        xAxis.setAttribute('y1', axisY);
+        xAxis.setAttribute('y2', axisY);
+      }
+      if (yAxis) {
+        yAxis.setAttribute('stroke', _pc_axisColor);
+        yAxis.setAttribute('stroke-width', _pn_axisStrokeWidth);
+        yAxis.setAttribute('display', _pb_displayYAxis ? 'block' : 'none');
+        // Position Y-axis left of the chart to accommodate line stroke
+        const axisX = chartState.chartX - _pn_axisStrokeWidth / 2;
+        yAxis.setAttribute('x1', axisX);
+        yAxis.setAttribute('x2', axisX);
+      }
+      
+      // Update current value display
+      const valueText = document.getElementById('valueText');
+      if (valueText) {
+        valueText.setAttribute('fill', _pc_textColor);
+        valueText.setAttribute('font-size', _pn_textSize);
+        valueText.setAttribute('display', _pb_displayCurrentValue ? 'block' : 'none');
+        valueText.textContent = `Current: ${_pn_value.toFixed(2)}`;
+      }
+      
+      // Update title
+      const titleText = document.getElementById('titleText');
+      if (titleText) {
+        titleText.setAttribute('fill', _pc_textColor);
+        titleText.setAttribute('font-weight', _ps_textWeight);
+        titleText.setAttribute('display', _pb_displayTitle ? 'block' : 'none');
+        titleText.textContent = _ps_chartTitle;
+      }
+    }
+
+    function updateGridAndLabels() {
+      updateGrid();
+      updateAxisLabels();
+    }
+
+    function addDataPoint(value) {
+      chartState.dataPoints.push({
+        value: value,
+        time: Date.now()
+      });
+      
+      // Clean up old points (older than time range + buffer)
+      const cutoffTime = Date.now() - (_pn_timeRangeMinutes * 60 * 1000 + 120000);
+      chartState.dataPoints = chartState.dataPoints.filter(p => p.time > cutoffTime);
+    }
+
+    function startLogging() {
+      // Clear any existing interval
+      if (logIntervalId) {
+        clearInterval(logIntervalId);
+        logIntervalId = null;
+      }
+      
+      if (_pb_useLogInterval) {
+        logIntervalId = setInterval(() => {
+          addDataPoint(_pn_value);
+          updateChart();
+        }, Math.max(500, _pn_logIntervalSeconds * 1000));
+      }
+    }
+
+    function stopLogging() {
+      if (logIntervalId) {
+        clearInterval(logIntervalId);
+        logIntervalId = null;
+      }
+    }
+
+    function destroyChart() {
+      // Clear all intervals
+      if (logIntervalId) {
+        clearInterval(logIntervalId);
+        logIntervalId = null;
+      }
+      if (updateIntervalId) {
+        clearInterval(updateIntervalId);
+        updateIntervalId = null;
+      }
+      
+      // Disconnect observer
+      if (cleanupObserver) {
+        cleanupObserver.disconnect();
+        cleanupObserver = null;
+      }
+      
+      // Clear data
+      chartState.dataPoints = [];
+    }
+
+    function putValue(id, value) {
+      if (id === '_pn_value') {
+        _pn_value = +value;
+        
+        // On first value received, initialize logging and data
+        if (chartState.dataPoints.length === 0) {
+          addDataPoint(_pn_value);
+          updateChart();
+          if (_pb_useLogInterval) {
+            startLogging();
+          }
+        } else if (!_pb_useLogInterval) {
+          // Only update if NOT using interval logging (interval handles updates)
+          addDataPoint(_pn_value);
+          updateChart();
+        }
+        return;
+      }
+      if (id === '_pn_timeRangeMinutes') {
+        _pn_timeRangeMinutes = Math.max(1, +value);
+        updateGridAndLabels();
+      }
+      if (id === '_pn_minValue') _pn_minValue = +value;
+      if (id === '_pn_maxValue') _pn_maxValue = +value;
+      if (id === '_pn_logIntervalSeconds') {
+        _pn_logIntervalSeconds = Math.max(0.5, +value);
+        if (_pb_useLogInterval) startLogging();
+      }
+      if (id === '_pb_useLogInterval') {
+        _pb_useLogInterval = (value === true || value === 1 || value === '1' || value === 'true');
+        if (_pb_useLogInterval) {
+          startLogging();
+        } else {
+          stopLogging();
+        }
+      }
+      if (id === '_pb_enableGrid') {
+        _pb_enableGrid = (value === true || value === 1 || value === '1' || value === 'true');
+        updateGrid();
+      }
+      if (id === '_pb_partialGrid') {
+        _pb_partialGrid = (value === true || value === 1 || value === '1' || value === 'true');
+        updateGrid();
+      }
+      if (id === '_pb_displayXAxisLabels') {
+        _pb_displayXAxisLabels = (value === true || value === 1 || value === '1' || value === 'true');
+        updateAxisLabels();
+      }
+      if (id === '_pb_displayYAxisLabels') {
+        _pb_displayYAxisLabels = (value === true || value === 1 || value === '1' || value === 'true');
+        updateAxisLabels();
+      }
+      if (id === '_pb_displayTitle') {
+        _pb_displayTitle = (value === true || value === 1 || value === '1' || value === 'true');
+        updateChart();
+      }
+      if (id === '_pb_displayCurrentValue') {
+        _pb_displayCurrentValue = (value === true || value === 1 || value === '1' || value === 'true');
+        updateChart();
+      }
+      if (id === '_pb_displayXAxis') {
+        _pb_displayXAxis = (value === true || value === 1 || value === '1' || value === 'true');
+        updateChart();
+      }
+      if (id === '_pb_displayYAxis') {
+        _pb_displayYAxis = (value === true || value === 1 || value === '1' || value === 'true');
+        updateChart();
+      }
+      if (id === '_pn_lineStrokeWidth') _pn_lineStrokeWidth = Math.max(0.5, +value);
+      if (id === '_pn_lineSmoothingAmount') _pn_lineSmoothingAmount = Math.max(0, Math.min(1, +value));
+      if (id === '_pn_gridStrokeWidth') {
+        _pn_gridStrokeWidth = Math.max(0.25, +value);
+        updateGrid();
+      }
+      if (id === '_pn_gridOpacity') {
+        _pn_gridOpacity = Math.max(0, Math.min(1, +value));
+        updateGrid();
+      }
+      if (id === '_pn_axisStrokeWidth') {
+        _pn_axisStrokeWidth = Math.max(0.5, +value);
+        updateChart();
+      }
+      if (id === '_pc_lineColor') _pc_lineColor = value;
+      if (id === '_pc_gridColor') {
+        _pc_gridColor = value;
+        updateGrid();
+      }
+      if (id === '_pc_axisColor') _pc_axisColor = value;
+      if (id === '_pc_textColor') _pc_textColor = value;
+      if (id === '_pn_textSize') {
+        _pn_textSize = Math.max(8, +value);
+        updateAxisLabels();
+        updateChart();
+      }
+      if (id === '_pn_axisLabelMargin') {
+        _pn_axisLabelMargin = Math.max(5, +value);
+        updateAxisLabels();
+      }
+      if (id === '_ps_textWeight') _ps_textWeight = value;
+      if (id === '_ps_chartTitle') {
+        _ps_chartTitle = value;
+        updateChart();
+      }
+      if (id === '_pb_enableAutoZoom') {
+        _pb_enableAutoZoom = (value === true || value === 1 || value === '1' || value === 'true');
+        updateChart();
+      }
+      if (id === '_pb_keepAspectRatio') {
+        _pb_keepAspectRatio = (value === true || value === 1 || value === '1' || value === 'true');
+        updateAspectRatio();
+      }
+    }
+
+    function init() {
+      // Prevent multiple initializations
+      if (initComplete) return;
+      initComplete = true;
+      
+      // DO NOT add initial data point - wait for FUXA to bind actual value
+      // DO NOT start logging yet - will start when first putValue is called
+      
+      // Initial draw with empty chart
+      updateChart();
+      updateAspectRatio();
+      updateGridAndLabels();
+      
+      // Periodic update for time labels accuracy
+      updateIntervalId = setInterval(() => {
+        if (_pb_displayXAxisLabels) {
+          updateAxisLabels();
+        }
+      }, 1000);
+      
+      // Setup cleanup observer for actual DOM removal (not parent changes)
+      const svg = document.getElementById('fuxaWidget');
+      if (svg) {
+        cleanupObserver = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            // Only check for actual removal of our SVG element
+            mutation.removedNodes.forEach((node) => {
+              if (node === svg || (node.id === 'fuxaWidget')) {
+                destroyChart();
+                if (cleanupObserver) {
+                  cleanupObserver.disconnect();
+                  cleanupObserver = null;
+                }
+              }
+            });
+          });
+        });
+        // Observe document.body for removal of SVG element
+        cleanupObserver.observe(document.body, { 
+          childList: true,
+          subtree: true
+        });
+      }
+    }
+
+    init();
+
+    ]]>
+  </script>
+</svg>

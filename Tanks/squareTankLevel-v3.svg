@@ -98,22 +98,38 @@
         case '_pn_textSize': _pn_textSize = parseInt(value); init(); break;
         case '_pn_value':
           let newValue = parseFloat(value);
+
+          if (isNaN(newValue)) return;
+
           newValue = Math.max(_pn_min, Math.min(_pn_max, newValue));
-          const step = newValue > _pn_value ? 0.5 : -0.5;
-          const delay = 10;
+
+          if (animationTimer !== null) {
+            clearTimeout(animationTimer);
+            animationTimer = null;
+          }
 
           const animateStep = () => {
-            if (_pn_value === newValue) {
+            const diff = newValue - _pn_value;
+
+            // Stop when close enough
+            if (Math.abs(diff) < 0.01) {
+              _pn_value = newValue;
+              updateWaterLevel(_pn_value);
               animationTimer = null;
               return;
             }
+
+            // Dynamic smooth step
+            const step = diff * 0.2;
+
             _pn_value += step;
+
             updateWaterLevel(_pn_value);
-            animationTimer = setTimeout(animateStep, delay);
+
+            animationTimer = setTimeout(animateStep, 30);
           };
 
-          if (animationTimer !== null) clearTimeout(animationTimer);
-          if (_pn_value !== newValue) animateStep();
+          animateStep();
           break;
       }
     }

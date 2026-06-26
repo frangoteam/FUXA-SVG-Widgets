@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="digitalClockSvg" width="100%" height="100%" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" onload="init()">
+  <rect id="clockBackground" x="2" y="2" width="296" height="96" rx="12" ry="12" fill="#000000" stroke="#333333" stroke-width="2" />
+
+  <g id="h1_digit" transform="translate(42 12)">
+    <polygon id="h1_a" points="7,0 35,0 39,4 35,8 7,8 3,4" fill="#ffffff" />
+    <polygon id="h1_b" points="38,9 42,13 42,31 38,35 34,31 34,13" fill="#ffffff" />
+    <polygon id="h1_c" points="38,41 42,45 42,63 38,67 34,63 34,45" fill="#ffffff" />
+    <polygon id="h1_d" points="7,68 35,68 39,72 35,76 7,76 3,72" fill="#ffffff" />
+    <polygon id="h1_e" points="0,41 4,45 4,63 0,67 -4,63 -4,45" fill="#ffffff" />
+    <polygon id="h1_f" points="0,9 4,13 4,31 0,35 -4,31 -4,13" fill="#ffffff" />
+    <polygon id="h1_g" points="7,34 35,34 39,38 35,42 7,42 3,38" fill="#ffffff" />
+  </g>
+  <g id="h2_digit" transform="translate(93 12)">
+    <polygon id="h2_a" points="7,0 35,0 39,4 35,8 7,8 3,4" fill="#ffffff" />
+    <polygon id="h2_b" points="38,9 42,13 42,31 38,35 34,31 34,13" fill="#ffffff" />
+    <polygon id="h2_c" points="38,41 42,45 42,63 38,67 34,63 34,45" fill="#ffffff" />
+    <polygon id="h2_d" points="7,68 35,68 39,72 35,76 7,76 3,72" fill="#ffffff" />
+    <polygon id="h2_e" points="0,41 4,45 4,63 0,67 -4,63 -4,45" fill="#ffffff" />
+    <polygon id="h2_f" points="0,9 4,13 4,31 0,35 -4,31 -4,13" fill="#ffffff" />
+    <polygon id="h2_g" points="7,34 35,34 39,38 35,42 7,42 3,38" fill="#ffffff" />
+  </g>
+
+  <g id="hourMinuteColon">
+    <circle id="hmColonTop" cx="150" cy="34" r="3.6" fill="#ffffff" />
+    <circle id="hmColonBottom" cx="150" cy="66" r="3.6" fill="#ffffff" />
+  </g>
+
+  <g id="m1_digit" transform="translate(175 12)">
+    <polygon id="m1_a" points="7,0 35,0 39,4 35,8 7,8 3,4" fill="#ffffff" />
+    <polygon id="m1_b" points="38,9 42,13 42,31 38,35 34,31 34,13" fill="#ffffff" />
+    <polygon id="m1_c" points="38,41 42,45 42,63 38,67 34,63 34,45" fill="#ffffff" />
+    <polygon id="m1_d" points="7,68 35,68 39,72 35,76 7,76 3,72" fill="#ffffff" />
+    <polygon id="m1_e" points="0,41 4,45 4,63 0,67 -4,63 -4,45" fill="#ffffff" />
+    <polygon id="m1_f" points="0,9 4,13 4,31 0,35 -4,31 -4,13" fill="#ffffff" />
+    <polygon id="m1_g" points="7,34 35,34 39,38 35,42 7,42 3,38" fill="#ffffff" />
+  </g>
+  <g id="m2_digit" transform="translate(226 12)">
+    <polygon id="m2_a" points="7,0 35,0 39,4 35,8 7,8 3,4" fill="#ffffff" />
+    <polygon id="m2_b" points="38,9 42,13 42,31 38,35 34,31 34,13" fill="#ffffff" />
+    <polygon id="m2_c" points="38,41 42,45 42,63 38,67 34,63 34,45" fill="#ffffff" />
+    <polygon id="m2_d" points="7,68 35,68 39,72 35,76 7,76 3,72" fill="#ffffff" />
+    <polygon id="m2_e" points="0,41 4,45 4,63 0,67 -4,63 -4,45" fill="#ffffff" />
+    <polygon id="m2_f" points="0,9 4,13 4,31 0,35 -4,31 -4,13" fill="#ffffff" />
+    <polygon id="m2_g" points="7,34 35,34 39,38 35,42 7,42 3,38" fill="#ffffff" />
+  </g>
+
+  <g id="minuteSecondColon" style="display:none">
+    <circle id="msColonTop" cx="278" cy="34" r="3.2" fill="#ffffff" />
+    <circle id="msColonBottom" cx="278" cy="66" r="3.2" fill="#ffffff" />
+  </g>
+
+  <g id="s1_digit" transform="translate(306 12)" style="display:none">
+    <polygon id="s1_a" points="7,0 35,0 39,4 35,8 7,8 3,4" fill="#ffffff" />
+    <polygon id="s1_b" points="38,9 42,13 42,31 38,35 34,31 34,13" fill="#ffffff" />
+    <polygon id="s1_c" points="38,41 42,45 42,63 38,67 34,63 34,45" fill="#ffffff" />
+    <polygon id="s1_d" points="7,68 35,68 39,72 35,76 7,76 3,72" fill="#ffffff" />
+    <polygon id="s1_e" points="0,41 4,45 4,63 0,67 -4,63 -4,45" fill="#ffffff" />
+    <polygon id="s1_f" points="0,9 4,13 4,31 0,35 -4,31 -4,13" fill="#ffffff" />
+    <polygon id="s1_g" points="7,34 35,34 39,38 35,42 7,42 3,38" fill="#ffffff" />
+  </g>
+  <g id="s2_digit" transform="translate(357 12)" style="display:none">
+    <polygon id="s2_a" points="7,0 35,0 39,4 35,8 7,8 3,4" fill="#ffffff" />
+    <polygon id="s2_b" points="38,9 42,13 42,31 38,35 34,31 34,13" fill="#ffffff" />
+    <polygon id="s2_c" points="38,41 42,45 42,63 38,67 34,63 34,45" fill="#ffffff" />
+    <polygon id="s2_d" points="7,68 35,68 39,72 35,76 7,76 3,72" fill="#ffffff" />
+    <polygon id="s2_e" points="0,41 4,45 4,63 0,67 -4,63 -4,45" fill="#ffffff" />
+    <polygon id="s2_f" points="0,9 4,13 4,31 0,35 -4,31 -4,13" fill="#ffffff" />
+    <polygon id="s2_g" points="7,34 35,34 39,38 35,42 7,42 3,38" fill="#ffffff" />
+  </g>
+
+  <script type="text/javascript"><![CDATA[
+    //!export-start
+    let _pc_backgroundColor = "#000000ff";
+    let _pc_digitColor = "#ffffffff";
+    let _pc_colonColor = "#ffffffff";
+    let _pc_borderColor = "#333333ff";
+    let _pn_borderWidth = 2;
+    let _pn_borderRadius = 12;
+    let _pb_showSeconds = false;
+    let _pb_colonBlink = true;
+    //!export-end
+
+    let clockTimer = null;
+    let initialized = false;
+    let clockSvg = null;
+    let clockBackground = null;
+    let h1_digit = null;
+    let h2_digit = null;
+    let m1_digit = null;
+    let m2_digit = null;
+    let s1_digit = null;
+    let s2_digit = null;
+    let minuteSecondColon = null;
+    let hmColonTop = null;
+    let hmColonBottom = null;
+    let msColonTop = null;
+    let msColonBottom = null;
+    
+let h1_a = null;    let h1_b = null;    let h1_c = null;    let h1_d = null;    let h1_e = null;    let h1_f = null;    let h1_g = null;    let h2_a = null;    let h2_b = null;    let h2_c = null;    let h2_d = null;    let h2_e = null;    let h2_f = null;    let h2_g = null;    let m1_a = null;    let m1_b = null;    let m1_c = null;    let m1_d = null;    let m1_e = null;    let m1_f = null;    let m1_g = null;    let m2_a = null;    let m2_b = null;    let m2_c = null;    let m2_d = null;    let m2_e = null;    let m2_f = null;    let m2_g = null;    let s1_a = null;    let s1_b = null;    let s1_c = null;    let s1_d = null;    let s1_e = null;    let s1_f = null;    let s1_g = null;    let s2_a = null;    let s2_b = null;    let s2_c = null;    let s2_d = null;    let s2_e = null;    let s2_f = null;    let s2_g = null;
+
+    const storagePrefix = 'fuxaDigitalClock.';
+
+    function init() {
+      clockSvg = document.getElementById('digitalClockSvg');
+      loadCachedSettings();
+      bindElements();
+      applyStyle();
+      updateClock();
+      restartTimer();
+      initialized = true;
+    }
+
+    function bindElements() {
+      clockBackground = document.getElementById('clockBackground');
+      h1_digit = document.getElementById('h1_digit');
+      h2_digit = document.getElementById('h2_digit');
+      m1_digit = document.getElementById('m1_digit');
+      m2_digit = document.getElementById('m2_digit');
+      s1_digit = document.getElementById('s1_digit');
+      s2_digit = document.getElementById('s2_digit');
+      minuteSecondColon = document.getElementById('minuteSecondColon');
+      hmColonTop = document.getElementById('hmColonTop');
+      hmColonBottom = document.getElementById('hmColonBottom');
+      msColonTop = document.getElementById('msColonTop');
+      msColonBottom = document.getElementById('msColonBottom');
+      h1_a = document.getElementById('h1_a');
+      h1_b = document.getElementById('h1_b');
+      h1_c = document.getElementById('h1_c');
+      h1_d = document.getElementById('h1_d');
+      h1_e = document.getElementById('h1_e');
+      h1_f = document.getElementById('h1_f');
+      h1_g = document.getElementById('h1_g');
+      h2_a = document.getElementById('h2_a');
+      h2_b = document.getElementById('h2_b');
+      h2_c = document.getElementById('h2_c');
+      h2_d = document.getElementById('h2_d');
+      h2_e = document.getElementById('h2_e');
+      h2_f = document.getElementById('h2_f');
+      h2_g = document.getElementById('h2_g');
+      m1_a = document.getElementById('m1_a');
+      m1_b = document.getElementById('m1_b');
+      m1_c = document.getElementById('m1_c');
+      m1_d = document.getElementById('m1_d');
+      m1_e = document.getElementById('m1_e');
+      m1_f = document.getElementById('m1_f');
+      m1_g = document.getElementById('m1_g');
+      m2_a = document.getElementById('m2_a');
+      m2_b = document.getElementById('m2_b');
+      m2_c = document.getElementById('m2_c');
+      m2_d = document.getElementById('m2_d');
+      m2_e = document.getElementById('m2_e');
+      m2_f = document.getElementById('m2_f');
+      m2_g = document.getElementById('m2_g');
+      s1_a = document.getElementById('s1_a');
+      s1_b = document.getElementById('s1_b');
+      s1_c = document.getElementById('s1_c');
+      s1_d = document.getElementById('s1_d');
+      s1_e = document.getElementById('s1_e');
+      s1_f = document.getElementById('s1_f');
+      s1_g = document.getElementById('s1_g');
+      s2_a = document.getElementById('s2_a');
+      s2_b = document.getElementById('s2_b');
+      s2_c = document.getElementById('s2_c');
+      s2_d = document.getElementById('s2_d');
+      s2_e = document.getElementById('s2_e');
+      s2_f = document.getElementById('s2_f');
+      s2_g = document.getElementById('s2_g');
+    }
+
+    function applyStyle() {
+      const width = _pb_showSeconds ? 430 : 300;
+      clockSvg.setAttribute('viewBox', '0 0 ' + width + ' 100');
+      clockBackground.setAttribute('width', width - 4);
+      clockBackground.setAttribute('rx', _pn_borderRadius);
+      clockBackground.setAttribute('ry', _pn_borderRadius);
+      clockBackground.setAttribute('fill', _pc_backgroundColor);
+      clockBackground.setAttribute('stroke', _pc_borderColor);
+      clockBackground.setAttribute('stroke-width', _pn_borderWidth);
+
+      if (_pb_showSeconds) {
+        h1_digit.setAttribute('transform', 'translate(20 12)');
+        h2_digit.setAttribute('transform', 'translate(72 12)');
+        hmColonTop.setAttribute('cx', 132);
+        hmColonBottom.setAttribute('cx', 132);
+        m1_digit.setAttribute('transform', 'translate(160 12)');
+        m2_digit.setAttribute('transform', 'translate(212 12)');
+        msColonTop.setAttribute('cx', 272);
+        msColonBottom.setAttribute('cx', 272);
+        s1_digit.setAttribute('transform', 'translate(300 12)');
+        s2_digit.setAttribute('transform', 'translate(352 12)');
+        minuteSecondColon.style.display = 'block';
+        s1_digit.style.display = 'block';
+        s2_digit.style.display = 'block';
+      } else {
+        h1_digit.setAttribute('transform', 'translate(42 12)');
+        h2_digit.setAttribute('transform', 'translate(94 12)');
+        hmColonTop.setAttribute('cx', 154);
+        hmColonBottom.setAttribute('cx', 154);
+        m1_digit.setAttribute('transform', 'translate(182 12)');
+        m2_digit.setAttribute('transform', 'translate(234 12)');
+        minuteSecondColon.style.display = 'none';
+        s1_digit.style.display = 'none';
+        s2_digit.style.display = 'none';
+      }
+    }
+
+    function restartTimer() {
+      if (clockTimer) {
+        clearTimeout(clockTimer);
+        clockTimer = null;
+      }
+      scheduleTick();
+    }
+
+    function scheduleTick() {
+      clockTimer = setTimeout(function () {
+        updateClock();
+        scheduleTick();
+      }, 1000);
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+      const colonVisible = !_pb_colonBlink || seconds % 2 === 0;
+
+      set_h1(Math.floor(hours / 10));
+      set_h2(hours % 10);
+      set_m1(Math.floor(minutes / 10));
+      set_m2(minutes % 10);
+
+      if (_pb_showSeconds) {
+        set_s1(Math.floor(seconds / 10));
+        set_s2(seconds % 10);
+      }
+
+      setColon(colonVisible);
+    }
+
+    function setColon(isVisible) {
+      const color = isVisible ? _pc_colonColor : 'transparent';
+      hmColonTop.setAttribute('fill', color);
+      hmColonBottom.setAttribute('fill', color);
+      msColonTop.setAttribute('fill', color);
+      msColonBottom.setAttribute('fill', color);
+    }
+
+
+    function set_h1(value) {
+      const a = value === 0 || value === 2 || value === 3 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9;
+      const b = value === 0 || value === 1 || value === 2 || value === 3 || value === 4 || value === 7 || value === 8 || value === 9;
+      const c = value === 0 || value === 1 || value === 3 || value === 4 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9;
+      const d = value === 0 || value === 2 || value === 3 || value === 5 || value === 6 || value === 8 || value === 9;
+      const e = value === 0 || value === 2 || value === 6 || value === 8;
+      const f = value === 0 || value === 4 || value === 5 || value === 6 || value === 8 || value === 9;
+      const g = value === 2 || value === 3 || value === 4 || value === 5 || value === 6 || value === 8 || value === 9;
+      h1_a.setAttribute('fill', a ? _pc_digitColor : 'transparent');
+      h1_b.setAttribute('fill', b ? _pc_digitColor : 'transparent');
+      h1_c.setAttribute('fill', c ? _pc_digitColor : 'transparent');
+      h1_d.setAttribute('fill', d ? _pc_digitColor : 'transparent');
+      h1_e.setAttribute('fill', e ? _pc_digitColor : 'transparent');
+      h1_f.setAttribute('fill', f ? _pc_digitColor : 'transparent');
+      h1_g.setAttribute('fill', g ? _pc_digitColor : 'transparent');
+    }
+
+    function set_h2(value) {
+      const a = value === 0 || value === 2 || value === 3 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9;
+      const b = value === 0 || value === 1 || value === 2 || value === 3 || value === 4 || value === 7 || value === 8 || value === 9;
+      const c = value === 0 || value === 1 || value === 3 || value === 4 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9;
+      const d = value === 0 || value === 2 || value === 3 || value === 5 || value === 6 || value === 8 || value === 9;
+      const e = value === 0 || value === 2 || value === 6 || value === 8;
+      const f = value === 0 || value === 4 || value === 5 || value === 6 || value === 8 || value === 9;
+      const g = value === 2 || value === 3 || value === 4 || value === 5 || value === 6 || value === 8 || value === 9;
+      h2_a.setAttribute('fill', a ? _pc_digitColor : 'transparent');
+      h2_b.setAttribute('fill', b ? _pc_digitColor : 'transparent');
+      h2_c.setAttribute('fill', c ? _pc_digitColor : 'transparent');
+      h2_d.setAttribute('fill', d ? _pc_digitColor : 'transparent');
+      h2_e.setAttribute('fill', e ? _pc_digitColor : 'transparent');
+      h2_f.setAttribute('fill', f ? _pc_digitColor : 'transparent');
+      h2_g.setAttribute('fill', g ? _pc_digitColor : 'transparent');
+    }
+
+    function set_m1(value) {
+      const a = value === 0 || value === 2 || value === 3 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9;
+      const b = value === 0 || value === 1 || value === 2 || value === 3 || value === 4 || value === 7 || value === 8 || value === 9;
+      const c = value === 0 || value === 1 || value === 3 || value === 4 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9;
+      const d = value === 0 || value === 2 || value === 3 || value === 5 || value === 6 || value === 8 || value === 9;
+      const e = value === 0 || value === 2 || value === 6 || value === 8;
+      const f = value === 0 || value === 4 || value === 5 || value === 6 || value === 8 || value === 9;
+      const g = value === 2 || value === 3 || value === 4 || value === 5 || value === 6 || value === 8 || value === 9;
+      m1_a.setAttribute('fill', a ? _pc_digitColor : 'transparent');
+      m1_b.setAttribute('fill', b ? _pc_digitColor : 'transparent');
+      m1_c.setAttribute('fill', c ? _pc_digitColor : 'transparent');
+      m1_d.setAttribute('fill', d ? _pc_digitColor : 'transparent');
+      m1_e.setAttribute('fill', e ? _pc_digitColor : 'transparent');
+      m1_f.setAttribute('fill', f ? _pc_digitColor : 'transparent');
+      m1_g.setAttribute('fill', g ? _pc_digitColor : 'transparent');
+    }
+
+    function set_m2(value) {
+      const a = value === 0 || value === 2 || value === 3 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9;
+      const b = value === 0 || value === 1 || value === 2 || value === 3 || value === 4 || value === 7 || value === 8 || value === 9;
+      const c = value === 0 || value === 1 || value === 3 || value === 4 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9;
+      const d = value === 0 || value === 2 || value === 3 || value === 5 || value === 6 || value === 8 || value === 9;
+      const e = value === 0 || value === 2 || value === 6 || value === 8;
+      const f = value === 0 || value === 4 || value === 5 || value === 6 || value === 8 || value === 9;
+      const g = value === 2 || value === 3 || value === 4 || value === 5 || value === 6 || value === 8 || value === 9;
+      m2_a.setAttribute('fill', a ? _pc_digitColor : 'transparent');
+      m2_b.setAttribute('fill', b ? _pc_digitColor : 'transparent');
+      m2_c.setAttribute('fill', c ? _pc_digitColor : 'transparent');
+      m2_d.setAttribute('fill', d ? _pc_digitColor : 'transparent');
+      m2_e.setAttribute('fill', e ? _pc_digitColor : 'transparent');
+      m2_f.setAttribute('fill', f ? _pc_digitColor : 'transparent');
+      m2_g.setAttribute('fill', g ? _pc_digitColor : 'transparent');
+    }
+
+    function set_s1(value) {
+      const a = value === 0 || value === 2 || value === 3 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9;
+      const b = value === 0 || value === 1 || value === 2 || value === 3 || value === 4 || value === 7 || value === 8 || value === 9;
+      const c = value === 0 || value === 1 || value === 3 || value === 4 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9;
+      const d = value === 0 || value === 2 || value === 3 || value === 5 || value === 6 || value === 8 || value === 9;
+      const e = value === 0 || value === 2 || value === 6 || value === 8;
+      const f = value === 0 || value === 4 || value === 5 || value === 6 || value === 8 || value === 9;
+      const g = value === 2 || value === 3 || value === 4 || value === 5 || value === 6 || value === 8 || value === 9;
+      s1_a.setAttribute('fill', a ? _pc_digitColor : 'transparent');
+      s1_b.setAttribute('fill', b ? _pc_digitColor : 'transparent');
+      s1_c.setAttribute('fill', c ? _pc_digitColor : 'transparent');
+      s1_d.setAttribute('fill', d ? _pc_digitColor : 'transparent');
+      s1_e.setAttribute('fill', e ? _pc_digitColor : 'transparent');
+      s1_f.setAttribute('fill', f ? _pc_digitColor : 'transparent');
+      s1_g.setAttribute('fill', g ? _pc_digitColor : 'transparent');
+    }
+
+    function set_s2(value) {
+      const a = value === 0 || value === 2 || value === 3 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9;
+      const b = value === 0 || value === 1 || value === 2 || value === 3 || value === 4 || value === 7 || value === 8 || value === 9;
+      const c = value === 0 || value === 1 || value === 3 || value === 4 || value === 5 || value === 6 || value === 7 || value === 8 || value === 9;
+      const d = value === 0 || value === 2 || value === 3 || value === 5 || value === 6 || value === 8 || value === 9;
+      const e = value === 0 || value === 2 || value === 6 || value === 8;
+      const f = value === 0 || value === 4 || value === 5 || value === 6 || value === 8 || value === 9;
+      const g = value === 2 || value === 3 || value === 4 || value === 5 || value === 6 || value === 8 || value === 9;
+      s2_a.setAttribute('fill', a ? _pc_digitColor : 'transparent');
+      s2_b.setAttribute('fill', b ? _pc_digitColor : 'transparent');
+      s2_c.setAttribute('fill', c ? _pc_digitColor : 'transparent');
+      s2_d.setAttribute('fill', d ? _pc_digitColor : 'transparent');
+      s2_e.setAttribute('fill', e ? _pc_digitColor : 'transparent');
+      s2_f.setAttribute('fill', f ? _pc_digitColor : 'transparent');
+      s2_g.setAttribute('fill', g ? _pc_digitColor : 'transparent');
+    }
+
+    function putValue(attr, value) {
+      if (attr === '_pc_backgroundColor') { _pc_backgroundColor = value; cacheSetting(attr, value); }
+      if (attr === '_pc_digitColor') { _pc_digitColor = value; cacheSetting(attr, value); }
+      if (attr === '_pc_colonColor') { _pc_colonColor = value; cacheSetting(attr, value); }
+      if (attr === '_pc_borderColor') { _pc_borderColor = value; cacheSetting(attr, value); }
+      if (attr === '_pn_borderWidth') { _pn_borderWidth = Number(value); cacheSetting(attr, value); }
+      if (attr === '_pn_borderRadius') { _pn_borderRadius = Number(value); cacheSetting(attr, value); }
+      if (attr === '_pb_showSeconds') { _pb_showSeconds = value === true || value === 'true'; cacheSetting(attr, _pb_showSeconds); }
+      if (attr === '_pb_colonBlink') { _pb_colonBlink = value === true || value === 'true'; cacheSetting(attr, _pb_colonBlink); }
+
+      if (clockBackground) {
+        applyStyle();
+        updateClock();
+      }
+      if (!initialized) {
+        init();
+      }
+    }
+
+    function cacheSetting(attr, value) {
+      try { localStorage.setItem(storagePrefix + attr, String(value)); } catch (e) {}
+    }
+
+    function loadCachedSettings() {
+      try {
+        const backgroundColor = localStorage.getItem(storagePrefix + '_pc_backgroundColor');
+        const digitColor = localStorage.getItem(storagePrefix + '_pc_digitColor');
+        const colonColor = localStorage.getItem(storagePrefix + '_pc_colonColor');
+        const borderColor = localStorage.getItem(storagePrefix + '_pc_borderColor');
+        const borderWidth = localStorage.getItem(storagePrefix + '_pn_borderWidth');
+        const borderRadius = localStorage.getItem(storagePrefix + '_pn_borderRadius');
+        const showSeconds = localStorage.getItem(storagePrefix + '_pb_showSeconds');
+        const colonBlink = localStorage.getItem(storagePrefix + '_pb_colonBlink');
+
+        if (backgroundColor !== null) { _pc_backgroundColor = backgroundColor; }
+        if (digitColor !== null) { _pc_digitColor = digitColor; }
+        if (colonColor !== null) { _pc_colonColor = colonColor; }
+        if (borderColor !== null) { _pc_borderColor = borderColor; }
+        if (borderWidth !== null) { _pn_borderWidth = Number(borderWidth); }
+        if (borderRadius !== null) { _pn_borderRadius = Number(borderRadius); }
+        if (showSeconds !== null) { _pb_showSeconds = showSeconds === 'true'; }
+        if (colonBlink !== null) { _pb_colonBlink = colonBlink === 'true'; }
+      } catch (e) {}
+    }
+
+
+    setTimeout(function () {
+      init();
+    }, 100);
+  ]]></script>
+</svg>

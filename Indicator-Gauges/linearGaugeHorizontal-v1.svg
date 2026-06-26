@@ -1,0 +1,401 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 300 100" preserveAspectRatio="xMidYMid meet">
+  <rect data-hg="background" x="0" y="0" width="300" height="100" fill="#ffffff" opacity="0"/>
+
+  <g data-hg="scaleLayer">
+    <line x1="22" y1="72" x2="278" y2="72" stroke="#4b4b4b" stroke-width="2"/>
+    <line x1="22" y1="72" x2="22" y2="18" stroke="#4b4b4b" stroke-width="2"/>
+    <text x="22" y="10" text-anchor="middle" dominant-baseline="middle" fill="#444444" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="600">0</text>
+    <line x1="73.2" y1="72" x2="73.2" y2="18" stroke="#4b4b4b" stroke-width="2"/>
+    <text x="73.2" y="10" text-anchor="middle" dominant-baseline="middle" fill="#444444" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="600">20</text>
+    <line x1="124.4" y1="72" x2="124.4" y2="18" stroke="#4b4b4b" stroke-width="2"/>
+    <text x="124.4" y="10" text-anchor="middle" dominant-baseline="middle" fill="#444444" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="600">40</text>
+    <line x1="175.6" y1="72" x2="175.6" y2="18" stroke="#4b4b4b" stroke-width="2"/>
+    <text x="175.6" y="10" text-anchor="middle" dominant-baseline="middle" fill="#444444" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="600">60</text>
+    <line x1="226.8" y1="72" x2="226.8" y2="18" stroke="#4b4b4b" stroke-width="2"/>
+    <text x="226.8" y="10" text-anchor="middle" dominant-baseline="middle" fill="#444444" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="600">80</text>
+    <line x1="278" y1="72" x2="278" y2="18" stroke="#4b4b4b" stroke-width="2"/>
+    <text x="278" y="10" text-anchor="middle" dominant-baseline="middle" fill="#444444" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="600">100</text>
+  </g>
+
+  <rect data-hg="zoneRect" x="175.6" y="60" width="102.4" height="12" fill="#9a9a9a" opacity="0.75"/>
+  <rect data-hg="fillRestRect" x="22" y="76" width="256" height="4" fill="#d0d0d0"/>
+  <rect data-hg="fillRect" x="22" y="76" width="115" height="4" fill="#8f8f8f"/>
+  <line data-hg="valueLine" x1="137" y1="14" x2="137" y2="66" stroke="#222222" stroke-width="1.5" stroke-linecap="square"/>
+
+  <script type="text/javascript"><![CDATA[
+    //!export-start
+      var _pn_value = 45;
+      var _pn_min = 0;
+      var _pn_max = 100;
+      var _pn_majorStep = 20;
+      var _pn_minorDivisions = 10;
+      var _pn_animationMs = 350;
+
+      var _pn_zoneStart = 60;
+      var _pn_zoneEnd = 100;
+      var _pn_zoneHeight = 12;
+      var _pn_barStrokeWidth = 4;
+      var _pn_valueLineWidth = 1.5;
+      var _pn_scaleFontSize = 10;
+
+      var _ps_scaleFontFamily = 'Arial, Helvetica, sans-serif';
+      var _ps_scaleFontWeight = '600';
+
+      var _pc_tickColor = '#4b4b4b';
+      var _pc_textColor = '#444444';
+      var _pc_zoneColor = '#9a9a9a';
+      var _pc_fillColor = '#8f8f8f';
+      var _pc_fillRestColor = '#d0d0d0';
+      var _pc_valueLineColor = '#222222';
+    //!export-end
+
+    var NS = 'http://www.w3.org/2000/svg';
+    var root = null;
+    var scaleLayer = null;
+    var zoneRect = null;
+    var fillRect = null;
+    var fillRestRect = null;
+    var valueLine = null;
+    var currentValue = Number(_pn_value) || 0;
+    var animationTimer = null;
+
+    var cfg = {
+      x0: 22,
+      x1: 278,
+      yBase: 72,
+      yTop: 18,
+      yMinorTop: 58,
+      yBar: 76,
+      valueLineTop: 14,
+      valueLineBottom: 66
+    };
+
+    function clamp(value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    }
+
+    function num(value, fallback) {
+      var n = Number(value);
+      return isNaN(n) ? fallback : n;
+    }
+
+    function getRoot() {
+      if (root) {
+        return root;
+      }
+      var scripts = document.getElementsByTagName('script');
+      for (var i = 0; i < scripts.length; i++) {
+        if (scripts[i].textContent && scripts[i].textContent.indexOf('linearGaugeHorizontal-v4') !== -1) {
+          root = scripts[i].ownerSVGElement;
+          break;
+        }
+      }
+      if (!root && document.currentScript) {
+        root = document.currentScript.ownerSVGElement;
+      }
+      if (!root) {
+        root = document.querySelector('svg');
+      }
+      return root;
+    }
+
+    function bindElements() {
+      var svg = getRoot();
+      if (!svg) {
+        return false;
+      }
+      scaleLayer = svg.querySelector('[data-hg="scaleLayer"]');
+      zoneRect = svg.querySelector('[data-hg="zoneRect"]');
+      fillRect = svg.querySelector('[data-hg="fillRect"]');
+      fillRestRect = svg.querySelector('[data-hg="fillRestRect"]');
+      valueLine = svg.querySelector('[data-hg="valueLine"]');
+      return !!(scaleLayer && zoneRect && fillRect && fillRestRect && valueLine);
+    }
+
+    function valueToX(value) {
+      var min = num(_pn_min, 0);
+      var max = num(_pn_max, 100);
+      if (max === min) {
+        return cfg.x0;
+      }
+      var low = Math.min(min, max);
+      var high = Math.max(min, max);
+      var clamped = clamp(num(value, min), low, high);
+      var percent = (clamped - min) / (max - min);
+      return cfg.x0 + percent * (cfg.x1 - cfg.x0);
+    }
+
+    function clearElement(el) {
+      while (el && el.firstChild) {
+        el.removeChild(el.firstChild);
+      }
+    }
+
+    function createLine(x1, y1, x2, y2, color, width) {
+      var el = document.createElementNS(NS, 'line');
+      el.setAttribute('x1', x1);
+      el.setAttribute('y1', y1);
+      el.setAttribute('x2', x2);
+      el.setAttribute('y2', y2);
+      el.setAttribute('stroke', color);
+      el.setAttribute('stroke-width', width);
+      el.setAttribute('stroke-linecap', 'square');
+      return el;
+    }
+
+    function createText(x, y, text) {
+      var el = document.createElementNS(NS, 'text');
+      el.setAttribute('x', x);
+      el.setAttribute('y', y);
+      el.setAttribute('text-anchor', 'middle');
+      el.setAttribute('dominant-baseline', 'middle');
+      el.setAttribute('fill', _pc_textColor);
+      el.setAttribute('font-family', _ps_scaleFontFamily);
+      el.setAttribute('font-size', num(_pn_scaleFontSize, 10));
+      el.setAttribute('font-weight', _ps_scaleFontWeight);
+      el.textContent = String(Math.round(text * 100) / 100).replace(/\.00$/, '');
+      return el;
+    }
+
+    function buildScale() {
+      if (!scaleLayer) {
+        return;
+      }
+
+      clearElement(scaleLayer);
+
+      var min = num(_pn_min, 0);
+      var max = num(_pn_max, 100);
+      var range = max - min;
+      var majorStep = Math.abs(num(_pn_majorStep, 20));
+      var minorDivisions = Math.max(1, Math.round(num(_pn_minorDivisions, 10)));
+
+      if (!majorStep || !range) {
+        majorStep = Math.abs(range || 100) / 5;
+      }
+
+      scaleLayer.appendChild(createLine(cfg.x0, cfg.yBase, cfg.x1, cfg.yBase, _pc_tickColor, 2));
+
+      var dir = range >= 0 ? 1 : -1;
+      var steps = Math.floor(Math.abs(range) / majorStep + 0.0001);
+
+      for (var i = 0; i <= steps; i++) {
+        var v = min + dir * majorStep * i;
+        var x = valueToX(v);
+        scaleLayer.appendChild(createLine(x, cfg.yBase, x, cfg.yTop, _pc_tickColor, 2));
+        scaleLayer.appendChild(createText(x, 10, v));
+
+        if (i < steps) {
+          for (var m = 1; m < minorDivisions; m++) {
+            var mv = v + dir * (majorStep / minorDivisions) * m;
+            var mx = valueToX(mv);
+            scaleLayer.appendChild(createLine(mx, cfg.yBase, mx, cfg.yMinorTop, _pc_tickColor, 0.9));
+          }
+        }
+      }
+
+      var last = min + dir * majorStep * steps;
+      if (Math.abs(last - max) > 0.0001) {
+        var endX = valueToX(max);
+        scaleLayer.appendChild(createLine(endX, cfg.yBase, endX, cfg.yTop, _pc_tickColor, 2));
+        scaleLayer.appendChild(createText(endX, 10, max));
+      }
+    }
+
+    function updateGeometry(value) {
+      if (!valueLine && !bindElements()) {
+        return;
+      }
+
+      var min = num(_pn_min, 0);
+      var max = num(_pn_max, 100);
+      var x = valueToX(value);
+      var barHeight = num(_pn_barStrokeWidth, 4);
+      var zoneHeight = num(_pn_zoneHeight, 12);
+
+      zoneRect.setAttribute('fill', _pc_zoneColor);
+      zoneRect.setAttribute('y', cfg.yBase - zoneHeight);
+      zoneRect.setAttribute('height', zoneHeight);
+      var zx0 = valueToX(num(_pn_zoneStart, min));
+      var zx1 = valueToX(num(_pn_zoneEnd, max));
+      zoneRect.setAttribute('x', Math.min(zx0, zx1));
+      zoneRect.setAttribute('width', Math.abs(zx1 - zx0));
+
+      fillRestRect.setAttribute('x', cfg.x0);
+      fillRestRect.setAttribute('y', cfg.yBar);
+      fillRestRect.setAttribute('width', cfg.x1 - cfg.x0);
+      fillRestRect.setAttribute('height', barHeight);
+      fillRestRect.setAttribute('fill', _pc_fillRestColor);
+
+      fillRect.setAttribute('x', Math.min(cfg.x0, x));
+      fillRect.setAttribute('y', cfg.yBar);
+      fillRect.setAttribute('width', Math.abs(x - cfg.x0));
+      fillRect.setAttribute('height', barHeight);
+      fillRect.setAttribute('fill', _pc_fillColor);
+
+      valueLine.setAttribute('x1', x);
+      valueLine.setAttribute('x2', x);
+      valueLine.setAttribute('y1', cfg.valueLineTop);
+      valueLine.setAttribute('y2', cfg.valueLineBottom);
+      valueLine.setAttribute('stroke', _pc_valueLineColor);
+      valueLine.setAttribute('stroke-width', num(_pn_valueLineWidth, 1.5));
+    }
+
+    function renderGauge() {
+      if (!bindElements()) {
+        return;
+      }
+      buildScale();
+      updateGeometry(_pn_value);
+      currentValue = num(_pn_value, currentValue);
+    }
+
+    function animateValue(target) {
+      target = num(target, currentValue);
+
+      if (!bindElements()) {
+        return;
+      }
+
+      if (animationTimer) {
+        clearInterval(animationTimer);
+        animationTimer = null;
+      }
+
+      var start = currentValue;
+      var diff = target - start;
+      var duration = Math.max(0, num(_pn_animationMs, 350));
+      var started = Date.now();
+
+      if (!duration || Math.abs(diff) < 0.000001) {
+        currentValue = target;
+        updateGeometry(target);
+        return;
+      }
+
+      animationTimer = setInterval(function () {
+        var t = Math.min(1, (Date.now() - started) / duration);
+        var eased = 1 - Math.pow(1 - t, 3);
+        var v = start + diff * eased;
+        updateGeometry(v);
+        if (t >= 1) {
+          clearInterval(animationTimer);
+          animationTimer = null;
+          currentValue = target;
+          updateGeometry(target);
+        }
+      }, 16);
+    }
+
+    function putValue(id, value) {
+      if (arguments.length === 1) {
+        value = id;
+        id = '_pn_value';
+      }
+
+      switch (id) {
+        case '_pn_value':
+          _pn_value = num(value, _pn_value);
+          animateValue(_pn_value);
+          break;
+        case '_pn_min':
+          _pn_min = num(value, _pn_min);
+          renderGauge();
+          animateValue(_pn_value);
+          break;
+        case '_pn_max':
+          _pn_max = num(value, _pn_max);
+          renderGauge();
+          animateValue(_pn_value);
+          break;
+        case '_pn_majorStep':
+          _pn_majorStep = num(value, _pn_majorStep);
+          buildScale();
+          updateGeometry(currentValue);
+          break;
+        case '_pn_minorDivisions':
+          _pn_minorDivisions = parseInt(value, 10);
+          buildScale();
+          updateGeometry(currentValue);
+          break;
+        case '_pn_zoneStart':
+          _pn_zoneStart = num(value, _pn_zoneStart);
+          updateGeometry(currentValue);
+          break;
+        case '_pn_zoneEnd':
+          _pn_zoneEnd = num(value, _pn_zoneEnd);
+          updateGeometry(currentValue);
+          break;
+        case '_pn_zoneHeight':
+          _pn_zoneHeight = num(value, _pn_zoneHeight);
+          updateGeometry(currentValue);
+          break;
+        case '_pn_barStrokeWidth':
+          _pn_barStrokeWidth = num(value, _pn_barStrokeWidth);
+          updateGeometry(currentValue);
+          break;
+        case '_pn_valueLineWidth':
+          _pn_valueLineWidth = num(value, _pn_valueLineWidth);
+          updateGeometry(currentValue);
+          break;
+        case '_pn_scaleFontSize':
+          _pn_scaleFontSize = num(value, _pn_scaleFontSize);
+          buildScale();
+          updateGeometry(currentValue);
+          break;
+        case '_ps_scaleFontFamily':
+          _ps_scaleFontFamily = value;
+          buildScale();
+          updateGeometry(currentValue);
+          break;
+        case '_ps_scaleFontWeight':
+          _ps_scaleFontWeight = value;
+          buildScale();
+          updateGeometry(currentValue);
+          break;
+        case '_pc_tickColor':
+          _pc_tickColor = value;
+          buildScale();
+          updateGeometry(currentValue);
+          break;
+        case '_pc_textColor':
+          _pc_textColor = value;
+          buildScale();
+          updateGeometry(currentValue);
+          break;
+        case '_pc_zoneColor':
+          _pc_zoneColor = value;
+          updateGeometry(currentValue);
+          break;
+        case '_pc_fillColor':
+          _pc_fillColor = value;
+          updateGeometry(currentValue);
+          break;
+        case '_pc_fillRestColor':
+          _pc_fillRestColor = value;
+          updateGeometry(currentValue);
+          break;
+        case '_pc_valueLineColor':
+          _pc_valueLineColor = value;
+          updateGeometry(currentValue);
+          break;
+      }
+    }
+
+    function setValue(value) {
+      putValue('_pn_value', value);
+    }
+
+    function refreshGauge() {
+      renderGauge();
+    }
+
+    if (typeof window !== 'undefined') {
+      window.putValue = putValue;
+      window.setValue = setValue;
+      window.refreshGauge = refreshGauge;
+    }
+
+    setTimeout(renderGauge, 0);
+  ]]></script>
+</svg>

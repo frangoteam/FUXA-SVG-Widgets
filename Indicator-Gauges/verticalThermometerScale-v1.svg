@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100%" height="100%" viewBox="0 0 120 220" xmlns="http://www.w3.org/2000/svg">
+  <rect id="bg" x="4" y="4" width="112" height="212" fill="#f7f7f7" stroke="#ffffff" stroke-width="4" />
+
+  <g id="leftScale"></g>
+  <g id="rightScale"></g>
+
+  <rect id="tubeBack" x="54" y="24" width="12" height="166" rx="6" fill="#b8b8b8" />
+  <rect id="tubeFill" x="54" y="190" width="12" height="0" rx="6" fill="#ff7777" />
+  <circle id="bulb" cx="60" cy="190" r="14" fill="#8f8f8f" />
+  <circle id="bulbFill" cx="60" cy="190" r="10" fill="#ff7777" opacity="0" />
+  <line id="valueLine" x1="37" y1="190" x2="83" y2="190" stroke="#ff7777" stroke-width="4" stroke-linecap="round" />
+
+
+  <script type="text/javascript"><![CDATA[
+    const SVG_NS = 'http://www.w3.org/2000/svg';
+    let initValue = 27.64;
+
+    //!export-start
+    let _pn_value = initValue;
+    let _pn_min = 0;
+    let _pn_max = 100;
+    let _pn_scaleFontSize = 9;
+    let _pn_majorStep = 20;
+    let _pn_minorStep = 2;
+    let _pn_showTubeFill = 0;
+    let _pn_animationDuration = 500;
+    let _pn_animationSteps = 20;
+    let _pc_backgroundColor = '#f7f7f7ff';
+    let _pc_tubeColor = '#8f8f8fff';
+    let _pc_scaleColor = '#4f4f4fff';
+    let _pc_markerColor = '#ff7777ff';
+    //!export-end
+
+    const topY = 24;
+    const bottomY = 190;
+    let scalesReady = false;
+    let currentDisplayValue = Number(initValue);
+    let animationTimer = null;
+    let animationToken = 0;
+
+    function el(id) {
+      return document.getElementById(id);
+    }
+
+    function createSvgElement(name, attrs) {
+      const node = document.createElementNS(SVG_NS, name);
+      for (const key in attrs) {
+        node.setAttribute(key, attrs[key]);
+      }
+      return node;
+    }
+
+    function clamp(value, min, max) {
+      const n = Number(value);
+      if (!isFinite(n)) return min;
+      return Math.max(min, Math.min(max, n));
+    }
+
+    function getY(value) {
+      const min = Number(_pn_min);
+      const max = Number(_pn_max);
+      if (max === min) return bottomY;
+      const pct = (clamp(value, min, max) - min) / (max - min);
+      return bottomY - pct * (bottomY - topY);
+    }
+
+    function clearNode(node) {
+      while (node.firstChild) node.removeChild(node.firstChild);
+    }
+
+    function buildScales() {
+      const left = el('leftScale');
+      const right = el('rightScale');
+      clearNode(left);
+      clearNode(right);
+
+      const min = Number(_pn_min);
+      const max = Number(_pn_max);
+      const majorStep = Math.max(1, Number(_pn_majorStep) || 20);
+      const minorStep = Math.max(1, Number(_pn_minorStep) || 2);
+      const start = Math.ceil(min / minorStep) * minorStep;
+
+      for (let v = start; v <= max + 0.0001; v += minorStep) {
+        const y = getY(v);
+        const isMajor = Math.abs((v / majorStep) - Math.round(v / majorStep)) < 0.0001;
+        const len = isMajor ? 10 : 6;
+        const strokeWidth = isMajor ? 2 : 1.5;
+
+        left.appendChild(createSvgElement('line', { x1: 45 - len, y1: y, x2: 45, y2: y, stroke: _pc_scaleColor, 'stroke-width': strokeWidth }));
+        right.appendChild(createSvgElement('line', { x1: 75, y1: y, x2: 75 + len, y2: y, stroke: _pc_scaleColor, 'stroke-width': strokeWidth }));
+
+        if (isMajor) {
+          left.appendChild(createSvgElement('text', { x: 31, y: y + 3, 'text-anchor': 'end', 'font-family': 'Arial, sans-serif', 'font-size': _pn_scaleFontSize, fill: _pc_scaleColor })).textContent = Math.round(v);
+          right.appendChild(createSvgElement('text', { x: 89, y: y + 3, 'text-anchor': 'start', 'font-family': 'Arial, sans-serif', 'font-size': _pn_scaleFontSize, fill: _pc_scaleColor })).textContent = Math.round(v);
+        }
+      }
+
+      left.appendChild(createSvgElement('line', { x1: 45, y1: topY, x2: 45, y2: bottomY, stroke: _pc_scaleColor, 'stroke-width': 3 }));
+      right.appendChild(createSvgElement('line', { x1: 75, y1: topY, x2: 75, y2: bottomY, stroke: _pc_scaleColor, 'stroke-width': 3 }));
+      scalesReady = true;
+    }
+
+    function applyStyle() {
+      el('bg').style.fill = _pc_backgroundColor;
+      el('tubeBack').style.fill = _pc_tubeColor;
+      el('bulb').style.fill = _pc_tubeColor;
+      el('valueLine').style.stroke = _pc_markerColor;
+      el('tubeFill').style.fill = _pc_markerColor;
+      el('bulbFill').style.fill = _pc_markerColor;
+      buildScales();
+    }
+
+    function applyDisplayValue(value) {
+      currentDisplayValue = Number(value);
+      const y = getY(currentDisplayValue);
+      const showFill = Number(_pn_showTubeFill) === 1;
+      el('valueLine').setAttribute('y1', y);
+      el('valueLine').setAttribute('y2', y);
+      el('tubeFill').setAttribute('y', y);
+      el('tubeFill').setAttribute('height', Math.max(0, bottomY - y));
+      el('tubeFill').style.opacity = showFill ? 1 : 0;
+      el('bulbFill').style.opacity = showFill ? 1 : 0;
+    }
+
+    function easeInOut(t) {
+      return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    }
+
+    function stopAnimation() {
+      animationToken += 1;
+      if (animationTimer) {
+        clearInterval(animationTimer);
+        animationTimer = null;
+      }
+    }
+
+    function updateValue(value, animate) {
+      const targetValue = Number(value);
+      _pn_value = isFinite(targetValue) ? targetValue : Number(_pn_min);
+
+      const duration = Math.max(0, Number(_pn_animationDuration) || 0);
+      const steps = Math.max(1, Math.min(60, Math.round(Number(_pn_animationSteps) || 20)));
+
+      if (animate === false || duration <= 0) {
+        stopAnimation();
+        applyDisplayValue(_pn_value);
+        return;
+      }
+
+      stopAnimation();
+      const token = animationToken;
+      const startValue = Number(currentDisplayValue);
+      const delta = _pn_value - startValue;
+      let step = 0;
+      const interval = Math.max(10, duration / steps);
+
+      animationTimer = setInterval(function () {
+        if (token !== animationToken) {
+          clearInterval(animationTimer);
+          animationTimer = null;
+          return;
+        }
+
+        step += 1;
+        const t = Math.min(1, step / steps);
+        const valueNow = startValue + delta * easeInOut(t);
+        applyDisplayValue(valueNow);
+
+        if (t >= 1) {
+          clearInterval(animationTimer);
+          animationTimer = null;
+          applyDisplayValue(_pn_value);
+        }
+      }, interval);
+    }
+
+    function init() {
+      applyStyle();
+      updateValue(_pn_value, false);
+    }
+
+    function putValue(id, value) {
+      if (id === '_pn_value') {
+        updateValue(value);
+        return;
+      }
+
+      if (id === '_pn_min') _pn_min = Number(value);
+      if (id === '_pn_max') _pn_max = Number(value);
+      if (id === '_pn_scaleFontSize') _pn_scaleFontSize = Number(value);
+      if (id === '_pn_majorStep') _pn_majorStep = Number(value);
+      if (id === '_pn_minorStep') _pn_minorStep = Number(value);
+      if (id === '_pn_showTubeFill') _pn_showTubeFill = Number(value);
+      if (id === '_pn_animationDuration') _pn_animationDuration = Number(value);
+      if (id === '_pn_animationSteps') _pn_animationSteps = Number(value);
+      if (id === '_pc_backgroundColor') _pc_backgroundColor = value;
+      if (id === '_pc_tubeColor') _pc_tubeColor = value;
+      if (id === '_pc_scaleColor') _pc_scaleColor = value;
+      if (id === '_pc_markerColor') _pc_markerColor = value;
+
+      applyStyle();
+      updateValue(_pn_value, false);
+    }
+
+    init();
+  ]]></script>
+</svg>

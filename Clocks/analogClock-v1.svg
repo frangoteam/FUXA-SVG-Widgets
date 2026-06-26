@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="clockSvg" width="100%" height="100%" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect id="clockBackground" x="0" y="0" width="200" height="200" fill="#000000" />
+
+  <g id="numbers" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="22" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">
+    <text x="100" y="22">12</text>
+    <text x="139" y="32">1</text>
+    <text x="168" y="61">2</text>
+    <text x="178" y="100">3</text>
+    <text x="168" y="139">4</text>
+    <text x="139" y="168">5</text>
+    <text x="100" y="178">6</text>
+    <text x="61" y="168">7</text>
+    <text x="32" y="139">8</text>
+    <text x="22" y="100">9</text>
+    <text x="32" y="61">10</text>
+    <text x="61" y="32">11</text>
+  </g>
+
+  <line id="hourHand" x1="100" y1="100" x2="100" y2="58" stroke="#ffffff" stroke-width="6" stroke-linecap="round" />
+  <line id="minuteHand" x1="100" y1="100" x2="100" y2="36" stroke="#ffffff" stroke-width="5" stroke-linecap="round" />
+  <line id="secondHand" x1="100" y1="105" x2="100" y2="34" stroke="#ff3b30" stroke-width="2" stroke-linecap="round" />
+  <circle id="centerDot" cx="100" cy="100" r="7" fill="#ffffff" />
+
+  <script type="text/javascript">
+    <![CDATA[
+    //!export-start
+    let _pc_backgroundColor = "#000000ff";
+    let _pc_numberColor = "#ffffffff";
+    let _pc_hourHandColor = "#ffffffff";
+    let _pc_minuteHandColor = "#ffffffff";
+    let _pc_secondHandColor = "#ff3b30ff";
+    let _pc_centerColor = "#ffffffff";
+    let _pn_numberSize = 22;
+    let _pn_hourHandWidth = 6;
+    let _pn_minuteHandWidth = 5;
+    let _pn_secondHandWidth = 2;
+    let _pb_showSeconds = false;
+    //!export-end
+
+    let clockTimer = null;
+    const storagePrefix = 'fuxaAnalogClock.';
+
+    function init() {
+      loadCachedSettings();
+      applyStyle();
+      updateClock();
+      restartTimer();
+    }
+
+    function applyStyle() {
+      const bg = document.getElementById('clockBackground');
+      const numbers = document.getElementById('numbers');
+      const hourHand = document.getElementById('hourHand');
+      const minuteHand = document.getElementById('minuteHand');
+      const secondHand = document.getElementById('secondHand');
+      const centerDot = document.getElementById('centerDot');
+
+      bg.setAttribute('fill', _pc_backgroundColor);
+      numbers.setAttribute('fill', _pc_numberColor);
+      numbers.setAttribute('font-size', _pn_numberSize);
+      hourHand.setAttribute('stroke', _pc_hourHandColor);
+      minuteHand.setAttribute('stroke', _pc_minuteHandColor);
+      secondHand.setAttribute('stroke', _pc_secondHandColor);
+      centerDot.setAttribute('fill', _pc_centerColor);
+      hourHand.setAttribute('stroke-width', _pn_hourHandWidth);
+      minuteHand.setAttribute('stroke-width', _pn_minuteHandWidth);
+      secondHand.setAttribute('stroke-width', _pn_secondHandWidth);
+      secondHand.style.display = _pb_showSeconds ? 'block' : 'none';
+    }
+
+    function restartTimer() {
+      if (clockTimer) {
+        clearInterval(clockTimer);
+        clockTimer = null;
+      }
+      clockTimer = setInterval(updateClock, _pb_showSeconds ? 1000 : 15000);
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+
+      const secondAngle = seconds * 6;
+      const minuteAngle = (minutes + seconds / 60) * 6;
+      const hourAngle = ((hours % 12) + minutes / 60 + seconds / 3600) * 30;
+
+      setHand('hourHand', hourAngle, 42);
+      setHand('minuteHand', minuteAngle, 64);
+      setHand('secondHand', secondAngle, 70, 5);
+    }
+
+    function setHand(id, angle, length, backLength) {
+      const hand = document.getElementById(id);
+      const centerX = 100;
+      const centerY = 100;
+      const radians = (angle - 90) * Math.PI / 180;
+      const back = backLength || 0;
+
+      const x2 = centerX + Math.cos(radians) * length;
+      const y2 = centerY + Math.sin(radians) * length;
+      const x1 = centerX - Math.cos(radians) * back;
+      const y1 = centerY - Math.sin(radians) * back;
+
+      hand.setAttribute('x1', x1.toFixed(2));
+      hand.setAttribute('y1', y1.toFixed(2));
+      hand.setAttribute('x2', x2.toFixed(2));
+      hand.setAttribute('y2', y2.toFixed(2));
+    }
+
+
+    function cacheSetting(id, value) {
+      try {
+        localStorage.setItem(storagePrefix + id, String(value));
+      } catch (e) {
+        // localStorage may be unavailable in some embedded contexts.
+      }
+    }
+
+    function getCachedSetting(id) {
+      try {
+        return localStorage.getItem(storagePrefix + id);
+      } catch (e) {
+        // localStorage may be unavailable in some embedded contexts.
+        return null;
+      }
+    }
+
+    function loadCachedSettings() {
+      const cachedBackground = getCachedSetting('_pc_backgroundColor');
+      const cachedNumberColor = getCachedSetting('_pc_numberColor');
+      const cachedHourColor = getCachedSetting('_pc_hourHandColor');
+      const cachedMinuteColor = getCachedSetting('_pc_minuteHandColor');
+      const cachedSecondColor = getCachedSetting('_pc_secondHandColor');
+      const cachedCenterColor = getCachedSetting('_pc_centerColor');
+      const cachedNumberSize = getCachedSetting('_pn_numberSize');
+      const cachedHourWidth = getCachedSetting('_pn_hourHandWidth');
+      const cachedMinuteWidth = getCachedSetting('_pn_minuteHandWidth');
+      const cachedSecondWidth = getCachedSetting('_pn_secondHandWidth');
+      const cachedShowSeconds = getCachedSetting('_pb_showSeconds');
+
+      if (cachedBackground !== null) _pc_backgroundColor = cachedBackground;
+      if (cachedNumberColor !== null) _pc_numberColor = cachedNumberColor;
+      if (cachedHourColor !== null) _pc_hourHandColor = cachedHourColor;
+      if (cachedMinuteColor !== null) _pc_minuteHandColor = cachedMinuteColor;
+      if (cachedSecondColor !== null) _pc_secondHandColor = cachedSecondColor;
+      if (cachedCenterColor !== null) _pc_centerColor = cachedCenterColor;
+      if (cachedNumberSize !== null) _pn_numberSize = parseFloat(cachedNumberSize);
+      if (cachedHourWidth !== null) _pn_hourHandWidth = parseFloat(cachedHourWidth);
+      if (cachedMinuteWidth !== null) _pn_minuteHandWidth = parseFloat(cachedMinuteWidth);
+      if (cachedSecondWidth !== null) _pn_secondHandWidth = parseFloat(cachedSecondWidth);
+      if (cachedShowSeconds !== null) _pb_showSeconds = parseBoolean(cachedShowSeconds);
+    }
+
+    function putValue(id, value) {
+      cacheSetting(id, value);
+
+      switch (id) {
+        case '_pc_backgroundColor':
+          _pc_backgroundColor = value;
+          applyStyle();
+          break;
+        case '_pc_numberColor':
+          _pc_numberColor = value;
+          applyStyle();
+          break;
+        case '_pc_hourHandColor':
+          _pc_hourHandColor = value;
+          applyStyle();
+          break;
+        case '_pc_minuteHandColor':
+          _pc_minuteHandColor = value;
+          applyStyle();
+          break;
+        case '_pc_secondHandColor':
+          _pc_secondHandColor = value;
+          applyStyle();
+          break;
+        case '_pc_centerColor':
+          _pc_centerColor = value;
+          applyStyle();
+          break;
+        case '_pn_numberSize':
+          _pn_numberSize = parseFloat(value);
+          applyStyle();
+          break;
+        case '_pn_hourHandWidth':
+          _pn_hourHandWidth = parseFloat(value);
+          applyStyle();
+          break;
+        case '_pn_minuteHandWidth':
+          _pn_minuteHandWidth = parseFloat(value);
+          applyStyle();
+          break;
+        case '_pn_secondHandWidth':
+          _pn_secondHandWidth = parseFloat(value);
+          applyStyle();
+          break;
+        case '_pb_showSeconds':
+          _pb_showSeconds = parseBoolean(value);
+          applyStyle();
+          restartTimer();
+          updateClock();
+          break;
+      }
+    }
+
+    function parseBoolean(value) {
+      return value === true || value === 'true' || value === 1 || value === '1';
+    }
+
+
+    setTimeout(function () {
+      init();
+    }, 100);
+    ]]>
+  </script>
+</svg>

@@ -76,6 +76,8 @@
       let _pc_baseColor         = '#f0f0f0'; 
       let _pc_strokeColor       = '#595959';
       let _pc_textColor         = '#595959';
+      let _pn_baseStrokeWidth   = 2;
+      let _pn_baseCornerRadius  = 5;
       //!export-end
   
       const hoursDisplay            = document.getElementById("hoursDisplay");
@@ -135,6 +137,9 @@
       function updateColors() {
         timeBox.setAttribute('fill',        _pc_baseColor);
         timeBox.setAttribute('stroke',      _pc_strokeColor);
+        timeBox.setAttribute('stroke-width', _pn_baseStrokeWidth);
+        timeBox.setAttribute('rx',          _pn_baseCornerRadius);
+        timeBox.setAttribute('ry',          _pn_baseCornerRadius);
         timeDisplay.setAttribute('fill',    _pc_textColor);
       }
 
@@ -146,6 +151,8 @@
         if (id === '_pc_baseColor'        ) _pc_baseColor         = value;
         if (id === '_pc_strokeColor'      ) _pc_strokeColor       = value;
         if (id === '_pc_textColor'        ) _pc_textColor         = value;
+        if (id === '_pn_baseStrokeWidth'  ) _pn_baseStrokeWidth   = value;
+        if (id === '_pn_baseCornerRadius' ) _pn_baseCornerRadius  = value;
 
         updateTimeDisplay();
         updateColors();

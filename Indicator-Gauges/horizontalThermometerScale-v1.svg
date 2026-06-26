@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100%" height="100%" viewBox="0 0 250 112" xmlns="http://www.w3.org/2000/svg">
+  <rect id="bg" x="4" y="4" width="242" height="104" fill="#f7f7f7" stroke="#ffffff" stroke-width="4" />
+
+  <g id="topScale"></g>
+  <g id="bottomScale"></g>
+
+  <circle id="bulb" cx="42" cy="60" r="20" fill="#8f8f8f" />
+  <rect id="tubeBack" x="42" y="50" width="178" height="20" rx="0" fill="#b8b8b8" />
+  <rect id="tubeFill" x="42" y="50" width="0" height="20" rx="0" fill="#ff7777" opacity="0" />
+  <circle id="bulbFill" cx="42" cy="60" r="15" fill="#ff7777" opacity="0" />
+
+  <line id="valueLine" x1="91" y1="31" x2="91" y2="89" stroke="#ff7777" stroke-width="4" stroke-linecap="round" />
+
+
+  <script type="text/javascript"><![CDATA[
+    var SVG_NS_H = 'http://www.w3.org/2000/svg';
+    var initValueH = 27.64;
+
+    //!export-start
+    let _pn_value = initValueH;
+    let _pn_min = 0;
+    let _pn_max = 100;
+    let _pn_decimals = 2;
+    let _pn_integerDigits = 3;
+    let _pn_fontSize = 13;
+    let _pn_scaleFontSize = 13;
+    let _pn_majorStep = 20;
+    let _pn_minorStep = 2;
+    let _pn_showTubeFill = 0;
+    let _pn_animationDuration = 500;
+    let _pn_animationSteps = 20;
+    let _ps_unit = '';
+    let _pc_backgroundColor = '#f7f7f7ff';
+    let _pc_tubeColor = '#8f8f8fff';
+    let _pc_scaleColor = '#4f4f4fff';
+    let _pc_markerColor = '#ff7777ff';
+    let _pc_valueBoxColor = '#c6c6bfff';
+    let _pc_valueTextColor = '#4a4a4aff';
+    //!export-end
+
+    var leftXH = 58;
+    var rightXH = 220;
+    var currentDisplayValueH = Number(initValueH);
+    var animationTimerH = null;
+    var animationTokenH = 0;
+
+    function hEl(id) {
+      return document.getElementById(id);
+    }
+
+    function hCreateSvgElement(name, attrs) {
+      var node = document.createElementNS(SVG_NS_H, name);
+      for (var key in attrs) {
+        node.setAttribute(key, attrs[key]);
+      }
+      return node;
+    }
+
+    function hClamp(value, min, max) {
+      var n = Number(value);
+      if (!isFinite(n)) return min;
+      return Math.max(min, Math.min(max, n));
+    }
+
+    function hGetX(value) {
+      var min = Number(_pn_min);
+      var max = Number(_pn_max);
+      if (max === min) return leftXH;
+      var pct = (hClamp(value, min, max) - min) / (max - min);
+      return leftXH + pct * (rightXH - leftXH);
+    }
+
+    function hFormatValue(value) {
+      var decimals = Math.max(0, Math.min(6, Math.round(Number(_pn_decimals) || 0)));
+      var digits = Math.max(1, Math.min(8, Math.round(Number(_pn_integerDigits) || 1)));
+      var n = Number(value);
+      var fixed = (isFinite(n) ? n : 0).toFixed(decimals);
+      var parts = fixed.split('.');
+      var sign = parts[0].charAt(0) === '-' ? '-' : '';
+      var intPart = sign ? parts[0].substring(1) : parts[0];
+      var padded = intPart.padStart(digits, '0');
+      return sign + padded + (parts.length > 1 ? '.' + parts[1] : '') + (_ps_unit || '');
+    }
+
+    function hClearNode(node) {
+      while (node.firstChild) node.removeChild(node.firstChild);
+    }
+
+    function hBuildScales() {
+      var top = hEl('topScale');
+      var bottom = hEl('bottomScale');
+      hClearNode(top);
+      hClearNode(bottom);
+
+      var min = Number(_pn_min);
+      var max = Number(_pn_max);
+      var majorStep = Math.max(1, Number(_pn_majorStep) || 20);
+      var minorStep = Math.max(1, Number(_pn_minorStep) || 2);
+      var start = Math.ceil(min / minorStep) * minorStep;
+
+      for (var v = start; v <= max + 0.0001; v += minorStep) {
+        var x = hGetX(v);
+        var isMajor = Math.abs((v / majorStep) - Math.round(v / majorStep)) < 0.0001;
+        var len = isMajor ? 10 : 6;
+        var strokeWidth = isMajor ? 2 : 1.5;
+
+        top.appendChild(hCreateSvgElement('line', { x1: x, y1: 36, x2: x, y2: 36 + len, stroke: _pc_scaleColor, 'stroke-width': strokeWidth }));
+        bottom.appendChild(hCreateSvgElement('line', { x1: x, y1: 84 - len, x2: x, y2: 84, stroke: _pc_scaleColor, 'stroke-width': strokeWidth }));
+
+        if (isMajor) {
+          top.appendChild(hCreateSvgElement('text', { x: x, y: 25, 'text-anchor': 'middle', 'font-family': 'Arial, sans-serif', 'font-size': _pn_scaleFontSize, fill: _pc_scaleColor })).textContent = Math.round(v);
+          bottom.appendChild(hCreateSvgElement('text', { x: x, y: 104, 'text-anchor': 'middle', 'font-family': 'Arial, sans-serif', 'font-size': _pn_scaleFontSize, fill: _pc_scaleColor })).textContent = Math.round(v);
+        }
+      }
+
+      top.appendChild(hCreateSvgElement('line', { x1: leftXH, y1: 36, x2: rightXH, y2: 36, stroke: _pc_scaleColor, 'stroke-width': 3 }));
+      bottom.appendChild(hCreateSvgElement('line', { x1: leftXH, y1: 84, x2: rightXH, y2: 84, stroke: _pc_scaleColor, 'stroke-width': 3 }));
+    }
+
+    function hApplyStyle() {
+      hEl('bg').style.fill = _pc_backgroundColor;
+      hEl('tubeBack').style.fill = _pc_tubeColor;
+      hEl('bulb').style.fill = _pc_tubeColor;
+      hEl('valueLine').style.stroke = _pc_markerColor;
+      hEl('tubeFill').style.fill = _pc_markerColor;
+      hEl('bulbFill').style.fill = _pc_markerColor;
+      hBuildScales();
+    }
+
+    function hApplyDisplayValue(value) {
+      currentDisplayValueH = Number(value);
+      var x = hGetX(currentDisplayValueH);
+      var showFill = Number(_pn_showTubeFill) === 1;
+      hEl('valueLine').setAttribute('x1', x);
+      hEl('valueLine').setAttribute('x2', x);
+      hEl('tubeFill').setAttribute('width', Math.max(0, x - 42));
+      hEl('tubeFill').style.opacity = showFill ? 1 : 0;
+      hEl('bulbFill').style.opacity = showFill ? 1 : 0;
+    }
+
+    function hEaseInOut(t) {
+      return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    }
+
+    function hStopAnimation() {
+      animationTokenH += 1;
+      if (animationTimerH) {
+        clearInterval(animationTimerH);
+        animationTimerH = null;
+      }
+    }
+
+    function hUpdateValue(value, animate) {
+      var targetValue = Number(value);
+      _pn_value = isFinite(targetValue) ? targetValue : Number(_pn_min);
+
+      var duration = Math.max(0, Number(_pn_animationDuration) || 0);
+      var steps = Math.max(1, Math.min(60, Math.round(Number(_pn_animationSteps) || 20)));
+
+      if (animate === false || duration <= 0) {
+        hStopAnimation();
+        hApplyDisplayValue(_pn_value);
+        return;
+      }
+
+      hStopAnimation();
+      var token = animationTokenH;
+      var startValue = Number(currentDisplayValueH);
+      var delta = _pn_value - startValue;
+      var step = 0;
+      var interval = Math.max(10, duration / steps);
+
+      animationTimerH = setInterval(function () {
+        if (token !== animationTokenH) {
+          clearInterval(animationTimerH);
+          animationTimerH = null;
+          return;
+        }
+
+        step += 1;
+        var t = Math.min(1, step / steps);
+        var valueNow = startValue + delta * hEaseInOut(t);
+        hApplyDisplayValue(valueNow);
+
+        if (t >= 1) {
+          clearInterval(animationTimerH);
+          animationTimerH = null;
+          hApplyDisplayValue(_pn_value);
+        }
+      }, interval);
+    }
+
+    function hInit() {
+      hApplyStyle();
+      hUpdateValue(_pn_value, false);
+    }
+
+    function putValue(id, value) {
+      if (id === '_pn_value') {
+        hUpdateValue(value);
+        return;
+      }
+
+      if (id === '_pn_min') _pn_min = Number(value);
+      if (id === '_pn_max') _pn_max = Number(value);
+      if (id === '_pn_decimals') _pn_decimals = Number(value);
+      if (id === '_pn_integerDigits') _pn_integerDigits = Number(value);
+      if (id === '_pn_fontSize') _pn_fontSize = Number(value);
+      if (id === '_pn_scaleFontSize') _pn_scaleFontSize = Number(value);
+      if (id === '_pn_majorStep') _pn_majorStep = Number(value);
+      if (id === '_pn_minorStep') _pn_minorStep = Number(value);
+      if (id === '_pn_showTubeFill') _pn_showTubeFill = Number(value);
+      if (id === '_pn_animationDuration') _pn_animationDuration = Number(value);
+      if (id === '_pn_animationSteps') _pn_animationSteps = Number(value);
+      if (id === '_ps_unit') _ps_unit = value;
+      if (id === '_pc_backgroundColor') _pc_backgroundColor = value;
+      if (id === '_pc_tubeColor') _pc_tubeColor = value;
+      if (id === '_pc_scaleColor') _pc_scaleColor = value;
+      if (id === '_pc_markerColor') _pc_markerColor = value;
+      if (id === '_pc_valueBoxColor') _pc_valueBoxColor = value;
+      if (id === '_pc_valueTextColor') _pc_valueTextColor = value;
+
+      hApplyStyle();
+      hUpdateValue(_pn_value, false);
+    }
+
+    hInit();
+  ]]></script>
+</svg>

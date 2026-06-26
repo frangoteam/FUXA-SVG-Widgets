@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="needleShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.22"/>
+    </filter>
+    <filter id="centerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <circle id="face" data-speedometer="face" cx="150" cy="150" r="144" fill="#ffffff"/>
+  <path id="outerBorder" data-speedometer="outerBorder" d="" fill="none" stroke="#3f3f3f" stroke-width="5" stroke-linecap="butt"/>
+  <path id="innerBorder" data-speedometer="innerBorder" d="" fill="none" stroke="#4a4a4a" stroke-width="2" stroke-linecap="butt"/>
+
+  <path id="redZone" data-speedometer="redZone" d="M 257.95 91.05 A 123.00 123.00 0 0 1 236.97 236.97" fill="none" stroke="#d76363" stroke-width="23" stroke-linecap="butt"/>
+
+  <g id="tickLayer" data-speedometer="tickLayer" stroke="#4b4b4b" stroke-linecap="butt">
+    <line class="speedTick" x1="69.39" y1="230.61" x2="59.49" y2="240.51" stroke-width="2.2"/>
+    <line class="speedTick" x1="55.01" y1="226.55" x2="50.33" y2="230.32" stroke-width="0.8"/>
+    <line class="speedTick" x1="49.89" y1="214.34" x2="42.32" y2="219.20" stroke-width="1.1"/>
+    <line class="speedTick" x1="40.90" y1="204.61" x2="35.54" y2="207.30" stroke-width="0.8"/>
+    <line class="speedTick" x1="43.19" y1="189.84" x2="30.07" y2="194.73" stroke-width="2.2"/>
+    <line class="speedTick" x1="31.79" y1="180.17" x2="25.98" y2="181.66" stroke-width="0.8"/>
+    <line class="speedTick" x1="32.21" y1="166.94" x2="23.30" y2="168.22" stroke-width="1.1"/>
+    <line class="speedTick" x1="28.08" y1="154.35" x2="22.08" y2="154.57" stroke-width="0.8"/>
+    <line class="speedTick" x1="36.29" y1="141.87" x2="22.33" y2="140.87" stroke-width="2.2"/>
+    <line class="speedTick" x1="29.94" y1="128.34" x2="24.03" y2="127.27" stroke-width="0.8"/>
+    <line class="speedTick" x1="35.82" y1="116.47" x2="27.18" y2="113.94" stroke-width="1.1"/>
+    <line class="speedTick" x1="37.29" y1="103.31" x2="31.74" y2="101.02" stroke-width="0.8"/>
+    <line class="speedTick" x1="49.94" y1="95.37" x2="37.66" y2="88.66" stroke-width="2.2"/>
+    <line class="speedTick" x1="49.79" y1="80.42" x2="44.86" y2="77.00" stroke-width="0.8"/>
+    <line class="speedTick" x1="60.07" y1="72.07" x2="53.26" y2="66.18" stroke-width="1.1"/>
+    <line class="speedTick" x1="66.87" y1="60.71" x2="62.78" y2="56.32" stroke-width="0.8"/>
+    <line class="speedTick" x1="81.68" y1="58.74" x2="73.29" y2="47.53" stroke-width="2.2"/>
+    <line class="speedTick" x1="87.75" y1="45.08" x2="84.69" y2="39.92" stroke-width="0.8"/>
+    <line class="speedTick" x1="100.57" y1="41.75" x2="96.83" y2="33.57" stroke-width="1.1"/>
+    <line class="speedTick" x1="111.47" y1="34.24" x2="109.58" y2="28.55" stroke-width="0.8"/>
+    <line class="speedTick" x1="125.77" y1="38.61" x2="122.79" y2="24.93" stroke-width="2.2"/>
+    <line class="speedTick" x1="136.96" y1="28.70" x2="136.32" y2="22.73" stroke-width="0.8"/>
+    <line class="speedTick" x1="150.00" y1="31.00" x2="150.00" y2="22.00" stroke-width="1.1"/>
+    <line class="speedTick" x1="163.04" y1="28.70" x2="163.68" y2="22.73" stroke-width="0.8"/>
+    <line class="speedTick" x1="174.23" y1="38.61" x2="177.21" y2="24.93" stroke-width="2.2"/>
+    <line class="speedTick" x1="188.53" y1="34.24" x2="190.42" y2="28.55" stroke-width="0.8"/>
+    <line class="speedTick" x1="199.43" y1="41.75" x2="203.17" y2="33.57" stroke-width="1.1"/>
+    <line class="speedTick" x1="212.25" y1="45.08" x2="215.31" y2="39.92" stroke-width="0.8"/>
+    <line class="speedTick" x1="218.32" y1="58.74" x2="226.71" y2="47.53" stroke-width="2.2"/>
+    <line class="speedTick" x1="233.13" y1="60.71" x2="237.22" y2="56.32" stroke-width="0.8"/>
+    <line class="speedTick" x1="239.93" y1="72.07" x2="246.74" y2="66.18" stroke-width="1.1"/>
+    <line class="speedTick" x1="250.21" y1="80.42" x2="255.14" y2="77.00" stroke-width="0.8"/>
+    <line class="speedTick" x1="250.06" y1="95.37" x2="262.34" y2="88.66" stroke-width="2.2"/>
+    <line class="speedTick" x1="262.71" y1="103.31" x2="268.26" y2="101.02" stroke-width="0.8"/>
+    <line class="speedTick" x1="264.18" y1="116.47" x2="272.82" y2="113.94" stroke-width="1.1"/>
+    <line class="speedTick" x1="270.06" y1="128.34" x2="275.97" y2="127.27" stroke-width="0.8"/>
+    <line class="speedTick" x1="263.71" y1="141.87" x2="277.67" y2="140.87" stroke-width="2.2"/>
+    <line class="speedTick" x1="271.92" y1="154.35" x2="277.92" y2="154.57" stroke-width="0.8"/>
+    <line class="speedTick" x1="267.79" y1="166.94" x2="276.70" y2="168.22" stroke-width="1.1"/>
+    <line class="speedTick" x1="268.21" y1="180.17" x2="274.02" y2="181.66" stroke-width="0.8"/>
+    <line class="speedTick" x1="256.81" y1="189.84" x2="269.93" y2="194.73" stroke-width="2.2"/>
+    <line class="speedTick" x1="259.10" y1="204.61" x2="264.46" y2="207.30" stroke-width="0.8"/>
+    <line class="speedTick" x1="250.11" y1="214.34" x2="257.68" y2="219.20" stroke-width="1.1"/>
+    <line class="speedTick" x1="244.99" y1="226.55" x2="249.67" y2="230.32" stroke-width="0.8"/>
+    <line class="speedTick" x1="230.61" y1="230.61" x2="240.51" y2="240.51" stroke-width="2.2"/>
+  </g>
+
+  <g id="labelLayer" data-speedometer="labelLayer" fill="#444444" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600">
+    <text class="speedLabel" x="83.53" y="216.47" text-anchor="middle" dominant-baseline="middle">0</text>
+    <text class="speedLabel" x="61.93" y="182.85" text-anchor="middle" dominant-baseline="middle">20</text>
+    <text class="speedLabel" x="56.24" y="143.29" text-anchor="middle" dominant-baseline="middle">40</text>
+    <text class="speedLabel" x="67.50" y="104.95" text-anchor="middle" dominant-baseline="middle">60</text>
+    <text class="speedLabel" x="93.67" y="74.75" text-anchor="middle" dominant-baseline="middle">80</text>
+    <text class="speedLabel" x="130.02" y="58.15" text-anchor="middle" dominant-baseline="middle">100</text>
+    <text class="speedLabel" x="169.98" y="58.15" text-anchor="middle" dominant-baseline="middle">120</text>
+    <text class="speedLabel" x="206.33" y="74.75" text-anchor="middle" dominant-baseline="middle">140</text>
+    <text class="speedLabel" x="232.50" y="104.95" text-anchor="middle" dominant-baseline="middle">160</text>
+    <text class="speedLabel" x="243.76" y="143.29" text-anchor="middle" dominant-baseline="middle">180</text>
+    <text class="speedLabel" x="238.07" y="182.85" text-anchor="middle" dominant-baseline="middle">200</text>
+    <text class="speedLabel" x="216.47" y="216.47" text-anchor="middle" dominant-baseline="middle">220</text>
+  </g>
+
+  <text id="unitText" data-speedometer="unitText" x="150" y="202" text-anchor="middle" dominant-baseline="middle" fill="#8a8a8a" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600">Km/h</text>
+
+  <g id="needleGroup" data-speedometer="needleGroup" transform="rotate(0 150 150)" filter="url(#needleShadow)">
+    <line id="needleGlow" data-speedometer="needleGlow" x1="165.56" y1="134.44" x2="84.95" y2="215.05" stroke="#f3c7b5" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+    <line id="needle" data-speedometer="needle" x1="165.56" y1="134.44" x2="84.95" y2="215.05" stroke="#f47d72" stroke-width="2.8" stroke-linecap="round"/>
+  </g>
+
+  <circle id="centerKnobShadow" cx="150" cy="150" r="19" fill="#d9d9d9" opacity="0.65" filter="url(#centerShadow)"/>
+  <circle id="centerKnob" cx="150" cy="150" r="17" fill="#e8e8e8"/>
+
+  <script type="text/javascript">
+    <![CDATA[
+    //!export-start
+      var _pn_value = 0;
+      var _pn_min = 0;
+      var _pn_max = 220;
+      var _pn_redStart = 160;
+      var _pn_redEnd = 220;
+      var _pn_majorStep = 0;
+      var _pn_minorDivisions = 4;
+      var _pn_startAngle = 135;
+      var _pn_endAngle = 405;
+      var _pn_animationMs = 450;
+      var _pn_arcThickness = 5;
+      var _pn_redZoneThickness = 23;
+      var _pn_scaleFontSize = 14;
+      var _ps_scaleFontFamily = 'Arial, Helvetica, sans-serif';
+      var _ps_scaleFontWeight = '600';
+      var _ps_unit = 'Km/h';
+      var _pc_faceColor = '#ffffff';
+      var _pc_borderColor = '#3f3f3f';
+      var _pc_tickColor = '#4b4b4b';
+      var _pc_textColor = '#444444';
+      var _pc_redZoneColor = '#d76363';
+      var _pc_needleColor = '#f47d72';
+      var _pc_unitColor = '#8a8a8a';
+    //!export-end
+
+      var currentAngle = 0;
+      var targetAngle = 0;
+      var timer = null;
+      var BASE_NEEDLE_ANGLE = 135;
+      var CX = 150;
+      var CY = 150;
+      var RED_RADIUS = 123;
+      var OUTER_BORDER_RADIUS = 146;
+      var INNER_BORDER_RADIUS = 136;
+
+      function getSvgRoot() {
+        var scripts = document.getElementsByTagName('script');
+        for (var i = 0; i < scripts.length; i++) {
+          var parent = scripts[i].parentNode;
+          if (parent && parent.tagName && parent.tagName.toLowerCase() === 'svg') {
+            return parent;
+          }
+        }
+        return null;
+      }
+
+      function getSvgElement(name) {
+        var byId = document.getElementById(name);
+        if (byId) { return byId; }
+        var root = getSvgRoot();
+        if (!root || !root.querySelector) { return null; }
+        return root.querySelector('[data-speedometer="' + name + '"]');
+      }
+
+      function init() {
+        applyStyle();
+        setUnitText();
+        refreshGauge();
+      }
+
+      function normalize(value) {
+        var numeric = parseFloat(value);
+        if (isNaN(numeric)) { numeric = 0; }
+        var min = parseFloat(_pn_min);
+        var max = parseFloat(_pn_max);
+        if (isNaN(min)) { min = 0; }
+        if (isNaN(max) || max === min) { max = min + 1; }
+        return Math.max(min, Math.min(max, numeric));
+      }
+
+      function getStartAngle() {
+        var angle = parseFloat(_pn_startAngle);
+        return isNaN(angle) ? 135 : angle;
+      }
+
+      function getEndAngle() {
+        var angle = parseFloat(_pn_endAngle);
+        if (isNaN(angle)) { angle = 405; }
+        var start = getStartAngle();
+        while (angle <= start) { angle += 360; }
+        return angle;
+      }
+
+      function valueToAngle(value) {
+        var min = parseFloat(_pn_min);
+        var max = parseFloat(_pn_max);
+        if (isNaN(min)) { min = 0; }
+        if (isNaN(max) || max === min) { max = min + 1; }
+        var start = getStartAngle();
+        var end = getEndAngle();
+        return start + ((value - min) / (max - min)) * (end - start);
+      }
+
+      function refreshGauge() {
+        updateArcBorders();
+        buildScale();
+        updateRedZone();
+        setNumericValue(_pn_value, false);
+      }
+
+      function setNeedleAngle(angle) {
+        var needleGroup = getSvgElement('needleGroup');
+        if (needleGroup) {
+          needleGroup.setAttribute('transform', 'rotate(' + (angle - BASE_NEEDLE_ANGLE) + ' ' + CX + ' ' + CY + ')');
+        }
+      }
+
+      function animateTo(angle) {
+        if (timer) { clearInterval(timer); timer = null; }
+        var duration = Math.max(0, parseFloat(_pn_animationMs) || 0);
+        var start = currentAngle;
+        var delta = angle - start;
+        var startTime = Date.now();
+        if (duration === 0) {
+          currentAngle = angle;
+          setNeedleAngle(currentAngle);
+          return;
+        }
+        timer = setInterval(function () {
+          var progress = Math.min(1, (Date.now() - startTime) / duration);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          currentAngle = start + (delta * eased);
+          setNeedleAngle(currentAngle);
+          if (progress >= 1) {
+            clearInterval(timer);
+            timer = null;
+            currentAngle = angle;
+            setNeedleAngle(currentAngle);
+          }
+        }, 16);
+      }
+
+      function setNumericValue(value, animate) {
+        _pn_value = parseFloat(value);
+        if (isNaN(_pn_value)) { _pn_value = 0; }
+        targetAngle = valueToAngle(normalize(_pn_value));
+        if (animate === false) {
+          if (timer) { clearInterval(timer); timer = null; }
+          currentAngle = targetAngle;
+          setNeedleAngle(currentAngle);
+        } else {
+          animateTo(targetAngle);
+        }
+      }
+
+      function polarToPoint(radius, angle) {
+        var rad = angle * Math.PI / 180;
+        return { x: CX + radius * Math.cos(rad), y: CY + radius * Math.sin(rad) };
+      }
+
+      function makeArc(radius, startAngle, endAngle) {
+        var span = endAngle - startAngle;
+        if (!isFinite(span) || span <= 0) { span = 1; }
+
+        // SVG arc cannot draw a full circle in one command, so split it in two arcs.
+        if (span >= 359.99) {
+          var midAngle = startAngle + (span / 2);
+          var p1 = polarToPoint(radius, startAngle);
+          var p2 = polarToPoint(radius, midAngle);
+          var p3 = polarToPoint(radius, endAngle - 0.01);
+          return 'M ' + p1.x.toFixed(2) + ' ' + p1.y.toFixed(2) +
+            ' A ' + radius + ' ' + radius + ' 0 1 1 ' + p2.x.toFixed(2) + ' ' + p2.y.toFixed(2) +
+            ' A ' + radius + ' ' + radius + ' 0 1 1 ' + p3.x.toFixed(2) + ' ' + p3.y.toFixed(2);
+        }
+
+        var start = polarToPoint(radius, startAngle);
+        var end = polarToPoint(radius, endAngle);
+        var largeArc = span > 180 ? 1 : 0;
+        return 'M ' + start.x.toFixed(2) + ' ' + start.y.toFixed(2) + ' A ' + radius + ' ' + radius + ' 0 ' + largeArc + ' 1 ' + end.x.toFixed(2) + ' ' + end.y.toFixed(2);
+      }
+
+
+      function clearElement(element) {
+        if (!element) { return; }
+        while (element.firstChild) {
+          element.removeChild(element.firstChild);
+        }
+      }
+
+      function createSvgElement(tag) {
+        return document.createElementNS('http://www.w3.org/2000/svg', tag);
+      }
+
+      function niceStep(rawStep) {
+        if (!isFinite(rawStep) || rawStep <= 0) { return 10; }
+        var exponent = Math.floor(Math.log(rawStep) / Math.LN10);
+        var fraction = rawStep / Math.pow(10, exponent);
+        var niceFraction = 1;
+        if (fraction <= 1) { niceFraction = 1; }
+        else if (fraction <= 2) { niceFraction = 2; }
+        else if (fraction <= 5) { niceFraction = 5; }
+        else { niceFraction = 10; }
+        return niceFraction * Math.pow(10, exponent);
+      }
+
+      function formatLabel(value) {
+        var rounded = Math.round(value * 100) / 100;
+        if (Math.abs(rounded - Math.round(rounded)) < 0.001) {
+          return String(Math.round(rounded));
+        }
+        return String(rounded);
+      }
+
+      function addTick(layer, angle, innerRadius, outerRadius, width) {
+        var inner = polarToPoint(innerRadius, angle);
+        var outer = polarToPoint(outerRadius, angle);
+        var line = createSvgElement('line');
+        line.setAttribute('x1', inner.x.toFixed(2));
+        line.setAttribute('y1', inner.y.toFixed(2));
+        line.setAttribute('x2', outer.x.toFixed(2));
+        line.setAttribute('y2', outer.y.toFixed(2));
+        line.setAttribute('stroke-width', width);
+        layer.appendChild(line);
+      }
+
+      function addLabel(layer, value, angle) {
+        var point = polarToPoint(100, angle);
+        var text = createSvgElement('text');
+        text.setAttribute('x', point.x.toFixed(2));
+        text.setAttribute('y', point.y.toFixed(2));
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('dominant-baseline', 'middle');
+        text.textContent = formatLabel(value);
+        layer.appendChild(text);
+      }
+
+      function getScaleNumbers() {
+        var min = parseFloat(_pn_min);
+        var max = parseFloat(_pn_max);
+        if (isNaN(min)) { min = 0; }
+        if (isNaN(max) || max === min) { max = min + 1; }
+        if (max < min) {
+          var tmp = min;
+          min = max;
+          max = tmp;
+        }
+        var range = max - min;
+        var majorStep = parseFloat(_pn_majorStep);
+        if (isNaN(majorStep) || majorStep <= 0) {
+          majorStep = niceStep(range / 11);
+        }
+        var minorDivisions = parseInt(_pn_minorDivisions, 10);
+        if (isNaN(minorDivisions) || minorDivisions < 1) { minorDivisions = 4; }
+        return { min: min, max: max, range: range, majorStep: majorStep, minorDivisions: minorDivisions };
+      }
+
+      function buildScale() {
+        var tickLayer = getSvgElement('tickLayer');
+        var labelLayer = getSvgElement('labelLayer');
+        if (!tickLayer || !labelLayer) { return; }
+
+        clearElement(tickLayer);
+        clearElement(labelLayer);
+
+        var scale = getScaleNumbers();
+        var values = [];
+        var epsilon = scale.majorStep / 1000;
+        values.push(scale.min);
+
+        var firstMajor = Math.ceil(scale.min / scale.majorStep) * scale.majorStep;
+        for (var value = firstMajor; value <= scale.max + epsilon; value += scale.majorStep) {
+          if (Math.abs(value - scale.min) > epsilon && Math.abs(value - scale.max) > epsilon) {
+            values.push(value);
+          }
+        }
+        values.push(scale.max);
+        values.sort(function (a, b) { return a - b; });
+
+        for (var i = 0; i < values.length; i++) {
+          var majorValue = values[i];
+          var majorAngle = valueToAngle(majorValue);
+          addTick(tickLayer, majorAngle, 121, 137, 2.2);
+          addLabel(labelLayer, majorValue, majorAngle);
+
+          if (i < values.length - 1) {
+            var nextValue = values[i + 1];
+            var section = nextValue - majorValue;
+            for (var m = 1; m < scale.minorDivisions; m++) {
+              var minorValue = majorValue + (section * m / scale.minorDivisions);
+              var minorAngle = valueToAngle(minorValue);
+              var isMiddle = scale.minorDivisions % 2 === 0 && m === scale.minorDivisions / 2;
+              addTick(tickLayer, minorAngle, isMiddle ? 124 : 128, 137, isMiddle ? 1.1 : 0.8);
+            }
+          }
+        }
+      }
+
+
+      function updateArcBorders() {
+        var outerBorder = getSvgElement('outerBorder');
+        var innerBorder = getSvgElement('innerBorder');
+        var start = getStartAngle();
+        var end = getEndAngle();
+        var arcThickness = parseFloat(_pn_arcThickness);
+        if (isNaN(arcThickness) || arcThickness < 0) { arcThickness = 5; }
+
+        if (outerBorder) {
+          outerBorder.setAttribute('d', makeArc(OUTER_BORDER_RADIUS, start, end));
+          outerBorder.setAttribute('stroke-width', arcThickness);
+        }
+        if (innerBorder) {
+          innerBorder.setAttribute('d', makeArc(INNER_BORDER_RADIUS, start, end));
+        }
+      }
+
+      function updateRedZone() {
+        var redZone = getSvgElement('redZone');
+        if (!redZone) { return; }
+        var start = valueToAngle(normalize(_pn_redStart));
+        var end = valueToAngle(normalize(_pn_redEnd));
+        if (end < start) {
+          var tmp = start;
+          start = end;
+          end = tmp;
+        }
+        redZone.setAttribute('d', makeArc(RED_RADIUS, start, end));
+        var redThickness = parseFloat(_pn_redZoneThickness);
+        if (isNaN(redThickness) || redThickness < 0) { redThickness = 23; }
+        redZone.setAttribute('stroke-width', redThickness);
+      }
+
+      function setUnitText() {
+        var unitText = getSvgElement('unitText');
+        if (unitText) { unitText.textContent = _ps_unit || ''; }
+      }
+
+      function applyStyle() {
+        var face = getSvgElement('face');
+        var outerBorder = getSvgElement('outerBorder');
+        var innerBorder = getSvgElement('innerBorder');
+        var tickLayer = getSvgElement('tickLayer');
+        var labelLayer = getSvgElement('labelLayer');
+        var redZone = getSvgElement('redZone');
+        var needle = getSvgElement('needle');
+        var glow = getSvgElement('needleGlow');
+        var unitText = getSvgElement('unitText');
+        if (face) { face.setAttribute('fill', _pc_faceColor); }
+        if (outerBorder) { outerBorder.setAttribute('stroke', _pc_borderColor); }
+        if (innerBorder) { innerBorder.setAttribute('stroke', _pc_borderColor); }
+        if (tickLayer) { tickLayer.setAttribute('stroke', _pc_tickColor); }
+        if (labelLayer) {
+          labelLayer.setAttribute('fill', _pc_textColor);
+          labelLayer.setAttribute('font-family', _ps_scaleFontFamily || 'Arial, Helvetica, sans-serif');
+          labelLayer.setAttribute('font-size', String(parseFloat(_pn_scaleFontSize) || 14));
+          labelLayer.setAttribute('font-weight', _ps_scaleFontWeight || '600');
+        }
+        if (redZone) { redZone.setAttribute('stroke', _pc_redZoneColor); }
+        if (needle) { needle.setAttribute('stroke', _pc_needleColor); }
+        if (glow) { glow.setAttribute('stroke', _pc_needleColor); }
+        if (unitText) { unitText.setAttribute('fill', _pc_unitColor); }
+      }
+
+      function putValue(id, value) {
+        switch (id) {
+          case '_pn_value': setNumericValue(value, true); break;
+          case '_pn_min': _pn_min = parseFloat(value); buildScale(); setNumericValue(_pn_value, true); updateRedZone(); break;
+          case '_pn_max': _pn_max = parseFloat(value); buildScale(); setNumericValue(_pn_value, true); updateRedZone(); break;
+          case '_pn_redStart': _pn_redStart = parseFloat(value); updateRedZone(); break;
+          case '_pn_redEnd': _pn_redEnd = parseFloat(value); updateRedZone(); break;
+          case '_pn_majorStep': _pn_majorStep = parseFloat(value); buildScale(); updateRedZone(); break;
+          case '_pn_minorDivisions': _pn_minorDivisions = parseInt(value, 10); buildScale(); break;
+          case '_pn_startAngle': _pn_startAngle = parseFloat(value); refreshGauge(); break;
+          case '_pn_endAngle': _pn_endAngle = parseFloat(value); refreshGauge(); break;
+          case '_pn_animationMs': _pn_animationMs = parseFloat(value); break;
+          case '_pn_arcThickness': _pn_arcThickness = parseFloat(value); updateArcBorders(); break;
+          case '_pn_redZoneThickness': _pn_redZoneThickness = parseFloat(value); updateRedZone(); break;
+          case '_pn_scaleFontSize': _pn_scaleFontSize = parseFloat(value); applyStyle(); break;
+          case '_ps_scaleFontFamily': _ps_scaleFontFamily = value; applyStyle(); break;
+          case '_ps_scaleFontWeight': _ps_scaleFontWeight = value; applyStyle(); break;
+          case '_ps_unit': _ps_unit = value; setUnitText(); break;
+          case '_pc_faceColor': _pc_faceColor = value; applyStyle(); break;
+          case '_pc_borderColor': _pc_borderColor = value; applyStyle(); break;
+          case '_pc_tickColor': _pc_tickColor = value; applyStyle(); break;
+          case '_pc_textColor': _pc_textColor = value; applyStyle(); break;
+          case '_pc_redZoneColor': _pc_redZoneColor = value; applyStyle(); break;
+          case '_pc_needleColor': _pc_needleColor = value; applyStyle(); break;
+          case '_pc_unitColor': _pc_unitColor = value; applyStyle(); break;
+        }
+      }
+
+      setTimeout(function () { init(); }, 100);
+    ]]>
+  </script>
+</svg>
